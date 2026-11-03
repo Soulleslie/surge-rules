@@ -17,3 +17,30 @@ RULE-SET:https://raw.githubusercontent.com/Soulleslie/surge-rules/main/China_NoG
 ```
 
 某条规则下载失败、为空或条数比旧版少一半以上时，保留旧文件，其他规则照常更新，workflow 标记为失败。
+
+## Clash（mihomo）
+
+同步完成后，`scripts/clash.py` 用 mihomo 把上面的 Surge 规则（含 `custom/`）转换到 `clash/`，Surge 文件不受影响。每个规则拆成：
+
+- `clash/<名称>.mrs`：DOMAIN / DOMAIN-SUFFIX，`behavior: domain`
+- `clash/<名称>-IP.mrs`：IP-CIDR / IP-CIDR6，`behavior: ipcidr`
+- `clash/<名称>-Extra.list`：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，`behavior: classical`
+
+`China_NoGEOIP.list` 输出为 `China*`。mihomo 不支持的 USER-AGENT、URL-REGEX 会被丢弃；没有内容的部分不生成文件。
+
+```yaml
+rule-providers:
+  Google:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/Soulleslie/surge-rules/main/clash/Google.mrs
+    path: ./rules/Google.mrs
+    interval: 86400
+
+rules:
+  - RULE-SET,Google,Google
+  - RULE-SET,Google-IP,Google,no-resolve
+```
+
+转换失败时保留 `clash/` 里的旧文件，Surge 规则照常提交，workflow 标记为失败。
