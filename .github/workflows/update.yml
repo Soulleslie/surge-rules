@@ -1,0 +1,40 @@
+name: Update rules
+
+on:
+  schedule:
+    - cron: "17 20 * * *" # 每天北京时间 04:17
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build China_NoGEOIP.list
+        run: python3 scripts/build.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add China_NoGEOIP.list
+            git commit -m "Update China_NoGEOIP.list"
+            git push
+          else
+            echo "No changes"
+          fi
+
+      # 公开仓库 60 天没有提交，定时任务会被 GitHub 停用；超过 50 天就提交一次空 commit 保活
+      - name: Keepalive
+        run: |
+          last=$(git log -1 --format=%ct)
+          now=$(date +%s)
+          if [ $((now - last)) -gt $((50 * 86400)) ]; then
+            git commit --allow-empty -m "Keepalive"
+            git push
+          fi
