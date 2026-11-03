@@ -1,0 +1,6 @@
+# NAME: T-Mobile
+# 手动维护，不参与 MagicRule 自动同步
+DOMAIN-SUFFIX,t-mobile.com
+DOMAIN-SUFFIX,tmobile.com
+DOMAIN-SUFFIX,metrobyt-mobile.com
+DOMAIN-SUFFIX,mintmobile.com
