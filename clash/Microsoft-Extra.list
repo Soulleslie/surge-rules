@@ -1,0 +1,7 @@
+# Microsoft：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 rules/Microsoft.list 生成
+DOMAIN-KEYWORD,1drv
+DOMAIN-KEYWORD,microsoft
+DOMAIN-KEYWORD,onedrive
+DOMAIN-KEYWORD,skydrive
+PROCESS-NAME,OneDrive
+PROCESS-NAME,OneDriveUpdater

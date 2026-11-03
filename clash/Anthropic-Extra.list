@@ -1,0 +1,10 @@
+# Anthropic：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 rules/Anthropic.list 生成
+DOMAIN-KEYWORD,datadog
+DOMAIN-KEYWORD,sentry
+DOMAIN-KEYWORD,sift
+IP-ASN,399358
+PROCESS-NAME,Claude
+PROCESS-NAME,Claude.exe
+PROCESS-NAME,claude
+PROCESS-NAME,claude.exe
+PROCESS-NAME,cowork-svc.exe

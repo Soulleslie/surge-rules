@@ -1,0 +1,6 @@
+# Spotify：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 rules/Spotify.list 生成
+DOMAIN-KEYWORD,-spotify-
+DOMAIN-KEYWORD,-spotify-com
+DOMAIN-KEYWORD,spotify
+DOMAIN-KEYWORD,spotify.com
+PROCESS-NAME,com.spotify.music

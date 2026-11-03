@@ -1,0 +1,3 @@
+# Twitch：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 rules/Twitch.list 生成
+DOMAIN-KEYWORD,ttvnw
+PROCESS-NAME,tv.twitch.android.app

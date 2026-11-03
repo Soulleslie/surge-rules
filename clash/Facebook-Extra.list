@@ -1,0 +1,4 @@
+# Facebook：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 rules/Facebook.list 生成
+DOMAIN-KEYWORD,facebook
+DOMAIN-KEYWORD,fbcdn
+IP-ASN,32934
