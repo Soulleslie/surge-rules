@@ -1,0 +1,40 @@
+# NAME: Oracle
+# 手动维护，不参与 MagicRule 自动同步
+# 来源：blackmatrix7 Oracle.list（2025-06-06 版，2026 年底停更）+ 补充的 OCI 域名
+
+# Oracle Cloud（OCI）
+DOMAIN-SUFFIX,oracle.com
+DOMAIN-SUFFIX,oraclecloud.com
+DOMAIN-SUFFIX,oracleimg.com
+DOMAIN-SUFFIX,oracleinfinity.io
+DOMAIN-SUFFIX,ateam-oracle.com
+DOMAIN-SUFFIX,oraclefoundation.org
+DOMAIN-SUFFIX,oracle
+# 补充：OCI 容器镜像仓库（如 sjc.ocir.io）
+DOMAIN-SUFFIX,ocir.io
+# 补充：OCI 对象存储专用端点（如 *.objectstorage.us-sanjose-1.oci.customer-oci.com）
+DOMAIN-SUFFIX,customer-oci.com
+
+# Java / Sun
+DOMAIN-SUFFIX,java
+DOMAIN-SUFFIX,java.com
+DOMAIN-SUFFIX,java.net
+DOMAIN-SUFFIX,sun.com
+
+# Oracle 营销与广告产品（AddThis、BlueKai、Eloqua、Responsys、Bronto）
+DOMAIN-SUFFIX,addthis.com
+DOMAIN-SUFFIX,addthis.com.edgekey.net
+DOMAIN-SUFFIX,addthiscdn.com
+DOMAIN-SUFFIX,addthisedge.com
+DOMAIN-SUFFIX,bluekai.com
+DOMAIN-SUFFIX,bronto.com
+DOMAIN-SUFFIX,eloqua.com
+DOMAIN-SUFFIX,eloquaeditors.com
+DOMAIN-SUFFIX,eloquapreview.com
+DOMAIN-SUFFIX,en25.com
+DOMAIN-SUFFIX,responsys.net
+
+# 其他（沿用 blackmatrix7）
+DOMAIN-SUFFIX,covid19-rx.org
+DOMAIN-SUFFIX,covid19rx.org
+DOMAIN-SUFFIX,a1cbafa5ea9a6480cb8e9ffba46cbad9-466059813.us-west-2.elb.amazonaws.com
