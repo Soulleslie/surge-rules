@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "17 20 * * *" # 每天北京时间 04:17
   workflow_dispatch:
+  # 手动改了 custom/ 或转换脚本后，立即重新生成 Clash 规则
+  push:
+    branches: [main]
+    paths:
+      - "custom/**"
+      - "scripts/clash.py"
 
 permissions:
   contents: write
@@ -18,12 +24,27 @@ jobs:
       - name: Sync from MagicRule
         run: python3 scripts/sync.py
 
+      # 以下两步只生成 clash/，不碰 Surge 文件；失败时标红，但 Surge 规则照常提交，clash/ 保留旧版
+      - name: Download mihomo
+        if: always()
+        env:
+          MIHOMO_VERSION: v1.19.33
+        run: |
+          curl -fsSL -o mihomo.gz "https://github.com/MetaCubeX/mihomo/releases/download/${MIHOMO_VERSION}/mihomo-linux-amd64-${MIHOMO_VERSION}.gz"
+          gunzip mihomo.gz
+          chmod +x mihomo
+          mv mihomo "$RUNNER_TEMP/mihomo"
+
+      - name: Convert to Clash (mihomo)
+        if: always()
+        run: python3 scripts/clash.py "$RUNNER_TEMP/mihomo"
+
       - name: Commit if changed
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
-          git add -A China_NoGEOIP.list rules
+          git add -A China_NoGEOIP.list rules clash
           if git diff --cached --quiet; then
             echo "No changes"
           else
