@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "clash"
-SOURCES = [ROOT / "China_NoGEOIP.list", *sorted((ROOT / "rules").glob("*.list")), *sorted((ROOT / "custom").glob("*.list"))]
+SOURCES = [*sorted((ROOT / "rules").glob("*.list")), *sorted((ROOT / "custom").glob("*.list"))]
 
 DOMAIN_TYPES = {"DOMAIN": "{}", "DOMAIN-SUFFIX": "+.{}"}
 IP_TYPES = ("IP-CIDR", "IP-CIDR6")
