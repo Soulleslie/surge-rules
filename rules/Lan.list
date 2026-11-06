@@ -1,13 +1,12 @@
 # NAME: Lan
 # AUTHOR: MagicRule
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-10-29 11:16:39
-# DOMAIN: 18
-# DOMAIN-SUFFIX: 124
+# UPDATED: 2026-11-06 18:57:05
+# DOMAIN: 17
+# DOMAIN-SUFFIX: 125
 # IP-CIDR: 18
 # IP-CIDR6: 14
 
-DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
 DOMAIN,asusrouter.com
 DOMAIN,aterm.me
 DOMAIN,console.gl-inet.com
@@ -122,6 +121,7 @@ DOMAIN-SUFFIX,acl4.ssr
 DOMAIN-SUFFIX,asusrouter.com
 DOMAIN-SUFFIX,b.e.f.ip6.arpa
 DOMAIN-SUFFIX,d.f.ip6.arpa
+DOMAIN-SUFFIX,dittocdn.com
 DOMAIN-SUFFIX,hiwifi.com
 DOMAIN-SUFFIX,home.arpa
 DOMAIN-SUFFIX,huaweimobilewifi.com
