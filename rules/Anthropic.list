@@ -1,14 +1,14 @@
 # NAME: Anthropic
 # AUTHOR: MagicRule
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-06 15:46:32
+# UPDATED: 2026-11-07 03:18:51
 # DOMAIN: 8
 # DOMAIN-SUFFIX: 33
 # DOMAIN-KEYWORD: 3
 # IP-CIDR: 1
 # IP-CIDR6: 1
 # IP-ASN: 1
-# PROCESS-NAME: 5
+# PROCESS-NAME: 2
 
 DOMAIN,anthropic-com.ghost.io
 DOMAIN,anthropic.auth0.com
@@ -58,7 +58,4 @@ IP-CIDR,160.79.104.0/21,no-resolve
 IP-CIDR6,2607:6bc0::/32,no-resolve
 IP-ASN,399358,no-resolve
 PROCESS-NAME,Claude
-PROCESS-NAME,Claude.exe
 PROCESS-NAME,claude
-PROCESS-NAME,claude.exe
-PROCESS-NAME,cowork-svc.exe

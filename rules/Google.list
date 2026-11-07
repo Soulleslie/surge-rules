@@ -2,12 +2,12 @@
 # NAME: Google
 # AUTHOR: MagicRule
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-10-29 11:31:53
+# UPDATED: 2026-11-07 03:20:10
 # DOMAIN: 241
 # DOMAIN-SUFFIX: 934
 # DOMAIN-KEYWORD: 6
 # IP-CIDR: 2
-# PROCESS-NAME: 5
+# PROCESS-NAME: 4
 
 DOMAIN,2mdn-cn.net
 DOMAIN,2mdn.net
@@ -1164,7 +1164,6 @@ DOMAIN-KEYWORD,googlesource
 DOMAIN-KEYWORD,recaptcha
 IP-CIDR,173.194.0.0/16,no-resolve
 IP-CIDR,74.125.0.0/16,no-resolve
-PROCESS-NAME,GoogleDriveFS.exe
 PROCESS-NAME,com.android.vending
 PROCESS-NAME,com.google.android.gms
 PROCESS-NAME,com.google.android.gsf

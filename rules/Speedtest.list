@@ -1,9 +1,9 @@
 # NAME: Speedtest
 # AUTHOR: MagicRule
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-06 18:54:09
+# UPDATED: 2026-11-07 03:23:20
 # DOMAIN: 3354
-# DOMAIN-SUFFIX: 131
+# DOMAIN-SUFFIX: 130
 # DOMAIN-KEYWORD: 1
 # USER-AGENT: 1
 
@@ -3364,7 +3364,6 @@ DOMAIN,zeusnet.almotafael.com
 DOMAIN-SUFFIX,backend.librespeed.org
 DOMAIN-SUFFIX,cdnst.net
 DOMAIN-SUFFIX,cellmaps.com
-DOMAIN-SUFFIX,dittocdn.com
 DOMAIN-SUFFIX,ekahau.cloud
 DOMAIN-SUFFIX,ekahau.com
 DOMAIN-SUFFIX,fast.com

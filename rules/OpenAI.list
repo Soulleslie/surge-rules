@@ -1,14 +1,14 @@
 # NAME: OpenAI
 # AUTHOR: MagicRule
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-06 18:47:02
+# UPDATED: 2026-11-07 03:23:36
 # DOMAIN: 12
 # DOMAIN-SUFFIX: 32
 # DOMAIN-KEYWORD: 4
 # IP-CIDR: 3
 # IP-CIDR6: 1
 # IP-ASN: 1
-# PROCESS-NAME: 7
+# PROCESS-NAME: 4
 
 DOMAIN,browser-intake-datadoghq.com
 DOMAIN,o33249.ingest.sentry.io
@@ -64,9 +64,6 @@ IP-CIDR,64.23.132.171/32,no-resolve
 IP-CIDR6,2604:f20::/32,no-resolve
 IP-ASN,401518,no-resolve
 PROCESS-NAME,ChatGPT
-PROCESS-NAME,ChatGPT.exe
 PROCESS-NAME,Codex
-PROCESS-NAME,Codex.exe
 PROCESS-NAME,chatgpt
 PROCESS-NAME,codex
-PROCESS-NAME,codex.exe
