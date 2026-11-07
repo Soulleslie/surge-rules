@@ -1,11 +1,11 @@
 # China (MagicRule) without GEOIP
 # Source: https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list
 # Upstream updated: 2026-11-06T14:10:25.452911+00:00
-# Total: 10332
+# Total: 10335
 # DOMAIN: 24
 # DOMAIN-KEYWORD: 10
 # DOMAIN-SUFFIX: 6379
-# IP-CIDR: 3885
+# IP-CIDR: 3888
 # IP-CIDR6: 4
 # USER-AGENT: 30
 DOMAIN,api.alibabacloud.com
@@ -6993,6 +6993,7 @@ IP-CIDR,103.36.172.0/22,no-resolve
 IP-CIDR,103.36.192.0/20,no-resolve
 IP-CIDR,103.36.208.0/22,no-resolve
 IP-CIDR,103.36.220.0/22,no-resolve
+IP-CIDR,103.36.28.0/22,no-resolve
 IP-CIDR,103.36.36.0/22,no-resolve
 IP-CIDR,103.36.63.0/24,no-resolve
 IP-CIDR,103.36.96.0/22,no-resolve
@@ -7355,6 +7356,7 @@ IP-CIDR,112.132.0.0/16,no-resolve
 IP-CIDR,112.192.0.0/14,no-resolve
 IP-CIDR,112.224.0.0/11,no-resolve
 IP-CIDR,112.64.0.0/14,no-resolve
+IP-CIDR,112.73.96.0/19,no-resolve
 IP-CIDR,112.74.0.0/16,no-resolve
 IP-CIDR,112.80.0.0/12,no-resolve
 IP-CIDR,112.96.0.0/13,no-resolve
@@ -9462,6 +9464,7 @@ IP-CIDR,218.97.240.0/20,no-resolve
 IP-CIDR,218.98.0.0/18,no-resolve
 IP-CIDR,218.98.104.0/22,no-resolve
 IP-CIDR,218.98.108.0/23,no-resolve
+IP-CIDR,218.98.111.0/24,no-resolve
 IP-CIDR,218.98.160.0/24,no-resolve
 IP-CIDR,218.98.176.0/24,no-resolve
 IP-CIDR,218.98.192.0/24,no-resolve
@@ -9916,7 +9919,7 @@ IP-CIDR,43.240.200.0/23,no-resolve
 IP-CIDR,43.240.202.0/24,no-resolve
 IP-CIDR,43.240.204.0/22,no-resolve
 IP-CIDR,43.240.220.0/22,no-resolve
-IP-CIDR,43.240.60.0/22,no-resolve
+IP-CIDR,43.240.56.0/21,no-resolve
 IP-CIDR,43.240.72.0/22,no-resolve
 IP-CIDR,43.241.16.0/22,no-resolve
 IP-CIDR,43.241.180.0/22,no-resolve
