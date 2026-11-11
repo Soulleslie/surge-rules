@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """按 sources.json 从 MagicRule 同步 Surge 规则，写到固定路径（说明见 README）。
 
-- drop_geoip：去掉 GEOIP，IP 规则补 no-resolve，可用于 [Host] 映射。
+- no_geoip：用于 [Host] 映射的规则。上游出现 GEOIP 或 IP 规则缺少 no-resolve 时视为异常，保留旧文件。
 - drop_bare_suffix：去掉裸后缀（如 DOMAIN-SUFFIX,hk），keep_bare 里的除外。
 """
 
@@ -26,33 +26,6 @@ def fetch(url: str) -> bytes:
 
 def rule_lines(text: str) -> list[str]:
     return [l.strip() for l in text.splitlines() if l.strip() and not l.strip().startswith("#")]
-
-
-def drop_geoip(text: str, url: str, updated_at: str) -> str:
-    rules = []
-    for line in rule_lines(text):
-        fields = [f.strip() for f in line.split(",")]
-        rule_type = fields[0].upper()
-        if rule_type == "GEOIP":
-            continue
-        if rule_type in IP_TYPES and "no-resolve" not in (f.lower() for f in fields[2:]):
-            fields.append("no-resolve")
-        rules.append(",".join(fields))
-
-    counts: dict[str, int] = {}
-    for r in rules:
-        t = r.split(",", 1)[0]
-        counts[t] = counts.get(t, 0) + 1
-
-    # 头部只写上游信息，不写当前时间，上游没变时文件内容就不变
-    header = [
-        "# China (MagicRule) without GEOIP",
-        f"# Source: {url}",
-        f"# Upstream updated: {updated_at}",
-        f"# Total: {len(rules)}",
-        *(f"# {t}: {n}" for t, n in sorted(counts.items())),
-    ]
-    return "\n".join(header + rules) + "\n"
 
 
 def bare_suffix(line: str) -> str:
@@ -87,8 +60,12 @@ def check(entry: dict, text: str, out: Path) -> None:
     missing = [m for m in entry.get("must_contain", []) if m not in present]
     if missing:
         raise ValueError(f"缺少关键条目 {missing}")
-    if entry.get("drop_geoip") and any(l.upper().startswith("GEOIP,") for l in lines):
-        raise ValueError("过滤后仍有 GEOIP")
+    if entry.get("no_geoip"):
+        if any(l.upper().startswith("GEOIP,") for l in lines):
+            raise ValueError("上游含有 GEOIP")
+        bare = [l for l in lines if l.upper().startswith(IP_TYPES) and "no-resolve" not in l.lower()]
+        if bare:
+            raise ValueError(f"{len(bare)} 条 IP 规则缺少 no-resolve")
     if entry.get("drop_bare_suffix"):
         left = {bare_suffix(l) for l in lines} - {""} - set(entry.get("keep_bare", []))
         if left:
@@ -105,8 +82,6 @@ def sync(entry: dict, index: dict) -> str:
         raise ValueError(f"manifest 里没有 {entry['artifact']}")
     url = artifacts[0]["url"]
     text = fetch(url).decode("utf-8")
-    if entry.get("drop_geoip"):
-        text = drop_geoip(text, url, manifest.get("rule_updated_at", ""))
     if entry.get("drop_bare_suffix"):
         text = drop_bare_suffix(text, set(entry.get("keep_bare", [])))
 
