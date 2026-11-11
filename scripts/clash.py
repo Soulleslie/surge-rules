@@ -56,7 +56,7 @@ def convert(mihomo: str, behavior: str, lines: list[str], out: Path) -> None:
 
 
 def build(mihomo: str, source: Path) -> list[str]:
-    name = "China" if source.name == "China_NoGEOIP.list" else source.stem
+    name = source.stem
     domains, ips, extra = split(source.read_text(encoding="utf-8"))
     if not (domains or ips or extra):
         raise ValueError("没有可转换的规则")
