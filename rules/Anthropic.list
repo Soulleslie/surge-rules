@@ -1,8 +1,8 @@
 # NAME: Anthropic
 # AUTHOR: MagicRule
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-07 03:18:51
-# DOMAIN: 8
+# UPDATED: 2026-11-11 09:45:14
+# DOMAIN: 10
 # DOMAIN-SUFFIX: 33
 # DOMAIN-KEYWORD: 3
 # IP-CIDR: 1
@@ -16,6 +16,8 @@ DOMAIN,anthropic.com.cdn.cloudflare.net
 DOMAIN,browser-intake-us5-datadoghq.com
 DOMAIN,cdn.growthbook.io
 DOMAIN,cdn.usefathom.com
+DOMAIN,http-intake.logs.us5.datadoghq.com
+DOMAIN,o1158394.ingest.us.sentry.io
 DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN,storage.googleapis.com
 DOMAIN-SUFFIX,ant.dev

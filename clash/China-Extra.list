@@ -1,4 +1,4 @@
-# China：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 rules/China_NoGEOIP.list 生成
+# China：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 rules/China.list 生成
 DOMAIN-KEYWORD,-cn
 DOMAIN-KEYWORD,.tmall.com
 DOMAIN-KEYWORD,alicdn
