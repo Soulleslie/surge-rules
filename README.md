@@ -5,15 +5,15 @@
 要同步哪些规则，在 `sources.json` 里配置：
 
 - `rules/<名称>.list`：原样同步的规则。
-- `rules/China_NoGEOIP.list`：China 完整规则去掉 `GEOIP`、IP 规则都带 `no-resolve`，可同时用在分流和 DNS 映射：
+- `rules/China.list`：China 完整规则。上游已不含 `GEOIP`，IP 规则都带 `no-resolve`，可同时用在分流和 DNS 映射；上游一旦不满足这两点，保留旧文件：
 
 ```
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/Soulleslie/surge-rules/main/rules/China_NoGEOIP.list,DIRECT
+RULE-SET,https://raw.githubusercontent.com/Soulleslie/surge-rules/main/rules/China.list,DIRECT
 GEOIP,CN,DIRECT
 
 [Host]
-RULE-SET:https://raw.githubusercontent.com/Soulleslie/surge-rules/main/rules/China_NoGEOIP.list = server:system
+RULE-SET:https://raw.githubusercontent.com/Soulleslie/surge-rules/main/rules/China.list = server:system
 ```
 
 某条规则下载失败、为空或条数比旧版少一半以上时，保留旧文件，其他规则照常更新，workflow 标记为失败。
@@ -26,7 +26,7 @@ RULE-SET:https://raw.githubusercontent.com/Soulleslie/surge-rules/main/rules/Chi
 - `clash/<名称>-IP.mrs`：IP-CIDR / IP-CIDR6，`behavior: ipcidr`
 - `clash/<名称>-Extra.list`：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，`behavior: classical`
 
-`China_NoGEOIP.list` 输出为 `China*`。mihomo 不支持的 USER-AGENT、URL-REGEX 会被丢弃；没有内容的部分不生成文件。
+mihomo 不支持的 USER-AGENT、URL-REGEX 会被丢弃；没有内容的部分不生成文件。
 
 ```yaml
 rule-providers:
