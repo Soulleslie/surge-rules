@@ -1,12 +1,12 @@
 # NAME: China
 # AUTHOR: MagicRule
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-11 09:49:17
+# UPDATED: 2026-11-11 23:03:13
 # DOMAIN: 20
 # DOMAIN-SUFFIX: 6362
 # DOMAIN-KEYWORD: 10
 # USER-AGENT: 30
-# IP-CIDR: 3854
+# IP-CIDR: 3856
 # IP-CIDR6: 4
 
 DOMAIN,api.blipsandchitz.me
@@ -8492,6 +8492,7 @@ IP-CIDR,163.61.178.0/23,no-resolve
 IP-CIDR,163.61.202.0/23,no-resolve
 IP-CIDR,163.61.214.0/23,no-resolve
 IP-CIDR,165.101.70.0/24,no-resolve
+IP-CIDR,165.173.176.0/24,no-resolve
 IP-CIDR,166.111.0.0/16,no-resolve
 IP-CIDR,167.139.0.0/16,no-resolve
 IP-CIDR,167.220.244.0/22,no-resolve
@@ -8653,6 +8654,7 @@ IP-CIDR,192.140.208.0/21,no-resolve
 IP-CIDR,192.144.128.0/17,no-resolve
 IP-CIDR,192.163.11.0/24,no-resolve
 IP-CIDR,192.232.97.0/24,no-resolve
+IP-CIDR,192.51.172.0/24,no-resolve
 IP-CIDR,193.112.0.0/16,no-resolve
 IP-CIDR,193.9.44.0/24,no-resolve
 IP-CIDR,193.9.46.0/24,no-resolve
