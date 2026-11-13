@@ -1,8 +1,8 @@
 # NAME: Global
 # AUTHOR: MagicRule
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-11 09:44:17
-# DOMAIN: 1912
+# UPDATED: 2026-11-13 07:42:46
+# DOMAIN: 1913
 # DOMAIN-SUFFIX: 22364
 # DOMAIN-KEYWORD: 53
 # USER-AGENT: 9
@@ -1127,6 +1127,7 @@ DOMAIN,info.knak.com
 DOMAIN,instafeed.nfcube.com
 DOMAIN,int.mwbbiz.com
 DOMAIN,interwiki.scpwikicn.com
+DOMAIN,iprsoftwaremedia.com
 DOMAIN,ipxy.io
 DOMAIN,irp-cdn.multiscreensite.com
 DOMAIN,isitmaintained.com
