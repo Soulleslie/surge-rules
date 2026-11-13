@@ -1,15 +1,7 @@
 name: Sync rules
 
 on:
-  schedule:
-    - cron: "17 20 * * *" # 每天北京时间 04:17
   workflow_dispatch:
-  # 手动改了 custom/ 或转换脚本后，立即重新生成 Clash 规则
-  push:
-    branches: [main]
-    paths:
-      - "custom/**"
-      - "scripts/clash.py"
 
 permissions:
   contents: write
