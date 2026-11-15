@@ -1,7 +1,7 @@
 # NAME: Speedtest
-# AUTHOR: source-audited recovery
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
-# REVIEWED: 2026-11-16T00:01:04.479362+08:00
+# UPDATED: 2026-11-14 07:42:00
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 3376
 # DOMAIN-KEYWORD: 1
@@ -3384,7 +3384,6 @@ DOMAIN,yyc-speedtest02.xplore.ca
 DOMAIN,yyz-speedtest.xplore.ca
 DOMAIN,zdt-iptv.highspeed.com.tr
 DOMAIN,zeusnet.almotafael.com
-DOMAIN-KEYWORD,speedtest
 DOMAIN-SUFFIX,backend.librespeed.org
 DOMAIN-SUFFIX,cdnst.net
 DOMAIN-SUFFIX,cellmaps.com
@@ -3515,4 +3514,5 @@ DOMAIN-SUFFIX,wifiman-stability-test.ubncloud.com
 DOMAIN-SUFFIX,wifiman.com
 DOMAIN-SUFFIX,wifiman.me
 DOMAIN-SUFFIX,wifiman.ubncloud.com
+DOMAIN-KEYWORD,speedtest
 USER-AGENT,SpeedTest*

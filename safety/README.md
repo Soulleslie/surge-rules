@@ -25,7 +25,11 @@ python3 -B scripts/sync.py --mihomo /path/to/mihomo --report /tmp/recovery.json 
   --recover-reviewed Apple Lan Telegram GlobalMedia Speedtest
 ```
 
-正常同步会验证上游 manifest 与文件 SHA-256。一旦上游发布元数据与文件不一致，保留本地审核过的旧产物并报错；不会改写期望校验和，也不使用本地恢复模式掩盖失败。只允许索引当前实际使用的两个固定 HTTPS 发布域名：`magicrule.pages.dev`、`rule-26r.pages.dev`，不会自动接纳其他域名或外站重定向。
+正常同步优先验证 manifest 的 `bytes_sha256`。已实测 Google、Steam、China、Global、Speedtest 的完整文件差异仅为 `UPDATED` 注释相差 1–2 秒：只替换该注释的时间就精确匹配声明的完整文件指纹，其余所有字节同时匹配声明的正文指纹。
+
+因此，仅当产物是非二进制 `rules`、明确声明 `dedupe.mode=standard_header_normalized` 且 `normalized_header_lines` 严格为整数 4 时，允许在完整文件指纹不符后校验 `semantic_sha256`。前四行必须依次为 NAME、AUTHOR、REPO、UPDATED，NAME 必须与目标列表完全相同。计算正文指纹时，只去掉这四行，保留第 5 行开始的所有原始字节，包括计数注释、其他注释、空行、顺序和末尾换行。不会删除全部注释或重新序列化正文来匹配指纹。
+
+不支持的模式、异常头部、缺失指纹和正文指纹不符均保留旧产物并报错；不改写任何期望校验和，也不使用本地恢复模式掩盖失败。报告中的 `integrity_verification` 记录使用的是整文件指纹还是正文指纹。后续逐条白名单、隔离和转换检查不变。只允许索引当前实际使用的两个固定 HTTPS 发布域名：`magicrule.pages.dev`、`rule-26r.pages.dev`，不会自动接纳其他域名或外站重定向。
 
 ## 以后审核新规则
 

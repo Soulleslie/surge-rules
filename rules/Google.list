@@ -1,11 +1,11 @@
-# Dropped bare DOMAIN-SUFFIX: -
 # NAME: Google
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-14 23:23:27
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 241
-# DOMAIN-SUFFIX: 893
 # DOMAIN-KEYWORD: 6
+# DOMAIN-SUFFIX: 893
 # IP-CIDR: 2
 # PROCESS-NAME: 4
 

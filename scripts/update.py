@@ -44,6 +44,45 @@ def fetch(url):
     return data
 
 
+def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
+    """Verify exact bytes, or the explicitly declared four-header body digest.
+
+    Shared text artifacts may have regenerated NAME/AUTHOR/REPO/UPDATED comments.
+    Only those four leading metadata lines are eligible for normalization. Every
+    remaining byte (including counts, comments, order and newline) is still hashed.
+    Unknown modes, five-line normalization and binary fallbacks fail closed.
+    """
+    dedupe = artifact.get('dedupe')
+    if not isinstance(dedupe, dict):
+        raise UnsafeRules('manifest 缺少有效的产物 SHA-256')
+    expected = dedupe.get('bytes_sha256')
+    if not isinstance(expected, str) or not re.fullmatch('[0-9a-f]{64}', expected):
+        raise UnsafeRules('manifest 缺少有效的产物 SHA-256')
+    if hashlib.sha256(data).hexdigest() == expected:
+        return 'bytes_sha256'
+
+    semantic = dedupe.get('semantic_sha256')
+    if (artifact.get('key') != 'rules' or artifact.get('binary') is not False
+            or dedupe.get('mode') != 'standard_header_normalized'
+            or type(dedupe.get('normalized_header_lines')) is not int
+            or dedupe['normalized_header_lines'] != 4
+            or not isinstance(semantic, str) or not re.fullmatch('[0-9a-f]{64}', semantic)):
+        raise UnsafeRules('产物 SHA-256 不符，且未声明支持的正文校验协议')
+    parts = data.split(b'\n', 4)
+    if len(parts) != 5:
+        raise UnsafeRules('正文 SHA-256 校验要求四行完整元数据头')
+    headers = [line.removesuffix(b'\r') for line in parts[:4]]
+    if (headers[0] != b'# NAME: ' + expected_name.encode('utf-8')
+            or not headers[1].startswith(b'# AUTHOR: ') or not headers[1][10:].strip()
+            or not headers[2].startswith(b'# REPO: ') or not headers[2][8:].strip()
+            or not re.fullmatch(rb'# UPDATED: \d{4}-\d\d-\d\d \d\d:\d\d:\d\d', headers[3])
+            or any(re.search(rb'[\x00-\x1f\x7f]', line) for line in headers)):
+        raise UnsafeRules('正文 SHA-256 校验的元数据头格式或规则名称不符')
+    if hashlib.sha256(parts[4]).hexdigest() != semantic:
+        raise UnsafeRules('产物正文 SHA-256 与 manifest 不符')
+    return 'semantic_sha256'
+
+
 def candidate(entry, index, fetcher):
     matches = index.get(entry['name'], [])
     if len(matches) != 1:
@@ -57,12 +96,8 @@ def candidate(entry, index, fetcher):
     artifact = artifacts[0]
     url = checked_url(artifact['url'])
     data = fetcher(url)
-    expected = artifact.get('dedupe', {}).get('bytes_sha256')
-    if not isinstance(expected, str) or not re.fullmatch('[0-9a-f]{64}', expected):
-        raise UnsafeRules('manifest 缺少有效的产物 SHA-256')
-    if hashlib.sha256(data).hexdigest() != expected:
-        raise UnsafeRules('产物 SHA-256 与 manifest 不符')
-    return data.decode('utf-8'), url
+    verification = verify_artifact(data, artifact, entry['name'])
+    return data.decode('utf-8'), url, verification
 
 
 def install(root, name, clean, mihomo):
@@ -127,7 +162,8 @@ def run(config, mihomo, report_path, *, root=ROOT, fetcher=fetch):
             detail = {'status': 'failed'}
             report['lists'][name] = detail
             try:
-                text, url = candidate(entry, index, fetcher)
+                text, url, verification = candidate(entry, index, fetcher)
+                detail.update(source=url, integrity_verification=verification)
                 if entry.get('drop_bare_suffix'):
                     text = sync.drop_bare_suffix(text, set(entry.get('keep_bare', [])))
                 clean, counts = policy.clean(name, text)

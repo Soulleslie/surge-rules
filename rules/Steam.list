@@ -1,10 +1,11 @@
 # NAME: Steam
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-13 20:42:44
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 18
-# DOMAIN-SUFFIX: 64
 # DOMAIN-KEYWORD: 3
+# DOMAIN-SUFFIX: 64
 # IP-CIDR: 12
 
 DOMAIN,a4e8s8k3.map2.ssl.hwcdn.net

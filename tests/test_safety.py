@@ -140,6 +140,43 @@ class PipelineTests(RepositoryCase):
         return {str(p.relative_to(self.root)): p.read_bytes()
                 for folder in ['rules', 'clash'] for p in (self.root / folder).glob('*')}
 
+    def normalized_remote(self, network, name, body):
+        header = (f'# NAME: {name}\n# AUTHOR: MagicRule\n# REPO: https://magicrule.pages.dev\n'
+                  '# UPDATED: 2026-11-15 09:50:07\n')
+        received = (header + body).encode()
+        original = (header.replace('09:50:07', '09:50:08') + body).encode()
+        url = f'https://magicrule.pages.dev/data/{name}/manifest.json'
+        manifest = json.loads(network[url])
+        artifact = manifest['artifacts'][0]
+        artifact['binary'] = False
+        artifact['dedupe'] = {'mode': 'standard_header_normalized', 'normalized_header_lines': 4,
+                              'bytes_sha256': hashlib.sha256(original).hexdigest(),
+                              'semantic_sha256': hashlib.sha256(body.encode()).hexdigest()}
+        network[artifact['url']] = received
+        network[url] = json.dumps(manifest).encode()
+
+    def test_valid_body_digest_still_filters_known_pollution(self):
+        body = 'DOMAIN,good.invalid\nDOMAIN-SUFFIX,ad.invalid\n'
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': body})
+        self.normalized_remote(n, 'One', body)
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 0)
+        self.assertEqual(report['lists']['One']['integrity_verification'], 'semantic_sha256')
+        self.assertEqual(report['lists']['One']['filtered_rules'], 1)
+        self.assertNotIn('ad.invalid', (self.root / 'rules/One.list').read_text())
+        self.assertNotIn(b'ad.invalid', (self.root / 'clash/One.mrs').read_bytes())
+
+    def test_valid_body_digest_cannot_approve_unknown_rules(self):
+        body = 'DOMAIN,good.invalid\nDOMAIN,new.invalid\n'
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': body})
+        self.normalized_remote(n, 'One', body)
+        before = self.snapshot()
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 1)
+        self.assertEqual(report['lists']['One']['integrity_verification'], 'semantic_sha256')
+        self.assertEqual(report['lists']['One']['unknown_rules'], ['DOMAIN,new.invalid'])
+        self.assertEqual(before, self.snapshot())
+
     def test_cleaning_known_pollution_updates_surge_and_clash(self):
         c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'},
                                  {'One': 'DOMAIN,good.invalid\nDOMAIN-SUFFIX,ad.invalid\n'})
