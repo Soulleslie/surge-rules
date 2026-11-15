@@ -1,10 +1,11 @@
 # NAME: GitHub
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-12 19:40:44
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 33
-# DOMAIN-SUFFIX: 40
 # DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 40
 
 DOMAIN,copilot-proxy.githubusercontent.com
 DOMAIN,copilot-telemetry-service.githubusercontent.com

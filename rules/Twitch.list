@@ -1,10 +1,11 @@
 # NAME: Twitch
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-12 19:40:19
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 27
-# DOMAIN-SUFFIX: 9
 # DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 9
 # IP-CIDR: 15
 # IP-CIDR6: 6
 # PROCESS-NAME: 1

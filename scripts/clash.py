@@ -15,6 +15,9 @@ import sys
 import tempfile
 from pathlib import Path
 
+from artifacts import publish
+from safety import Policy, parse
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "clash"
 SOURCES = [*sorted((ROOT / "rules").glob("*.list")), *sorted((ROOT / "custom").glob("*.list"))]
@@ -55,25 +58,34 @@ def convert(mihomo: str, behavior: str, lines: list[str], out: Path) -> None:
         dst.replace(out)
 
 
-def build(mihomo: str, source: Path) -> list[str]:
+def build(mihomo: str, source: Path, *, root: Path | None = None, out_dir: Path | None = None) -> list[str]:
+    root = ROOT if root is None else root
+    out_dir = OUT if out_dir is None else out_dir
     name = source.stem
     domains, ips, extra = split(source.read_text(encoding="utf-8"))
     if not (domains or ips or extra):
         raise ValueError("没有可转换的规则")
 
-    written = []
-    for lines, behavior, out in ((domains, "domain", OUT / f"{name}.mrs"), (ips, "ipcidr", OUT / f"{name}-IP.mrs")):
-        if lines:
-            convert(mihomo, behavior, lines, out)
-            written.append(f"{out.name}({len(lines)})")
+    written, updates = [], {}
+    with tempfile.TemporaryDirectory() as tmp:
+        for lines, behavior, filename in ((domains, 'domain', f'{name}.mrs'),
+                                         (ips, 'ipcidr', f'{name}-IP.mrs')):
+            out = out_dir / filename
+            if lines:
+                staged = Path(tmp) / filename
+                convert(mihomo, behavior, lines, staged)
+                updates[out] = staged.read_bytes()
+                written.append(f'{out.name}({len(lines)})')
+            else:
+                updates[out] = None
+        out = out_dir / f'{name}-Extra.list'
+        if extra:
+            text = f'# {name}：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 {source.relative_to(root)} 生成\n'
+            updates[out] = (text + '\n'.join(extra) + '\n').encode('utf-8')
+            written.append(f'{out.name}({len(extra)})')
         else:
-            out.unlink(missing_ok=True)
-    out = OUT / f"{name}-Extra.list"
-    if extra:
-        out.write_text(f"# {name}：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 {source.relative_to(ROOT)} 生成\n" + "\n".join(extra) + "\n", encoding="utf-8")
-        written.append(f"{out.name}({len(extra)})")
-    else:
-        out.unlink(missing_ok=True)
+            updates[out] = None
+        publish(updates)
     return written
 
 
@@ -82,12 +94,22 @@ def main() -> int:
         print(__doc__, file=sys.stderr)
         return 2
     mihomo = sys.argv[1]
+    try:
+        policy = Policy(ROOT)
+    except Exception as exc:
+        print(f'FAIL safety policy: {exc}', file=sys.stderr)
+        return 1
     OUT.mkdir(exist_ok=True)
 
     failed = []
     for source in SOURCES:
         label = str(source.relative_to(ROOT))
         try:
+            if source.parent == ROOT / 'rules':
+                text = source.read_text(encoding='utf-8')
+                clean, _ = policy.clean(source.stem, text)
+                if set(parse(text)) != set(parse(clean)):
+                    raise ValueError('源文件仍含隔离条目；必须先通过安全同步清理')
             print(f"OK    {label:28} -> {' '.join(build(mihomo, source))}")
         except Exception as e:  # 单条失败保留 clash/ 里的旧文件，其他照常转换
             failed.append(label)

@@ -1,13 +1,14 @@
 # NAME: Anthropic
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-12 19:43:11
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 10
-# DOMAIN-SUFFIX: 33
 # DOMAIN-KEYWORD: 3
+# DOMAIN-SUFFIX: 33
+# IP-ASN: 1
 # IP-CIDR: 1
 # IP-CIDR6: 1
-# IP-ASN: 1
 # PROCESS-NAME: 2
 
 DOMAIN,anthropic-com.ghost.io

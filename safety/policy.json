@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "baseline_commit": "10a4575f63ef582f7a05bd583369753544172504",
+  "reviewed_at": "2026-11-16T00:01:04.479362+08:00",
+  "minimum_retained_fraction": 0.9,
+  "lists": {
+    "China": {
+      "path": "safety/approved/China.list",
+      "sha256": "12fc90564fdf4a4a82d2251d212e32193b57cb42264ea21c606f69687e8e576d",
+      "count": 10290
+    },
+    "Lan": {
+      "path": "safety/approved/Lan.list",
+      "sha256": "d00f385187449b67c5fd9e878607946ec3cbe6399b97b9dcf66b40b1b3b9347a",
+      "count": 173
+    },
+    "Apple": {
+      "path": "safety/approved/Apple.list",
+      "sha256": "1e42643a4a1020f4cb6b9a33c135a7aa7858a5241be91276365a10832fe33089",
+      "count": 2071
+    },
+    "SteamCN": {
+      "path": "safety/approved/SteamCN.list",
+      "sha256": "e5541c7db5d9396a8be97205ac5a3742b318a391f39946c2a1c8239fb567fb15",
+      "count": 17
+    },
+    "Speedtest": {
+      "path": "safety/approved/Speedtest.list",
+      "sha256": "ca816d4ecabafbb9b2b81d2ae8abb0bd58abb1fbc773db567f2b661ea254da6e",
+      "count": 3508
+    },
+    "Google": {
+      "path": "safety/approved/Google.list",
+      "sha256": "fafd1dd5c3d944eeae13ed1004b1dfc5e68424befce1893906d6257ffee20cf9",
+      "count": 1146
+    },
+    "YouTube": {
+      "path": "safety/approved/YouTube.list",
+      "sha256": "14bb8172a2bf3bde1ed0c3dc62c4e8eada0742d2b312f637c5ee128419f375a4",
+      "count": 190
+    },
+    "YouTubeMusic": {
+      "path": "safety/approved/YouTubeMusic.list",
+      "sha256": "cc4be7255843b6d0843cfb6f4fc99c541b75e99dcde67b35c03d69faa5d29bbb",
+      "count": 1
+    },
+    "OpenAI": {
+      "path": "safety/approved/OpenAI.list",
+      "sha256": "cf562724b6acbae140e188f92a22816de674f8e676bccc4ae68b7f4e4d463497",
+      "count": 57
+    },
+    "Anthropic": {
+      "path": "safety/approved/Anthropic.list",
+      "sha256": "2d3df502a6cd8231f20f41b0de86c055be8a89572eee792b9a124cf9c1fc2b6a",
+      "count": 51
+    },
+    "Steam": {
+      "path": "safety/approved/Steam.list",
+      "sha256": "bae74dcc88650f869efb43c395943fdb6bebd742ab2797b4e6afe1bac947acc6",
+      "count": 97
+    },
+    "Epic": {
+      "path": "safety/approved/Epic.list",
+      "sha256": "849025408deb952593ea051aa8b8c08c8969204e99b6e15bad1dd6546327a603",
+      "count": 33
+    },
+    "Sony": {
+      "path": "safety/approved/Sony.list",
+      "sha256": "a7191aa1a98386ebf742adf2d4d317d44d2cde61bc49bd7ee1d6830e7ecbd1a7",
+      "count": 128
+    },
+    "Nintendo": {
+      "path": "safety/approved/Nintendo.list",
+      "sha256": "926379d31eb638d5b73ae0cf2c996bd5256406b67b4e480915b289a35e2f98bb",
+      "count": 127
+    },
+    "Cryptocurrency": {
+      "path": "safety/approved/Cryptocurrency.list",
+      "sha256": "8b01589eec666cc140502b92794924c26639088f6e759ba4e85449ea452e8996",
+      "count": 240
+    },
+    "Bybit": {
+      "path": "safety/approved/Bybit.list",
+      "sha256": "23f3e5dc660a5cdb531b78c2e4084f0b31b272c6576cc1d4a5772b5c27ba18fe",
+      "count": 16
+    },
+    "PayPal": {
+      "path": "safety/approved/PayPal.list",
+      "sha256": "cb4bf7570434e3a8cc58066acdef959f66f047586a576b929e0348f33d8bb311",
+      "count": 248
+    },
+    "Telegram": {
+      "path": "safety/approved/Telegram.list",
+      "sha256": "0b56efc16ee0a71a689082c489efad494c7754b11663bfebc03de0ae1ff67b2c",
+      "count": 67
+    },
+    "Facebook": {
+      "path": "safety/approved/Facebook.list",
+      "sha256": "f8c97e214333c029e3a2ccd1e698409172f99fc8dc25aa485ae18c6d114ce502",
+      "count": 592
+    },
+    "Twitter": {
+      "path": "safety/approved/Twitter.list",
+      "sha256": "72f6f1d834eaecdff52589d69e2dc269e99cdfd1a7636bec66760ac5fb5ac823",
+      "count": 36
+    },
+    "Discord": {
+      "path": "safety/approved/Discord.list",
+      "sha256": "3229d38b82a14dcd8e9567b4223ffc2e3785c172e2b0d1a0f0955095a2f5146f",
+      "count": 31
+    },
+    "Twitch": {
+      "path": "safety/approved/Twitch.list",
+      "sha256": "975ab1a96bdfec34d3560efecd8732cc4b3f145a0c2a533636b1e1d28aafb97f",
+      "count": 59
+    },
+    "GitHub": {
+      "path": "safety/approved/GitHub.list",
+      "sha256": "eb539ce4a78331f5ecd3b8746c2d5fa4601295699d93f8ac6820dcc6bb754fe5",
+      "count": 74
+    },
+    "Microsoft": {
+      "path": "safety/approved/Microsoft.list",
+      "sha256": "93decbd18380fcd295e22b7e59696152f3e90d32983600b50c0b1cc53c8a68d0",
+      "count": 920
+    },
+    "Reddit": {
+      "path": "safety/approved/Reddit.list",
+      "sha256": "70adc1480ae26601b833c5aafab36137bc2e473ac742641f92bbc1281cf2ae01",
+      "count": 15
+    },
+    "Spotify": {
+      "path": "safety/approved/Spotify.list",
+      "sha256": "fcfa7842b9940818c295df05d503cc5b8b7e04f2c9fa7608789a09d1f3deae2e",
+      "count": 40
+    },
+    "GlobalMedia": {
+      "path": "safety/approved/GlobalMedia.list",
+      "sha256": "f393e2f8408ef775594471754c6a17801305998f8b839f527a8126da944d093d",
+      "count": 1722
+    },
+    "Global": {
+      "path": "safety/approved/Global.list",
+      "sha256": "d68e6c002c78f0bd41a0709b103e4911f1014cd4a35e3a733748a672d818a95f",
+      "count": 24433
+    }
+  },
+  "excluded": {
+    "path": "safety/excluded.list",
+    "sha256": "d0f6a2feafc930a6e6a989b7fc5b815a1eb02f4bfecc617b8a0e02b8511b1835",
+    "count": 3930
+  }
+}

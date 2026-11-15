@@ -1,7 +1,8 @@
 # NAME: Nintendo
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-12 19:44:16
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN-SUFFIX: 127
 
 DOMAIN-SUFFIX,100classicbooks.com

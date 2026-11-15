@@ -1,13 +1,14 @@
 # NAME: Spotify
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-12 19:48:58
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 10
-# DOMAIN-SUFFIX: 23
 # DOMAIN-KEYWORD: 4
-# USER-AGENT: 1
+# DOMAIN-SUFFIX: 23
 # IP-CIDR: 1
 # PROCESS-NAME: 1
+# USER-AGENT: 1
 
 DOMAIN,adeventtracker.spotify.com
 DOMAIN,adstudio-assets.scdn.co

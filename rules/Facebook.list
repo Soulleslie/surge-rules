@@ -1,12 +1,13 @@
 # NAME: Facebook
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-12 19:47:13
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 1
-# DOMAIN-SUFFIX: 552
 # DOMAIN-KEYWORD: 2
-# IP-CIDR: 36
+# DOMAIN-SUFFIX: 552
 # IP-ASN: 1
+# IP-CIDR: 36
 
 DOMAIN,fbcdn-a.akamaihd.net
 DOMAIN-SUFFIX,aboutfacebook.com

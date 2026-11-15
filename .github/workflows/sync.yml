@@ -1,52 +1,83 @@
 name: Sync rules
 
 on:
+  schedule:
+    - cron: "0 0 * * *" # 每天北京时间 08:00（GitHub 调度可能延迟）
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "custom/**"
+      - "scripts/**"
+      - "safety/**"
+      - "tests/**"
+      - "sources.json"
+
+concurrency:
+  group: rules-sync-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
 
 jobs:
   sync:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      # 个别规则失败时这一步会标红，但其他规则照常更新、提交
-      - name: Sync from MagicRule
-        run: python3 scripts/sync.py
+      - name: Test safety checks and rollback
+        run: python3 -B -m unittest discover -s tests -v
 
-      # 以下两步只生成 clash/，不碰 Surge 文件；失败时标红，但 Surge 规则照常提交，clash/ 保留旧版
       - name: Download mihomo
-        if: always()
         env:
           MIHOMO_VERSION: v1.19.33
+          MIHOMO_SHA256: 132f6f3edf9a65e62f04853aed3358472e0b2b7666daa8419edfa2ddf5bb6323
         run: |
-          curl -fsSL -o mihomo.gz "https://github.com/MetaCubeX/mihomo/releases/download/${MIHOMO_VERSION}/mihomo-linux-amd64-${MIHOMO_VERSION}.gz"
-          gunzip mihomo.gz
-          chmod +x mihomo
-          mv mihomo "$RUNNER_TEMP/mihomo"
+          set -euo pipefail
+          curl -fsSL -o "$RUNNER_TEMP/mihomo.gz" "https://github.com/MetaCubeX/mihomo/releases/download/${MIHOMO_VERSION}/mihomo-linux-amd64-${MIHOMO_VERSION}.gz"
+          printf '%s  %s\n' "$MIHOMO_SHA256" "$RUNNER_TEMP/mihomo.gz" | sha256sum --check --strict -
+          gunzip "$RUNNER_TEMP/mihomo.gz"
+          chmod +x "$RUNNER_TEMP/mihomo"
 
-      - name: Convert to Clash (mihomo)
+      - name: Review, clean and convert rules
+        id: sync
+        continue-on-error: true
+        run: python3 -B scripts/sync.py --mihomo "$RUNNER_TEMP/mihomo" --report "$RUNNER_TEMP/sync-report.json"
+
+      - name: Verify approved contents and load every MRS
+        if: steps.sync.outcome == 'success' || steps.sync.outcome == 'failure'
+        run: |
+          python3 -B -m unittest discover -s tests -v
+          python3 -B tests/smoke_mihomo.py --mihomo "$RUNNER_TEMP/mihomo"
+
+      - name: Save quarantine and failure report
         if: always()
-        run: python3 scripts/clash.py "$RUNNER_TEMP/mihomo"
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-review-${{ github.run_id }}
+          path: ${{ runner.temp }}/sync-report.json
+          if-no-files-found: ignore
+          retention-days: 14
 
       - name: Commit if changed
-        if: always()
+        if: success() && (steps.sync.outcome == 'success' || steps.sync.outcome == 'failure')
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
           git add -A rules clash
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Sync rules from MagicRule"
-            git push
+            git commit -m "Sync reviewed rules and Clash outputs"
+            git push origin HEAD:main
           fi
 
       # 公开仓库 60 天没有提交，定时任务会被 GitHub 停用；超过 50 天就提交一次空 commit 保活
       - name: Keepalive
-        if: always()
+        if: success() && steps.sync.outcome == 'success'
         run: |
           last=$(git log -1 --format=%ct)
           now=$(date +%s)
@@ -54,3 +85,9 @@ jobs:
             git commit --allow-empty -m "Keepalive"
             git push
           fi
+
+      - name: Mark blocked updates as failed
+        if: always() && steps.sync.outcome == 'failure'
+        run: |
+          echo "Some lists were blocked and kept their previous artifacts; see sync-review report."
+          exit 1

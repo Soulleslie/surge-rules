@@ -1,11 +1,24 @@
 # surge-rules
 
-每天自动从 [MagicRule](https://magicrule.pages.dev/) 同步 Surge 规则的最新版本。MagicRule 的文件链接带哈希，更新后会换新链接；这里把它们写到固定路径，Surge 订阅固定路径就能跟着更新。
+每天北京时间 08:00 从 [MagicRule](https://magicrule.pages.dev/) 同步经过本地审核的 Surge 规则，并生成 Clash 产物。GitHub Actions 调度可能延迟，也可在 Actions → Sync rules → Run workflow 手动运行。
+
+上游曾把广告规则追加到 Apple、Lan、Telegram、GlobalMedia、Speedtest；连 11 月 7 日的冻结旧版也有残留。因此现在所有 28 个列表都使用 `safety/approved/` 中独立、固定的逐条白名单。五个受影响列表已对照各自原始来源重审，记录在 `safety/review.json`。
+
+- 已审核规则才允许发布，规则类型和 `no-resolve` 参数也是审核身份的一部分。
+- 已知未批准条目由 `safety/excluded.list` 隔离；不会把所有 Advertising 条目一概删除。
+- 出现任何其他未经审核的新条目，即使只有一条，也暂停更新该列表并保留 Surge 和 Clash 旧版。
+- 从原始上游下载开始验证 TLS、发布地址、manifest 身份和 SHA-256；校验不符不接受文件。
+- 清理后剩余条数不能低于固定白名单的 90%，防止逐次减少绕过检查。
+- 网络任务只提交 `rules/` 和 `clash/`，不能自动修改或扩大审核白名单。
+
+这是一种保守的自动同步：允许已批准内容的更新和小范围删除；新的域名、IP 或匹配类型必须先人工审核。不能保证每个历史条目的业务归属永远正确，也不能保证上游永不出错。任何新增项都不会因为上游重新生成而自动获得信任。
+
+每次运行把隔离数量、待审核新增条目和失败原因上传为 Actions 的 `sync-review-*` artifact；有列表被拦截时任务标红，其余成功列表可正常提交。同步必须通过测试、白名单校验和 Clash 转换，才一起替换单个列表的 Surge/Clash 产物。
 
 要同步哪些规则，在 `sources.json` 里配置：
 
-- `rules/<名称>.list`：原样同步的规则。
-- `rules/China.list`：China 完整规则。上游已不含 `GEOIP`，IP 规则都带 `no-resolve`，可同时用在分流和 DNS 映射；上游一旦不满足这两点，保留旧文件：
+- `rules/<名称>.list`：通过本地审核白名单过滤后的规则，注释里的类型计数会重新生成。
+- `rules/China.list`：China 规则。当前批准的 IP 规则带 `no-resolve`，不含 `GEOIP`；`no_geoip` 配置已移除，匹配类型和参数的变化由固定白名单阻止。可同时用于分流和 DNS 映射：
 
 ```
 [Rule]
@@ -16,11 +29,19 @@ GEOIP,CN,DIRECT
 RULE-SET:https://raw.githubusercontent.com/Soulleslie/surge-rules/main/rules/China.list = server:system
 ```
 
-某条规则下载失败、为空或条数比旧版少一半以上时，保留旧文件，其他规则照常更新，workflow 标记为失败。
+本地手动同步（要求先安装 CI 中固定版本的 mihomo）：
+
+```bash
+python3 -B -m unittest discover -s tests -v
+python3 -B scripts/sync.py --mihomo /path/to/mihomo --report /tmp/sync-report.json
+python3 -B tests/smoke_mihomo.py --mihomo /path/to/mihomo
+```
+
+此命令同时生成 Surge 与 Clash。旧的无参数 `python3 scripts/sync.py` 不再允许只覆盖 Surge 文件。每个列表下载失败、校验不符、出现未审核新增或转换失败时保留旧版，其他列表照常处理，退出码为 1。请检查报告和 Git 差异后再提交。
 
 ## Clash（mihomo）
 
-同步完成后，`scripts/clash.py` 用 mihomo 把上面的 Surge 规则（含 `custom/`）转换到 `clash/`，Surge 文件不受影响。每个规则拆成：
+安全同步器用 mihomo 把上述规则转换到临时目录，成功后一起发布。`custom/` 为本地人工维护规则，仅生成对应 Clash 文件。每个规则拆成：
 
 - `clash/<名称>.mrs`：DOMAIN / DOMAIN-SUFFIX，`behavior: domain`
 - `clash/<名称>-IP.mrs`：IP-CIDR / IP-CIDR6，`behavior: ipcidr`
@@ -43,4 +64,6 @@ rules:
   - RULE-SET,Google-IP,Google,no-resolve
 ```
 
-转换失败时保留 `clash/` 里的旧文件，Surge 规则照常提交，workflow 标记为失败。
+转换失败时该列表的 Surge、domain、IP 和 Extra 产物均保留旧版。写入中途出现可捕获的文件系统异常会回滚该组；多文件替换不承诺断电级事务，Git 提交才是对外发布边界。
+
+更新白名单、初始事故清理方法和能力边界见 [safety/README.md](safety/README.md)。

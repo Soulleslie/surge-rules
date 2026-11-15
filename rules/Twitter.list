@@ -1,9 +1,10 @@
 # NAME: Twitter
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-12 19:43:21
-# DOMAIN-SUFFIX: 27
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 27
 # IP-CIDR: 8
 
 DOMAIN-SUFFIX,ads-twitter.com

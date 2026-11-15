@@ -1,12 +1,13 @@
 # NAME: Microsoft
-# AUTHOR: MagicRule
+# AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-12 19:42:56
+# SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 121
-# DOMAIN-SUFFIX: 790
 # DOMAIN-KEYWORD: 4
-# USER-AGENT: 3
+# DOMAIN-SUFFIX: 790
 # PROCESS-NAME: 2
+# USER-AGENT: 3
 
 DOMAIN,az764295.vo.msecnd.net
 DOMAIN,azure.microsoft.com
