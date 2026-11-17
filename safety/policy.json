@@ -6,8 +6,8 @@
   "lists": {
     "China": {
       "path": "safety/approved/China.list",
-      "sha256": "12fc90564fdf4a4a82d2251d212e32193b57cb42264ea21c606f69687e8e576d",
-      "count": 10290
+      "sha256": "113f52baada9292eb3afcb8f8cc8b18d99894e109efa853052a9dc3e4cb6e533",
+      "count": 10298
     },
     "Lan": {
       "path": "safety/approved/Lan.list",
@@ -16,8 +16,8 @@
     },
     "Apple": {
       "path": "safety/approved/Apple.list",
-      "sha256": "1e42643a4a1020f4cb6b9a33c135a7aa7858a5241be91276365a10832fe33089",
-      "count": 2071
+      "sha256": "24bdbf1964fd8c961ece7e33e4e2723ddf8d4dd71d083d5790fce6f05d2ac1da",
+      "count": 2075
     },
     "SteamCN": {
       "path": "safety/approved/SteamCN.list",
@@ -76,8 +76,8 @@
     },
     "Cryptocurrency": {
       "path": "safety/approved/Cryptocurrency.list",
-      "sha256": "8b01589eec666cc140502b92794924c26639088f6e759ba4e85449ea452e8996",
-      "count": 240
+      "sha256": "feb0d7889080531b2bf0ae7cf617f1bc4fb9f70aa414dfd95e3a6529ee50c65b",
+      "count": 241
     },
     "Bybit": {
       "path": "safety/approved/Bybit.list",
@@ -121,8 +121,8 @@
     },
     "Microsoft": {
       "path": "safety/approved/Microsoft.list",
-      "sha256": "93decbd18380fcd295e22b7e59696152f3e90d32983600b50c0b1cc53c8a68d0",
-      "count": 920
+      "sha256": "21c758c90292a337e60ed64279fcc9e6a86e98f6536a8b3854b1582bf243ad19",
+      "count": 923
     },
     "Reddit": {
       "path": "safety/approved/Reddit.list",
@@ -141,13 +141,21 @@
     },
     "Global": {
       "path": "safety/approved/Global.list",
-      "sha256": "d68e6c002c78f0bd41a0709b103e4911f1014cd4a35e3a733748a672d818a95f",
-      "count": 24433
+      "sha256": "6b01c6f4a48fb22cbc565ce21838025d9a41b115ac7b9e6e91d231907832cb4c",
+      "count": 24438
     }
   },
   "excluded": {
     "path": "safety/excluded.list",
-    "sha256": "d0f6a2feafc930a6e6a989b7fc5b815a1eb02f4bfecc617b8a0e02b8511b1835",
-    "count": 3930
-  }
+    "sha256": "863b0662ad66ca3bb80a1adadda2749cecdf58bf84592a9818c4e8b55831f320",
+    "count": 3938
+  },
+  "reviews": [
+    {
+      "path": "safety/reviews/2026-11-17-additions.json",
+      "sha256": "fa552aa9657d2eb68b0b5daec3be4b64aff091da6965b75002a62ac4c8201ec5",
+      "approved": 21,
+      "quarantined": 8
+    }
+  ]
 }

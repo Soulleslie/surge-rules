@@ -1,11 +1,11 @@
 # NAME: Global
 # AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-15 09:57:15
+# UPDATED: 2026-11-17 15:34:35
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
-# DOMAIN: 1914
+# DOMAIN: 1917
 # DOMAIN-KEYWORD: 53
-# DOMAIN-SUFFIX: 22365
+# DOMAIN-SUFFIX: 22367
 # IP-CIDR: 80
 # IP-CIDR6: 4
 # PROCESS-NAME: 8
@@ -249,6 +249,7 @@ DOMAIN,brand-sdk.kmsmep.com
 DOMAIN,brandwidgets.outtra.com
 DOMAIN,bucket.noy.asia
 DOMAIN,bucket1.notaku.so
+DOMAIN,builds.dotnet.microsoft.com
 DOMAIN,bundle.5gtb.com
 DOMAIN,bundle.9gtb.com
 DOMAIN,bundle.dyn-rev.app
@@ -1216,6 +1217,7 @@ DOMAIN,media.cleanshot.cloud
 DOMAIN,media.convertkit.com
 DOMAIN,media.currys.biz
 DOMAIN,media.daily.dev
+DOMAIN,media.datacamp.com
 DOMAIN,media.datacenterdynamics.com
 DOMAIN,media.e4le.me
 DOMAIN,media.fidoalliance.org
@@ -1656,6 +1658,7 @@ DOMAIN,static.j51.net
 DOMAIN,static.javhd.com
 DOMAIN,static.jup.ag
 DOMAIN,static.k2s.cc
+DOMAIN,static.karousell.com
 DOMAIN,static.klaviyo.com
 DOMAIN,static.licdn.com
 DOMAIN,static.lwn.net
@@ -7198,6 +7201,7 @@ DOMAIN-SUFFIX,cyberghostvpn.com
 DOMAIN-SUFFIX,cybermondaybeats4sale.com
 DOMAIN-SUFFIX,cyberpunk.net
 DOMAIN-SUFFIX,cyberx.com
+DOMAIN-SUFFIX,cygames.com
 DOMAIN-SUFFIX,cygwin.com
 DOMAIN-SUFFIX,cylink.pro
 DOMAIN-SUFFIX,cylink0122.icu
@@ -18431,6 +18435,7 @@ DOMAIN-SUFFIX,releaseinternational.org
 DOMAIN-SUFFIX,religionnews.com
 DOMAIN-SUFFIX,religioustolerance.org
 DOMAIN-SUFFIX,remirepo.net
+DOMAIN-SUFFIX,remna.dev
 DOMAIN-SUFFIX,renchead.com
 DOMAIN-SUFFIX,render.com
 DOMAIN-SUFFIX,renderingtoolkit.org

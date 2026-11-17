@@ -43,8 +43,9 @@ class PolicyTests(RepositoryCase):
     def test_single_unknown_is_blocked_and_reported(self):
         policy = self.policy({'One': 'DOMAIN-SUFFIX,good.invalid\n'})
         with self.assertRaises(UnsafeRules) as result:
-            policy.clean('One', 'DOMAIN-SUFFIX,good.invalid\nDOMAIN,novel-ad.invalid\n')
+            policy.clean('One', 'DOMAIN-SUFFIX,good.invalid\nDOMAIN,novel-ad.invalid\nDOMAIN-SUFFIX,ad.invalid\n')
         self.assertEqual(result.exception.unknown, ['DOMAIN,novel-ad.invalid'])
+        self.assertEqual(result.exception.quarantined, ['DOMAIN-SUFFIX,ad.invalid'])
 
     def test_known_pollution_is_removed_and_counts_rebuilt(self):
         policy = self.policy({'One': 'DOMAIN-SUFFIX,good.invalid\n'})
@@ -52,6 +53,7 @@ class PolicyTests(RepositoryCase):
         self.assertNotIn('ad.invalid', clean)
         self.assertIn('# DOMAIN-SUFFIX: 1\n', clean)
         self.assertEqual(report['filtered_rules'], 1)
+        self.assertEqual(report['quarantined_rules'], ['DOMAIN-SUFFIX,ad.invalid'])
 
     def test_approval_is_per_list_not_global(self):
         policy = self.policy({'One': 'DOMAIN,shared.invalid\n', 'Two': 'DOMAIN,other.invalid\n'},
@@ -189,10 +191,11 @@ class PipelineTests(RepositoryCase):
 
     def test_unknown_blocks_entire_group_but_other_list_updates(self):
         c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n', 'Two': 'DOMAIN,other.invalid\n'},
-                                 {'One': 'DOMAIN,good.invalid\nDOMAIN,new.invalid\n', 'Two': 'DOMAIN,other.invalid\n'})
+                                 {'One': 'DOMAIN,good.invalid\nDOMAIN,new.invalid\nDOMAIN-SUFFIX,ad.invalid\n', 'Two': 'DOMAIN,other.invalid\n'})
         code, report = self.execute(c, n)
         self.assertEqual(code, 1)
         self.assertEqual(report['lists']['One']['unknown_rules'], ['DOMAIN,new.invalid'])
+        self.assertEqual(report['lists']['One']['quarantined_rules'], ['DOMAIN-SUFFIX,ad.invalid'])
         self.assertEqual((self.root / 'rules/One.list').read_text(), 'OLD SURGE')
         self.assertEqual((self.root / 'clash/One.mrs').read_text(), 'OLD CLASH')
         self.assertEqual(report['lists']['Two']['status'], 'updated')

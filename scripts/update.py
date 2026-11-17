@@ -178,6 +178,7 @@ def run(config, mihomo, report_path, *, root=ROOT, fetcher=fetch):
                 failed = True
                 detail['error'] = str(exc)
                 detail['unknown_rules'] = getattr(exc, 'unknown', [])
+                detail.setdefault('quarantined_rules', getattr(exc, 'quarantined', []))
                 print(f'FAIL {name}: {exc}', file=sys.stderr)
         # custom/ is locally maintained, never fetched or modified by this updater.
         for source in sorted((root / 'custom').glob('*.list')):

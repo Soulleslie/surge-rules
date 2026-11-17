@@ -16,6 +16,8 @@
 
 `review.json` 保存实际取证 URL、下载内容 SHA-256、解析条数、未采用的语法、旧版剔除项和明确批准的新增项。审核日期在 `policy.json`。
 
+后续逐次审核记录保存在 `reviews/*.json`，包括逐条批准／隔离结论和依据；索引及摘要保存在 `policy.json` 的 `reviews` 中。每次同步的 Actions 报告还会逐列表列出完整的 `quarantined_rules` 和待审 `unknown_rules`，便于查看没有同步的具体域名和 IP。
+
 ## 初始恢复与日常同步
 
 事故清理时，五个列表直接从经过来源对照且有本地校验和的批准快照重建，再使用真实 mihomo 生成 Clash。命令是明确的本地恢复操作，不会在日常 CI 自动执行：

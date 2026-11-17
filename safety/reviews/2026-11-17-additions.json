@@ -1,0 +1,675 @@
+{
+  "reviewed_at": "2026-11-17T04:56:08.349140-06:00",
+  "baseline_commit": "f49cf39a5358fdd91fad24405d8e073b5b852419",
+  "summary": {
+    "new_scoped_rules": 29,
+    "approved": 21,
+    "quarantined": 8
+  },
+  "decisions": [
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,arknights.com",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hypergryph",
+          "sha256": "6f1e9dd8336c8f6e17e8c0efb0c4fbb228ac314ba69232812193bbc9bd3dc0a2"
+        }
+      ]
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,hgto.cc",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hypergryph",
+          "sha256": "6f1e9dd8336c8f6e17e8c0efb0c4fbb228ac314ba69232812193bbc9bd3dc0a2"
+        }
+      ]
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,hycdn.com",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hypergryph",
+          "sha256": "6f1e9dd8336c8f6e17e8c0efb0c4fbb228ac314ba69232812193bbc9bd3dc0a2"
+        }
+      ]
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,hypergryph.com",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hypergryph",
+          "sha256": "6f1e9dd8336c8f6e17e8c0efb0c4fbb228ac314ba69232812193bbc9bd3dc0a2"
+        }
+      ]
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,hypergryph.net",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hypergryph",
+          "sha256": "6f1e9dd8336c8f6e17e8c0efb0c4fbb228ac314ba69232812193bbc9bd3dc0a2"
+        }
+      ]
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,octavedge.com",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hypergryph",
+          "sha256": "6f1e9dd8336c8f6e17e8c0efb0c4fbb228ac314ba69232812193bbc9bd3dc0a2"
+        }
+      ]
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,skland.com",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hypergryph",
+          "sha256": "6f1e9dd8336c8f6e17e8c0efb0c4fbb228ac314ba69232812193bbc9bd3dc0a2"
+        }
+      ]
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,skland.net",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hypergryph",
+          "sha256": "6f1e9dd8336c8f6e17e8c0efb0c4fbb228ac314ba69232812193bbc9bd3dc0a2"
+        }
+      ]
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN,builds.dotnet.microsoft.com",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+          "sha256": "f50bf52e96839e6a51c14f388a9dfce58072eae86d18a8519b7ea88523e604b4"
+        }
+      ]
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN,media.datacamp.com",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/cdn.conf",
+          "sha256": "fecae26cf40fa0ea96ec5ca4b8443a29581bb543210c45312d554af6f9601faa"
+        }
+      ]
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN,static.karousell.com",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/cdn.conf",
+          "sha256": "fecae26cf40fa0ea96ec5ca4b8443a29581bb543210c45312d554af6f9601faa"
+        }
+      ]
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,cygames.com",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+          "sha256": "f50bf52e96839e6a51c14f388a9dfce58072eae86d18a8519b7ea88523e604b4"
+        }
+      ]
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,remna.dev",
+      "decision": "approved",
+      "reason": "Exact rule type/value present in the corresponding original category source; no checked Sukka advertising overlap.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+          "sha256": "f50bf52e96839e6a51c14f388a9dfce58072eae86d18a8519b7ea88523e604b4"
+        }
+      ]
+    },
+    {
+      "list": "Apple",
+      "rule": "DOMAIN,configuration.ls.apple.com",
+      "decision": "approved",
+      "reason": "Owned apple.com hierarchy and Apple/Akamai/aaplimg CNAMEs; captive documented in Apple enterprise network article.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple",
+          "sha256": "f7d1c3898b07119ba13cd7a5e3f017504e7e7187c68fcd893eab437e11a208c0"
+        }
+      ],
+      "exact_source_lines": [
+        {
+          "line": 748,
+          "text": "full:configuration.ls.apple.com @cn"
+        }
+      ],
+      "include_chain": [
+        "apple"
+      ]
+    },
+    {
+      "list": "Apple",
+      "rule": "DOMAIN,musicstatus.itunes.apple.com",
+      "decision": "approved",
+      "reason": "Owned apple.com hierarchy and Apple/Akamai/aaplimg CNAMEs; captive documented in Apple enterprise network article.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/itunes",
+          "sha256": "1052468ccb62504450e05500ccad52d44659499e12776f66ac2078d567b237fa"
+        }
+      ],
+      "exact_source_lines": [
+        {
+          "line": 77,
+          "text": "full:musicstatus.itunes.apple.com @cn"
+        }
+      ],
+      "include_chain": [
+        "apple",
+        "itunes"
+      ]
+    },
+    {
+      "list": "Apple",
+      "rule": "DOMAIN,mzstorekit.itunes.apple.com",
+      "decision": "approved",
+      "reason": "Owned apple.com hierarchy and Apple/Akamai/aaplimg CNAMEs; captive documented in Apple enterprise network article.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/itunes",
+          "sha256": "1052468ccb62504450e05500ccad52d44659499e12776f66ac2078d567b237fa"
+        }
+      ],
+      "exact_source_lines": [
+        {
+          "line": 80,
+          "text": "full:mzstorekit.itunes.apple.com @cn"
+        }
+      ],
+      "include_chain": [
+        "apple",
+        "itunes"
+      ]
+    },
+    {
+      "list": "Apple",
+      "rule": "DOMAIN-SUFFIX,captive.apple.com",
+      "decision": "approved",
+      "reason": "Owned apple.com hierarchy and Apple/Akamai/aaplimg CNAMEs; captive documented in Apple enterprise network article.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple",
+          "sha256": "f7d1c3898b07119ba13cd7a5e3f017504e7e7187c68fcd893eab437e11a208c0"
+        }
+      ],
+      "exact_source_lines": [
+        {
+          "line": 742,
+          "text": "captive.apple.com @cn"
+        }
+      ],
+      "include_chain": [
+        "apple"
+      ]
+    },
+    {
+      "list": "Microsoft",
+      "rule": "DOMAIN,builds.dotnet.microsoft.com",
+      "decision": "approved",
+      "reason": "builds.dotnet.microsoft.com is the official .NET release host; its DNS CNAME is dotnetcli.trafficmanager.net. sundry-star-net-geo points to download.prss.microsoft.com.akamaized.net and fg.microsoft.map.fastly.net.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/microsoft-dev",
+          "sha256": "e12bcfc3de06b400afe51a2955303d5e60c9c632dc0e59e840f290ee23830289"
+        }
+      ],
+      "exact_source_lines": [
+        {
+          "line": 62,
+          "text": "full:builds.dotnet.microsoft.com"
+        }
+      ],
+      "include_chain": [
+        "microsoft",
+        "microsoft-dev"
+      ]
+    },
+    {
+      "list": "Microsoft",
+      "rule": "DOMAIN,dotnetcli.trafficmanager.net",
+      "decision": "approved",
+      "reason": "builds.dotnet.microsoft.com is the official .NET release host; its DNS CNAME is dotnetcli.trafficmanager.net. sundry-star-net-geo points to download.prss.microsoft.com.akamaized.net and fg.microsoft.map.fastly.net.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/microsoft-dev",
+          "sha256": "e12bcfc3de06b400afe51a2955303d5e60c9c632dc0e59e840f290ee23830289"
+        }
+      ],
+      "exact_source_lines": [
+        {
+          "line": 66,
+          "text": "full:dotnetcli.trafficmanager.net"
+        }
+      ],
+      "include_chain": [
+        "microsoft",
+        "microsoft-dev"
+      ]
+    },
+    {
+      "list": "Microsoft",
+      "rule": "DOMAIN,sundry-star-net-geo.trafficmanager.net",
+      "decision": "approved",
+      "reason": "builds.dotnet.microsoft.com is the official .NET release host; its DNS CNAME is dotnetcli.trafficmanager.net. sundry-star-net-geo points to download.prss.microsoft.com.akamaized.net and fg.microsoft.map.fastly.net.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/microsoft-dev",
+          "sha256": "e12bcfc3de06b400afe51a2955303d5e60c9c632dc0e59e840f290ee23830289"
+        }
+      ],
+      "exact_source_lines": [
+        {
+          "line": 75,
+          "text": "full:sundry-star-net-geo.trafficmanager.net"
+        }
+      ],
+      "include_chain": [
+        "microsoft",
+        "microsoft-dev"
+      ]
+    },
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,speedtest2.par2.as216190.net",
+      "decision": "quarantined",
+      "reason": "Exact Sukka Speedtest source and AS216190=OCASDEV; operator homepage reports active security incident and the individual server root returned HTTP 503.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf",
+          "sha256": "1d5875794d832f4b888b0706f0133de9cbf497c3a647bdd64cff510fb90de7b7"
+        }
+      ],
+      "exact_source_lines": [
+        {
+          "line": 2636,
+          "text": "speedtest2.par2.as216190.net"
+        }
+      ],
+      "include_chain": [
+        "speedtest"
+      ]
+    },
+    {
+      "list": "Cryptocurrency",
+      "rule": "DOMAIN-SUFFIX,debot.ai",
+      "decision": "approved",
+      "reason": "Official docs.debot.ai describes DeBot as AI-driven cryptocurrency investment tooling.",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-cryptocurrency",
+          "sha256": "ee243af1ab690f62bd713b7d2371dc43f9027aa4d51366959ae66735ab747c45"
+        }
+      ],
+      "exact_source_lines": [
+        {
+          "line": 68,
+          "text": "debot.ai"
+        }
+      ],
+      "include_chain": [
+        "category-cryptocurrency"
+      ]
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,135.84.80.0/22,no-resolve",
+      "decision": "quarantined",
+      "reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,136.143.176.0/23,no-resolve",
+      "decision": "quarantined",
+      "reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,165.173.128.0/23,no-resolve",
+      "decision": "quarantined",
+      "reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,165.173.174.0/23,no-resolve",
+      "decision": "quarantined",
+      "reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,165.173.180.0/22,no-resolve",
+      "decision": "quarantined",
+      "reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,199.67.64.0/23,no-resolve",
+      "decision": "quarantined",
+      "reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,8.39.54.0/23,no-resolve",
+      "decision": "quarantined",
+      "reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    }
+  ],
+  "upstream_artifacts": [
+    {
+      "name": "China",
+      "source": "https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list",
+      "sha256": "6a4c01fddd7a7f29068d5a6aff45d1751eb91287a6151f966f2c68cad3bc7456",
+      "integrity_verification": "semantic_sha256"
+    },
+    {
+      "name": "Apple",
+      "source": "https://magicrule.pages.dev/data/_shared/artifacts/Apple_rules_50be57f093bd1fff.list",
+      "sha256": "e648aa826421b0c4b6d657206528d6e6f933d0b63d837cfdeb9cee3206139aeb",
+      "integrity_verification": "bytes_sha256"
+    },
+    {
+      "name": "Speedtest",
+      "source": "https://magicrule.pages.dev/data/_shared/artifacts/Speedtest_rules_6431e293aaca07be.list",
+      "sha256": "fdc12b81e7f7d277bcb2c075f9bc2afcb161f6278641451fd0bfb71747d5fbcc",
+      "integrity_verification": "bytes_sha256"
+    },
+    {
+      "name": "Cryptocurrency",
+      "source": "https://magicrule.pages.dev/data/_shared/artifacts/Cryptocurrency_rules_68269739f2640ae4.list",
+      "sha256": "ddab7d1dc20f381742325097c873ab6b0508262d9dccd86c0b55b349f20a3de4",
+      "integrity_verification": "bytes_sha256"
+    },
+    {
+      "name": "Microsoft",
+      "source": "https://magicrule.pages.dev/data/_shared/artifacts/Microsoft_rules_7fd3d40967dabeef.list",
+      "sha256": "691b534a7b4cd0b5adfb6c15b00b97610cf63d13c58fb49747c00eaed00c6fe0",
+      "integrity_verification": "bytes_sha256"
+    },
+    {
+      "name": "Global",
+      "source": "https://magicrule.pages.dev/data/_shared/artifacts/Global_rules_b5f3bb33d8a4698a.list",
+      "sha256": "34b53324c7640e5ce1c0808e468ed9e0e67a7de2e3d1056fc69cf8948e08e5b5",
+      "integrity_verification": "semantic_sha256"
+    }
+  ],
+  "advertising_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "aea583559895044ef90f8bad8915e528c4936a50acb4477c42aa8b2db71068a7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+      "sha256": "4df0edb8e635aeeaf34976e5e238b1bf6bffb4bc2cbf9425839e5e71355a5ad5"
+    }
+  ],
+  "advertising_overlap_check": "Checked exact/parent domains, descendants within new suffixes, keywords and relevant wildcard patterns; scoped reviewer also checked CNAME, IP and ASN for Apple/Microsoft/Cryptocurrency/Speedtest. Absence is not proof of global safety.",
+  "china_domain_include_chain": [
+    {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-cn",
+      "sha256": "7da06e44e4d16fe7f04d0660b8fa8db9307d4eeac707f723b8d24655498be11f"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-entertainment-cn",
+      "sha256": "825d1393c9b89dddba9666443896cf2de6d12e6ffadfbfe6e7060aebe0661a06"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-games-cn",
+      "sha256": "4ed54a8c45e8d9168f6bb192e4ed751e025c4f4a3f42848c1ba59a338060117c",
+      "include": "include:hypergryph @-!cn"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/hypergryph",
+      "sha256": "6f1e9dd8336c8f6e17e8c0efb0c4fbb228ac314ba69232812193bbc9bd3dc0a2",
+      "note": "Approved eight untagged domestic-service domains, not entries marked @!cn."
+    }
+  ],
+  "official_service_evidence": {
+    "apple_enterprise": {
+      "url": "https://support.apple.com/en-us/101555",
+      "sha256": "5fef43e9743bf01af97cab8e48554e50dc81fb13bcd8ac490ff72d21ca47d15d",
+      "excerpts": [
+        ".apple.com 443 TCP iOS, iPadOS, tvOS, macOS, and visionOS Device activation Yes captive.apple.com 443, 80 TCP iOS, iPadOS, tvOS, macOS, and visionOS Internet connectivity validation for networks that use captive portals Yes gs.apple.com 443 TCP iOS, iPadOS, tvOS, macOS, and visionOS Yes humb.apple.com 443 TCP iOS, iPadOS, tvOS, macOS, and"
+      ]
+    },
+    "dotnet_release_index": {
+      "url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json",
+      "sha256": "4bf95cfbeb14b5cca97f35c99ec41e11c658796c13435b0d76ec81dda22e9da7",
+      "excerpts": [
+        "ve\", \"release-type\": \"sts\", \"eol-date\": \"2028-11-14\", \"releases.json\": \"https://builds.dotnet.microsoft.com/dotnet/release-metadata/11.0/releases.json\", \"supported-os.json\": \"https://builds.dotnet.microsoft.com/dotnet/release-metadata/11.0/supported-os.json\" }, { \"channel-version\": \"10.0\", \"latest-release\": \"10.0.15\", \"latest-release-date"
+      ]
+    },
+    "debot_docs": {
+      "url": "https://docs.debot.ai/",
+      "sha256": "2d1e3b1c337eb9ecefc7b9628c21043807d5100b32d78f5179fe3f1a9a3ed773",
+      "excerpts": [
+        "ailable as [Markdown](https://docs.debot.ai/readme.md). # DeBot.AI 使用教程 DeBot - AI驱动的数字货币投资工具，为用户提供快速而安全的投资信号，帮助发掘高潜力项目，让加密货币投资变得更简单、更智能。 我们的目标是帮助您发现更优质的投资机会并买、卖合适的点位，减少链上投资的风险 ## 🎉🎉全网最强大、丰富的监控能力 定义您自己的聪明钱包库，更精准的发现买入时机！！ {% content-ref url=\"/pages/uoudFL9QOCvI99O8uAse\" %} [如何找聪明钱包](https://docs.debot.ai/zui-jia-shi-jian/ru-he-zhao-cong-mi"
+      ]
+    },
+    "OCASDEV_incident": {
+      "url": "https://as216190.net/",
+      "sha256": "228374764e81a0afef59a5f881114f3b49966ef7cf518fdc3427eb15d7b49cd2",
+      "excerpts": [
+        "eight: 44px; } h1 { margin-bottom: 36px; } } Incident de sécurité &nbsp;/&nbsp; Security incident Site indisponible Website unavailable FRANÇAIS Une faille de sécurité a été identifiée sur nos services. Par mesure de précaution, le site a été mis hors ligne. Une intervention est en cours pour corriger la vulnérabilité. Retour prévu&nbsp;:",
+        "n, le site a été mis hors ligne. Une intervention est en cours pour corriger la vulnérabilité. Retour prévu&nbsp;: lundi 26 octobre vers 10h00 (heure de Paris). ENGLISH A security vulnerability has been identified on our services. As a precaution, the website has been taken offline. Work is underway to fix the vulnerability. Expected retu"
+      ]
+    },
+    "AS216190_RDAP": {
+      "url": "https://rdap.db.ripe.net/autnum/216190",
+      "sha256": "68de65089ba742c49eaf2d39396ed6784440db726a649031696d64875ff5cfeb",
+      "excerpts": [
+        " \"handle\" : \"AS216190\", \"startAutnum\" : 216190, \"endAutnum\" : 216190, \"name\" : \"OCASDEV\", \"status\" : [ \"active\" ], \"entities\" : [ { \"handle\" : \"lir-fr-fbw-networks-1-MNT\", \"vcardArray\" : [ \"vcard\", [ [ \"version\", { }, \"text\", \"4.0\" ], [ \"fn\", { }, \"text\", \"lir-fr-fbw-networks-1-MNT\" ], [ \"kind\", { }, \"text\", \"individual\" ] ] ], \"roles\" : "
+      ]
+    }
+  },
+  "china_ip_conflict": {
+    "evidence": [
+      {
+        "prefix": "135.84.80.0/22",
+        "geolocation_source": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=135.84.80.0/22",
+        "sha256": "a654007f7026ef7f12b57d88e8dc37cf4a00ee3173ce328a2c3429dd1709aa65",
+        "locations": [
+          {
+            "country": "US",
+            "covered_percentage": 100.0
+          }
+        ],
+        "data_time": "2026-11-13T20:46:43",
+        "rdap_source": "https://rdap.arin.net/registry/ip/135.84.80.0",
+        "rdap_sha256": "462429313270f1028fa76c18b42787c2441c239cf29ae611aad14171de4798b9",
+        "rdap_name": "ZOHOC",
+        "rdap_network_country": null
+      },
+      {
+        "prefix": "136.143.176.0/23",
+        "geolocation_source": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=136.143.176.0/23",
+        "sha256": "af34fee7ea9a6be2bd0f19cd3c013d4a147570b5fe0bd57b99e63a12882085ea",
+        "locations": [
+          {
+            "country": "US",
+            "covered_percentage": 100.0
+          }
+        ],
+        "data_time": "2026-11-13T20:46:43",
+        "rdap_source": "https://rdap.arin.net/registry/ip/136.143.176.0",
+        "rdap_sha256": "6da802c4d9656d632a239c82af1025bb92fa9a4a8a3ce7da8c2d543bd8ec1723",
+        "rdap_name": "ZOHOC",
+        "rdap_network_country": null
+      },
+      {
+        "prefix": "165.173.128.0/23",
+        "geolocation_source": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=165.173.128.0/23",
+        "sha256": "e703ebb50b9bea8532201527a0282efa4120dae11921a8e4f806c022c2e2a57e",
+        "locations": [
+          {
+            "country": "US",
+            "covered_percentage": 100.0
+          }
+        ],
+        "data_time": "2026-11-13T20:46:43",
+        "rdap_source": "https://rdap.arin.net/registry/ip/165.173.128.0",
+        "rdap_sha256": "337c9eb94f0dce2b25ff35704be00befe3397b63aae928e066f1b58b958fb53c",
+        "rdap_name": "ZOHOC",
+        "rdap_network_country": null
+      },
+      {
+        "prefix": "165.173.174.0/23",
+        "geolocation_source": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=165.173.174.0/23",
+        "sha256": "2330f3907a758bd7285c8f25444842a4e2ed1ab41801891a901750d97cb298d3",
+        "locations": [
+          {
+            "country": "US",
+            "covered_percentage": 100.0
+          }
+        ],
+        "data_time": "2026-11-13T20:46:43",
+        "rdap_source": "https://rdap.arin.net/registry/ip/165.173.174.0",
+        "rdap_sha256": "c5343279b2bd98e95137de35f3347fbae91e39ffd6df3dd711bf6c34d1c640eb",
+        "rdap_name": "ZOHOC",
+        "rdap_network_country": null
+      },
+      {
+        "prefix": "165.173.180.0/22",
+        "geolocation_source": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=165.173.180.0/22",
+        "sha256": "06158aecbdc5fc635a483574f931666a9b15d6719f8a58d8dfe7326323bf94fe",
+        "locations": [
+          {
+            "country": "US",
+            "covered_percentage": 100.0
+          }
+        ],
+        "data_time": "2026-11-13T20:46:43",
+        "rdap_source": "https://rdap.arin.net/registry/ip/165.173.180.0",
+        "rdap_sha256": "afaf936e7c400ff9852e98ed93acea44dd5824670167023326af65e7f152a92e",
+        "rdap_name": "ZOHOC",
+        "rdap_network_country": null
+      },
+      {
+        "prefix": "199.67.64.0/23",
+        "geolocation_source": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=199.67.64.0/23",
+        "sha256": "52514aa5ce3a3ac8dc0a70879d4fc3e0aa3d0843b9db1532a1e9646e2eee5934",
+        "locations": [
+          {
+            "country": "US",
+            "covered_percentage": 100.0
+          }
+        ],
+        "data_time": "2026-11-13T20:46:43",
+        "rdap_source": "https://rdap.arin.net/registry/ip/199.67.64.0",
+        "rdap_sha256": "a9d1c7f0b0f554ba1cbda5cfd2a43bfe5fefa2770f6134dbc5857724ccb850f2",
+        "rdap_name": "ZOHOC",
+        "rdap_network_country": null
+      },
+      {
+        "prefix": "8.39.54.0/23",
+        "geolocation_source": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=8.39.54.0/23",
+        "sha256": "bcb4523138cadad65e21bcdedf42d9f9d796fad1265aeff8764b0122f7efadab",
+        "locations": [
+          {
+            "country": "US",
+            "covered_percentage": 100.0
+          }
+        ],
+        "data_time": "2026-11-13T20:46:43",
+        "rdap_source": "https://rdap.arin.net/registry/ip/8.39.54.0",
+        "rdap_sha256": "10c0c829b1b1be5fc7af8ceb19593c670bdf378e1dfb696f2fdbba80ff4ee638",
+        "rdap_name": "LVLT-ZOHOC-8-39-54",
+        "rdap_network_country": null
+      }
+    ],
+    "operator_page": {
+      "url": "https://www.zoho.com/know-your-datacenter.html",
+      "sha256": "9cc4caf51b0e8ebf8972c8133221f65d6a970c8ca07746cdb686d1bfbe7c045c",
+      "china_datacenters_named": [
+        "Shanghai",
+        "Beijing"
+      ],
+      "contains_any_requested_prefix": false
+    },
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Mainland.list",
+        "sha256": "1da39fed8ccf5fd956d741ce2663f96e0b1ce84d156e422fc9456c0cb09237b6"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/master/Rulesets/Surge/Basic/CN.list",
+        "sha256": "0d2395acec877713615e32f65b2922eae35e1cf4fd4bd2b742e2aaabdec35dfe"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Domestic.yaml",
+        "sha256": "41fed461cefcdbee7ce5ae667c0103e15b004ab46df59d3918a124911cbd4653"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Region/China.list",
+        "sha256": "9fcc04d42430d2d73c34181c9ed1ad5192094692e7a1ed2b052ade8ee645ddfe"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+        "sha256": "cb3da9b966930c9e658c8575db43de157ce76e06b40796a51cb5ecc88ad3baff"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/domestic.conf",
+        "sha256": "99fd01e3b16bb3715dc2a07f5e3c4fde213c2031469256282c55aa7e1ed46494"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/domestic.conf",
+        "sha256": "b80c6ce2b79f3a4ec5288f4297f8ddee4f2ba5e0a42487fe99e1b58d6517e2d6"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+        "sha256": "4df0edb8e635aeeaf34976e5e238b1bf6bffb4bc2cbf9425839e5e71355a5ad5"
+      }
+    ],
+    "caveat": "GeoLite is an external geolocation estimate and can lag; registration and BGP ownership do not prove geography. The evidence supports withholding approval, not declaring all seven malicious."
+  },
+  "limits": "Approval is scoped to exact matching rules; source affiliation and checked ad conflicts do not guarantee perpetual business correctness. Quarantined entries are not automatically labelled malicious."
+}

@@ -13,9 +13,10 @@ IP_TYPES = {'IP-CIDR', 'IP-CIDR6', 'IP-ASN'}
 
 
 class UnsafeRules(ValueError):
-    def __init__(self, message, *, unknown=()):
+    def __init__(self, message, *, unknown=(), quarantined=()):
         super().__init__(message)
         self.unknown = sorted(unknown)
+        self.quarantined = sorted(quarantined)
 
 
 def parse(text: str) -> list[str]:
@@ -90,12 +91,13 @@ class Policy:
         lines = parse(text)
         approved = self.approved[name]
         unknown = set(lines) - approved - self.excluded
+        quarantined = sorted((set(lines) - approved) & self.excluded)
         # Never silently bless an unknown rule, even a single rule or a small growth.
         if unknown:
-            raise UnsafeRules(f'{len(unknown)} 条未经审核的新规则，保留旧版', unknown=unknown)
+            raise UnsafeRules(f'{len(unknown)} 条未经审核的新规则，保留旧版', unknown=unknown, quarantined=quarantined)
         kept = [line for line in lines if line in approved]
         if len(kept) < len(approved) * self.config['minimum_retained_fraction']:
-            raise UnsafeRules(f'清理后只剩 {len(kept)}/{len(approved)} 条，疑似不完整')
+            raise UnsafeRules(f'清理后只剩 {len(kept)}/{len(approved)} 条，疑似不完整', quarantined=quarantined)
         if not kept:
             raise UnsafeRules('清理后规则为空')
         counts = Counter(line.split(',', 1)[0] for line in kept)
@@ -108,4 +110,5 @@ class Policy:
         return '\n'.join(header + [''] + kept) + '\n', {
             'upstream_rules': len(lines), 'accepted_rules': len(kept),
             'filtered_rules': len(lines) - len(kept), 'updated': updated,
+            'quarantined_rules': quarantined,
         }

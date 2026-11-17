@@ -1,11 +1,11 @@
 # NAME: Apple
 # AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-12 19:46:44
+# UPDATED: 2026-11-17 15:33:02
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
-# DOMAIN: 279
+# DOMAIN: 282
 # DOMAIN-KEYWORD: 4
-# DOMAIN-SUFFIX: 1767
+# DOMAIN-SUFFIX: 1768
 # IP-CIDR: 10
 # IP-CIDR6: 3
 # PROCESS-NAME: 8
@@ -90,6 +90,7 @@ DOMAIN,communities.apple.com
 DOMAIN,configuration-lb.ls-apple.com.akadns.net
 DOMAIN,configuration.apple.com
 DOMAIN,configuration.apple.com.akadns.net
+DOMAIN,configuration.ls.apple.com
 DOMAIN,crl-lb.apple.com.akadns.net
 DOMAIN,crl.apple.com
 DOMAIN,cstat.apple.com
@@ -188,9 +189,11 @@ DOMAIN,mesu.apple.com
 DOMAIN,misc-assets.itunes.apple.com
 DOMAIN,ml.cdn-apple.com
 DOMAIN,music.apple.com
+DOMAIN,musicstatus.itunes.apple.com
 DOMAIN,musicstatus.music.apple.com
 DOMAIN,mvod.itunes.apple.com
 DOMAIN,myapp.itunes.apple.com
+DOMAIN,mzstorekit.itunes.apple.com
 DOMAIN,news-assets.apple.com
 DOMAIN,news-client.apple.com
 DOMAIN,news-edge.apple.com
@@ -1048,6 +1051,7 @@ DOMAIN-SUFFIX,calendarserver.org
 DOMAIN-SUFFIX,camelphat.com
 DOMAIN-SUFFIX,camelspaceeffect.com
 DOMAIN-SUFFIX,canada-beatsbydre.com
+DOMAIN-SUFFIX,captive.apple.com
 DOMAIN-SUFFIX,carbon.com
 DOMAIN-SUFFIX,carekit.org
 DOMAIN-SUFFIX,casque-fr.com

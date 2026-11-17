@@ -34,6 +34,7 @@ DOMAIN,speedtest.vel.as205941.net
 DOMAIN,speedtest.way2netbroadband.com
 DOMAIN,speedtest1-phnyazjv.as20055.net
 DOMAIN,speedtest2.honeybroadband.com
+DOMAIN,speedtest2.par2.as216190.net
 DOMAIN,sst.leroymerlin.pl
 DOMAIN,tag.web.onesdata.com
 DOMAIN,tagging.conde.digital
@@ -3917,11 +3918,18 @@ DOMAIN-SUFFIX,zzjgigxgomlde.site
 IP-CIDR,103.36.28.0/22,no-resolve
 IP-CIDR,104.251.176.0/22,no-resolve
 IP-CIDR,112.73.96.0/19,no-resolve
+IP-CIDR,135.84.80.0/22,no-resolve
+IP-CIDR,136.143.176.0/23,no-resolve
+IP-CIDR,165.173.128.0/23,no-resolve
+IP-CIDR,165.173.174.0/23,no-resolve
 IP-CIDR,165.173.176.0/24,no-resolve
+IP-CIDR,165.173.180.0/22,no-resolve
+IP-CIDR,199.67.64.0/23,no-resolve
 IP-CIDR,203.205.64.0/19,no-resolve
 IP-CIDR,218.98.111.0/24,no-resolve
 IP-CIDR,43.240.56.0/21,no-resolve
 IP-CIDR,43.240.60.0/22,no-resolve
+IP-CIDR,8.39.54.0/23,no-resolve
 PROCESS-NAME,LookupViewService
 USER-AGENT,AppleNews*
 USER-AGENT,AppleTV*
