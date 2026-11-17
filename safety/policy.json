@@ -6,8 +6,8 @@
   "lists": {
     "China": {
       "path": "safety/approved/China.list",
-      "sha256": "113f52baada9292eb3afcb8f8cc8b18d99894e109efa853052a9dc3e4cb6e533",
-      "count": 10298
+      "sha256": "4306d758d88ce059e038c7c0b1458074e7beae87b902a11fe13a61f07fe9e7cd",
+      "count": 10305
     },
     "Lan": {
       "path": "safety/approved/Lan.list",
@@ -26,8 +26,8 @@
     },
     "Speedtest": {
       "path": "safety/approved/Speedtest.list",
-      "sha256": "ca816d4ecabafbb9b2b81d2ae8abb0bd58abb1fbc773db567f2b661ea254da6e",
-      "count": 3508
+      "sha256": "143ad550a4202663fefbbd3e4b347068d364a71fe5b273e1fe9cc0180504e990",
+      "count": 3509
     },
     "Google": {
       "path": "safety/approved/Google.list",
@@ -156,6 +156,13 @@
       "sha256": "fa552aa9657d2eb68b0b5daec3be4b64aff091da6965b75002a62ac4c8201ec5",
       "approved": 21,
       "quarantined": 8
+    },
+    {
+      "path": "safety/reviews/2026-11-17-user-approved-eight.json",
+      "sha256": "1e281ae98d241b418577fcdd75b8cce4a8a98d4d6dcb8b7fab5e3bdee4d6b9b2",
+      "approved": 8,
+      "quarantined": 0,
+      "authorization": "explicit-user-override"
     }
   ]
 }

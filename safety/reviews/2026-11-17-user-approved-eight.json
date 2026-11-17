@@ -1,0 +1,65 @@
+{
+  "reviewed_at": "2026-11-17T05:21:20.688456-06:00",
+  "baseline_commit": "8e65ea4595b8c868e8340704532557867acd5367",
+  "authorization": "User explicitly selected the eight previously quarantined rules and requested their inclusion. Approval is limited to the original China and Speedtest scopes.",
+  "prior_review": {
+    "path": "safety/reviews/2026-11-17-additions.json",
+    "sha256": "fa552aa9657d2eb68b0b5daec3be4b64aff091da6965b75002a62ac4c8201ec5"
+  },
+  "risk_status": "This is an explicit user override, not new proof that the geography conflict or operator security incident was resolved.",
+  "summary": {
+    "approved": 8,
+    "quarantined": 0
+  },
+  "decisions": [
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,speedtest2.par2.as216190.net",
+      "decision": "user-approved",
+      "previous_hold_reason": "Exact Sukka Speedtest source and AS216190=OCASDEV; operator homepage reports active security incident and the individual server root returned HTTP 503."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,135.84.80.0/22,no-resolve",
+      "decision": "user-approved",
+      "previous_hold_reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,136.143.176.0/23,no-resolve",
+      "decision": "user-approved",
+      "previous_hold_reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,165.173.128.0/23,no-resolve",
+      "decision": "user-approved",
+      "previous_hold_reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,165.173.174.0/23,no-resolve",
+      "decision": "user-approved",
+      "previous_hold_reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,165.173.180.0/22,no-resolve",
+      "decision": "user-approved",
+      "previous_hold_reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,199.67.64.0/23,no-resolve",
+      "decision": "user-approved",
+      "previous_hold_reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,8.39.54.0/23,no-resolve",
+      "decision": "user-approved",
+      "previous_hold_reason": "Only one China classification source supports this prefix; independent GeoLite evidence says US and no operator mapping to a China datacenter was found. Not asserted malicious."
+    }
+  ],
+  "scope_boundary": "Global exclusion data remains unchanged. Exact per-list approval takes precedence only in the two authorized lists; other rules still require review."
+}
