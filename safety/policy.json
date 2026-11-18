@@ -26,8 +26,8 @@
     },
     "Speedtest": {
       "path": "safety/approved/Speedtest.list",
-      "sha256": "143ad550a4202663fefbbd3e4b347068d364a71fe5b273e1fe9cc0180504e990",
-      "count": 3509
+      "sha256": "7ace1e2c2dd632609cf3a55898cfe6d9985ec28c43863c4085ea3c30cdea7c25",
+      "count": 3511
     },
     "Google": {
       "path": "safety/approved/Google.list",
@@ -176,6 +176,12 @@
       "approved": 9,
       "quarantined": 0,
       "authorization": "explicit-user-override"
+    },
+    {
+      "path": "safety/reviews/2026-11-18-speedtest-additions.json",
+      "sha256": "37aad9a0e9f9751e6502246f2c2d865732f0dcf85fcde7ab6b5e86527e01fd9f",
+      "approved": 2,
+      "quarantined": 0
     }
   ]
 }

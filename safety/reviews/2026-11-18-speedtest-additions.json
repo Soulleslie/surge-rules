@@ -1,0 +1,81 @@
+{
+  "reviewed_at": "2026-11-18T07:46:46.735058-06:00",
+  "baseline_commit": "3f455b24e0d897dbf1908dbd31e4d9559bc5da7d",
+  "summary": {
+    "approved": 2,
+    "quarantined": 0
+  },
+  "upstream_artifact": {
+    "url": "https://magicrule.pages.dev/data/_shared/artifacts/Speedtest_rules_6431e293aaca07be.list",
+    "sha256": "93302b19e05589408eccf7de939274bee6c278e763b2fbb2910db45f4c9722b0",
+    "integrity_verification": "semantic_sha256"
+  },
+  "decisions": [
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,dallas.outboundrix.cloud",
+      "decision": "approved",
+      "reason": "Exact domain in the configured Sukka Speedtest category, supported by an Ookla server listing and no matching checked reject rules.",
+      "source": {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf",
+        "sha256": "24760902c76d1bfb3201f48221626d4273c8ae5de83e11170c6f4b799292569a",
+        "line": 1640
+      },
+      "ookla_server": {
+        "url": "https://www.speedtest.net/api/js/servers?engine=js&search=OutboundRIX",
+        "sha256": "e0b6a54daf1428b6927d2b42c502962e6e9d6a927588b6dfe296bd3d7dfafe56",
+        "id": "77022",
+        "host": "dallas.outboundrix.cloud:8080",
+        "sponsor": "OUTBOUNDRIX",
+        "location": "Dallas, TX"
+      },
+      "resolved_ips": [
+        "91.124.130.214",
+        "2001:470:1f0e:667::2"
+      ]
+    },
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,speedtest-bne0.encoo.com.au",
+      "decision": "approved",
+      "reason": "Exact domain in the configured Sukka Speedtest category, supported by an Ookla server listing and no matching checked reject rules.",
+      "source": {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf",
+        "sha256": "24760902c76d1bfb3201f48221626d4273c8ae5de83e11170c6f4b799292569a",
+        "line": 2344
+      },
+      "ookla_server": {
+        "url": "https://www.speedtest.net/api/js/servers?engine=js&search=Brisbane",
+        "sha256": "3270c128f8a9fa27ad81ddab1b00519aad669f34c1c6200fbcab8b06c80d52fb",
+        "id": "77021",
+        "host": "speedtest-bne0.encoo.com.au.prod.hosts.ooklaserver.net:8080",
+        "sponsor": "Encoo",
+        "location": "Brisbane",
+        "cname_check": {
+          "url": "https://dns.google/resolve?name=speedtest-bne0.encoo.com.au.prod.hosts.ooklaserver.net&type=CNAME",
+          "sha256": "59a643abc1dec2755615d2116cf5381fa4beba690dc4a241faec015effafb11e",
+          "target": "speedtest-bne0.encoo.com.au"
+        }
+      },
+      "resolved_ips": [
+        "103.235.191.113",
+        "2402:d840:1::15"
+      ]
+    }
+  ],
+  "advertising_check": "Compared domain names against exact, suffix, keyword and wildcard reject rules and resolved A/AAAA addresses against reject CIDRs. No matches.",
+  "advertising_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "025dcebb4684cac422c66f565c56ec4006f7f39d7b712bf0c638725f0bbe271a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+      "sha256": "4df0edb8e635aeeaf34976e5e238b1bf6bffb4bc2cbf9425839e5e71355a5ad5"
+    }
+  ]
+}
