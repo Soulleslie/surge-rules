@@ -1,0 +1,75 @@
+{
+  "reviewed_at": "2026-11-17T19:41:35.840346-06:00",
+  "baseline_commit": "b2d2841ce2adda62232789ef07cd812ef5a9f460",
+  "authorization": "The user requested inclusion of the nine historical Apple rules discussed in the review.",
+  "historical_review": {
+    "path": "safety/review.json",
+    "sha256": "2d4c90da8870b084346843c6690ee8dcf983eb2a0aeabcf5c2275ba8ca6e3828"
+  },
+  "upstream_artifact": {
+    "url": "https://magicrule.pages.dev/data/_shared/artifacts/Apple_rules_50be57f093bd1fff.list",
+    "sha256": "68656f8d672247bb9c02954f1e96c3af5ff8e5140160671820305a74e059c488",
+    "integrity_verification": "semantic_sha256"
+  },
+  "summary": {
+    "approved": 9,
+    "quarantined": 0
+  },
+  "decisions": [
+    {
+      "list": "Apple",
+      "rule": "DOMAIN,apple-relay.fastly-edge.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "Initial cleanup lacked sufficient evidence to approve this exact rule in the Apple category."
+    },
+    {
+      "list": "Apple",
+      "rule": "DOMAIN-KEYWORD,testflight",
+      "decision": "user-approved",
+      "previous_hold_reason": "Initial cleanup lacked sufficient evidence to approve this exact rule in the Apple category."
+    },
+    {
+      "list": "Apple",
+      "rule": "DOMAIN-SUFFIX,digicert.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "Initial cleanup lacked sufficient evidence to approve this exact rule in the Apple category."
+    },
+    {
+      "list": "Apple",
+      "rule": "PROCESS-NAME,LookupViewService",
+      "decision": "user-approved",
+      "previous_hold_reason": "Initial cleanup lacked sufficient evidence to approve this exact rule in the Apple category."
+    },
+    {
+      "list": "Apple",
+      "rule": "USER-AGENT,AppleNews*",
+      "decision": "user-approved",
+      "previous_hold_reason": "Initial cleanup lacked sufficient evidence to approve this exact rule in the Apple category."
+    },
+    {
+      "list": "Apple",
+      "rule": "USER-AGENT,AppleTV*",
+      "decision": "user-approved",
+      "previous_hold_reason": "Initial cleanup lacked sufficient evidence to approve this exact rule in the Apple category."
+    },
+    {
+      "list": "Apple",
+      "rule": "USER-AGENT,com.apple.news*",
+      "decision": "user-approved",
+      "previous_hold_reason": "Initial cleanup lacked sufficient evidence to approve this exact rule in the Apple category."
+    },
+    {
+      "list": "Apple",
+      "rule": "USER-AGENT,com.apple.trustd*",
+      "decision": "user-approved",
+      "previous_hold_reason": "Initial cleanup lacked sufficient evidence to approve this exact rule in the Apple category."
+    },
+    {
+      "list": "Apple",
+      "rule": "USER-AGENT,com.apple.tv*",
+      "decision": "user-approved",
+      "previous_hold_reason": "Initial cleanup lacked sufficient evidence to approve this exact rule in the Apple category."
+    }
+  ],
+  "scope": "The exception applies to exact matches in Apple. The shared exclusion list retains all nine rules."
+}

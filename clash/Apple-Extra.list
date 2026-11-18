@@ -3,7 +3,9 @@ DOMAIN-KEYWORD,apple.com.akadns.net
 DOMAIN-KEYWORD,icloud.com.akadns.net
 DOMAIN-KEYWORD,icoudo
 DOMAIN-KEYWORD,icoudos
+DOMAIN-KEYWORD,testflight
 PROCESS-NAME,CoreLocationAgent
+PROCESS-NAME,LookupViewService
 PROCESS-NAME,WeatherWidget
 PROCESS-NAME,apsd
 PROCESS-NAME,com.apple.Maps

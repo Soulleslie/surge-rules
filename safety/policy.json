@@ -16,8 +16,8 @@
     },
     "Apple": {
       "path": "safety/approved/Apple.list",
-      "sha256": "84b0af031aa736adae05f4423c7924532f897b369f68ec9a230575a5ae7869e3",
-      "count": 2077
+      "sha256": "f16a13c8a2a64c093a0298a54a78448ff7b3897b7b8147ab8a1011c6936afcc5",
+      "count": 2086
     },
     "SteamCN": {
       "path": "safety/approved/SteamCN.list",
@@ -169,6 +169,13 @@
       "sha256": "8bbe23bb78776cb50fa1c3dcb45dc5a37cdeecf7490cc3c4edaa5495bdf9a23e",
       "approved": 2,
       "quarantined": 0
+    },
+    {
+      "path": "safety/reviews/2026-11-17-apple-user-approved-nine.json",
+      "sha256": "2753c671c1d8be0d3a4e703f71ebef0456b86c53f15a9a8ca488971f7578f023",
+      "approved": 9,
+      "quarantined": 0,
+      "authorization": "explicit-user-override"
     }
   ]
 }
