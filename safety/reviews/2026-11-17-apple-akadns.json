@@ -1,0 +1,47 @@
+{
+  "reviewed_at": "2026-11-17T18:55:23.122163-06:00",
+  "baseline_commit": "dd4cfdd7c03ed3404c971b2b2a169c396462036a",
+  "summary": {
+    "approved": 2,
+    "quarantined": 0
+  },
+  "upstream_artifact": {
+    "url": "https://magicrule.pages.dev/data/_shared/artifacts/Apple_rules_50be57f093bd1fff.list",
+    "sha256": "68656f8d672247bb9c02954f1e96c3af5ff8e5140160671820305a74e059c488",
+    "integrity_verification": "semantic_sha256"
+  },
+  "decisions": [
+    {
+      "list": "Apple",
+      "rule": "DOMAIN-SUFFIX,ls-apple.com.akadns.net",
+      "decision": "approved",
+      "reason": "Exact DOMAIN-SUFFIX match in the configured dler-io Apple category. No matching domain or parent/descendant suffix was found in the inspected Sukka reject sources.",
+      "source": {
+        "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Apple.yaml",
+        "sha256": "2e664f2700fcb5b473c36ee3e80d32aeb6e49dd31ae307d59f05652f2417a778",
+        "line": 18
+      }
+    },
+    {
+      "list": "Apple",
+      "rule": "DOMAIN-SUFFIX,me.com.akadns.net",
+      "decision": "approved",
+      "reason": "Exact DOMAIN-SUFFIX match in the configured dler-io Apple category. No matching domain or parent/descendant suffix was found in the inspected Sukka reject sources.",
+      "source": {
+        "url": "https://raw.githubusercontent.com/dler-io/Rules/main/Clash/Provider/Apple.yaml",
+        "sha256": "2e664f2700fcb5b473c36ee3e80d32aeb6e49dd31ae307d59f05652f2417a778",
+        "line": 20
+      }
+    }
+  ],
+  "advertising_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "025dcebb4684cac422c66f565c56ec4006f7f39d7b712bf0c638725f0bbe271a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    }
+  ]
+}

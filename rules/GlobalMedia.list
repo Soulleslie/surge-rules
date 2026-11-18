@@ -1,11 +1,11 @@
 # NAME: GlobalMedia
 # AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-17 15:30:48
+# UPDATED: 2026-11-17 20:36:02
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 88
-# DOMAIN-KEYWORD: 28
-# DOMAIN-SUFFIX: 1117
+# DOMAIN-KEYWORD: 27
+# DOMAIN-SUFFIX: 1114
 # IP-CIDR: 266
 # IP-CIDR6: 200
 # PROCESS-NAME: 3
@@ -224,9 +224,6 @@ DOMAIN-SUFFIX,channel5.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chocotv.com.tw
 DOMAIN-SUFFIX,cinemax.com
-DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,claude.com
-DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,cnbc.com
 DOMAIN-SUFFIX,cnbcfm.com
@@ -1225,7 +1222,6 @@ DOMAIN-KEYWORD,anthropic
 DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
 DOMAIN-KEYWORD,avoddashs
 DOMAIN-KEYWORD,bbcfmt
-DOMAIN-KEYWORD,claude
 DOMAIN-KEYWORD,dualstack.apiproxy-
 DOMAIN-KEYWORD,dualstack.apiproxy-device-prod-nlb-
 DOMAIN-KEYWORD,dualstack.ichnaea-web-

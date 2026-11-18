@@ -16,8 +16,8 @@
     },
     "Apple": {
       "path": "safety/approved/Apple.list",
-      "sha256": "24bdbf1964fd8c961ece7e33e4e2723ddf8d4dd71d083d5790fce6f05d2ac1da",
-      "count": 2075
+      "sha256": "84b0af031aa736adae05f4423c7924532f897b369f68ec9a230575a5ae7869e3",
+      "count": 2077
     },
     "SteamCN": {
       "path": "safety/approved/SteamCN.list",
@@ -163,6 +163,12 @@
       "approved": 8,
       "quarantined": 0,
       "authorization": "explicit-user-override"
+    },
+    {
+      "path": "safety/reviews/2026-11-17-apple-akadns.json",
+      "sha256": "8bbe23bb78776cb50fa1c3dcb45dc5a37cdeecf7490cc3c4edaa5495bdf9a23e",
+      "approved": 2,
+      "quarantined": 0
     }
   ]
 }

@@ -1,11 +1,11 @@
 # NAME: Apple
 # AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-17 15:33:02
+# UPDATED: 2026-11-17 20:23:13
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 282
 # DOMAIN-KEYWORD: 4
-# DOMAIN-SUFFIX: 1768
+# DOMAIN-SUFFIX: 1770
 # IP-CIDR: 10
 # IP-CIDR6: 3
 # PROCESS-NAME: 8
@@ -1664,6 +1664,7 @@ DOMAIN-SUFFIX,livephotos.tv
 DOMAIN-SUFFIX,lojaiphone.com.br
 DOMAIN-SUFFIX,lovebeatsdr.com
 DOMAIN-SUFFIX,lovemarca.com
+DOMAIN-SUFFIX,ls-apple.com.akadns.net
 DOMAIN-SUFFIX,ls.apple.com
 DOMAIN-SUFFIX,luckyissue.com
 DOMAIN-SUFFIX,lyzsxx.com
@@ -1725,6 +1726,7 @@ DOMAIN-SUFFIX,mask.icloud.com
 DOMAIN-SUFFIX,mbeats-tech.com
 DOMAIN-SUFFIX,mbheadphone.com
 DOMAIN-SUFFIX,me.com
+DOMAIN-SUFFIX,me.com.akadns.net
 DOMAIN-SUFFIX,mensura.cdn-apple.com
 DOMAIN-SUFFIX,mesu-cdn.apple.com.akadns.net
 DOMAIN-SUFFIX,mesu-china.apple.com.akadns.net

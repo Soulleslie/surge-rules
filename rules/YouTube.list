@@ -1,11 +1,11 @@
 # NAME: YouTube
 # AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-17 15:29:12
+# UPDATED: 2026-11-17 22:03:06
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 3
 # DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 181
+# DOMAIN-SUFFIX: 180
 # IP-CIDR: 2
 # IP-CIDR6: 1
 # USER-AGENT: 2
@@ -23,7 +23,6 @@ DOMAIN-SUFFIX,video.google.com
 DOMAIN-SUFFIX,wide-youtube.l.google.com
 DOMAIN-SUFFIX,withyoutube.com
 DOMAIN-SUFFIX,youtu.be
-DOMAIN-SUFFIX,youtube
 DOMAIN-SUFFIX,youtube-nocookie.com
 DOMAIN-SUFFIX,youtube-ui.l.google.com
 DOMAIN-SUFFIX,youtube.ae
