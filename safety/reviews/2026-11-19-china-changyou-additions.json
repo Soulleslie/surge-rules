@@ -1,0 +1,95 @@
+{
+  "reviewed_at": "2026-11-19T01:01:44.828439-06:00",
+  "baseline_commit": "3d4edee6b2f582865d809a262dadd5dd940ec36f",
+  "summary": {
+    "approved": 2,
+    "quarantined": 0
+  },
+  "upstream_artifact": {
+    "url": "https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list",
+    "sha256": "31aaae230a80afa74cc3b933b2ebe67102be76800c2f1cd5a5e189ec70e80590",
+    "integrity_verification": "semantic_sha256"
+  },
+  "decisions": [
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,1y.com",
+      "decision": "approved",
+      "reason": "The v2fly China gaming category includes the exact suffix under Changyou. www.1y.com serves the official Guanyou Shikong game publishing site.",
+      "source": {
+        "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/changyou",
+        "sha256": "652dba1ab0843578b4476701226e7abd6432c9d79efd540a444749fcbef27a42",
+        "line": 4
+      }
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,1ycdn.com",
+      "decision": "approved",
+      "reason": "The v2fly China gaming category includes the exact suffix under Changyou. The official site uses ue.1ycdn.com for its static assets.",
+      "source": {
+        "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/changyou",
+        "sha256": "652dba1ab0843578b4476701226e7abd6432c9d79efd540a444749fcbef27a42",
+        "line": 5
+      }
+    }
+  ],
+  "classification_chain": [
+    {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-cn",
+      "sha256": "3f5d6ae2990f7ee0bd7c49a0b17459cad4e467dafd335adc55142d3fea7738b5",
+      "line": 12,
+      "include": "category-entertainment-cn"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-entertainment-cn",
+      "sha256": "825d1393c9b89dddba9666443896cf2de6d12e6ffadfbfe6e7060aebe0661a06",
+      "line": 3,
+      "include": "category-games-cn"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-games-cn",
+      "sha256": "4ed54a8c45e8d9168f6bb192e4ed751e025c4f4a3f42848c1ba59a338060117c",
+      "line": 5,
+      "include": "changyou"
+    }
+  ],
+  "site_evidence": {
+    "url": "https://www.1y.com/",
+    "sha256": "2d68f86fdc52eb66f83e9556cb218cfc7916378cbece4344183da1881a9fdf7d",
+    "title": "冠游时空官网——更懂玩家的全球精品游戏发行团队",
+    "observed_asset": "https://ue.1ycdn.com/a/lib/reset-2.1.css"
+  },
+  "advertising_check": {
+    "result": "No matches among exact, suffix, keyword and wildcard reject rules for the checked hosts or observed DNS aliases, nor among reject CIDRs for the observed addresses.",
+    "observed_ips": [
+      "58.87.97.186",
+      "122.188.44.139",
+      "124.95.136.140",
+      "117.27.233.27"
+    ],
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+        "sha256": "eac1b01a1228077f86f04af6683c2230d8c35309421696dc20bde5bba4f67fb2"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+        "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+        "sha256": "4df0edb8e635aeeaf34976e5e238b1bf6bffb4bc2cbf9425839e5e71355a5ad5"
+      }
+    ]
+  },
+  "upstream_removals": {
+    "China": [
+      "IP-CIDR,207.57.167.0/24,no-resolve",
+      "IP-CIDR,207.57.168.0/24,no-resolve",
+      "IP-CIDR,207.57.174.0/24,no-resolve",
+      "IP-CIDR,207.57.182.0/24,no-resolve",
+      "IP-CIDR,52.82.148.0/22,no-resolve"
+    ]
+  }
+}
