@@ -6,8 +6,8 @@
   "lists": {
     "China": {
       "path": "safety/approved/China.list",
-      "sha256": "9c84a9d69d2cbe368b5d7d5c0e25303316f26aa828fb78bee44535be9e0f2801",
-      "count": 10307
+      "sha256": "5f28404bb371ae057e9d383d5c0498efe55f02da7121fcc2ba611cadb42d3869",
+      "count": 10346
     },
     "Lan": {
       "path": "safety/approved/Lan.list",
@@ -141,14 +141,14 @@
     },
     "Global": {
       "path": "safety/approved/Global.list",
-      "sha256": "6b01c6f4a48fb22cbc565ce21838025d9a41b115ac7b9e6e91d231907832cb4c",
-      "count": 24438
+      "sha256": "08fd57699d8ae1967c656bb13f00bfee54942ed203d851caf7bd7e3f47d46c2e",
+      "count": 24441
     }
   },
   "excluded": {
     "path": "safety/excluded.list",
-    "sha256": "863b0662ad66ca3bb80a1adadda2749cecdf58bf84592a9818c4e8b55831f320",
-    "count": 3938
+    "sha256": "10e5daab85149b9e2f7f5fb7b1a7d4ef6c9bdc3383c17b02d2215f5109a238e6",
+    "count": 3939
   },
   "reviews": [
     {
@@ -188,6 +188,12 @@
       "sha256": "c55869e707d4fb5c93536a33d9bb67ef0e14ecc8b8ea27e76d7f81c1a671e389",
       "approved": 2,
       "quarantined": 0
+    },
+    {
+      "path": "safety/reviews/2026-11-21-china-global-additions.json",
+      "sha256": "dd9ced8e0c9c92075724854ac4b5150e0bad5f6e1e356072d31f383bfc505814",
+      "approved": 42,
+      "quarantined": 1
     }
   ]
 }

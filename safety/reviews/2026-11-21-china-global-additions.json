@@ -1,0 +1,1395 @@
+{
+  "reviewed_at": "2026-11-21T04:18:38.562267-06:00",
+  "baseline_commit": "16e33f3615e11aa8cf97f67b25df98f087d17e2c",
+  "summary": {
+    "approved": 42,
+    "quarantined": 1,
+    "approved_domains": 20,
+    "approved_ipv4_cidrs": 22
+  },
+  "upstream_artifacts": {
+    "China": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list",
+      "sha256": "355a0ef8883b29ca3430716243d7ef42771e273d250bec3314c6e9227bbd4c32",
+      "integrity_verification": "semantic_sha256"
+    },
+    "Global": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/Global_rules_b5f3bb33d8a4698a.list",
+      "sha256": "3e3ae1add81a5946e9beff395db596f927be7450035e3514705dcf325a68cfe7",
+      "integrity_verification": "semantic_sha256"
+    }
+  },
+  "upstream_removals": {
+    "China": [
+      "IP-CIDR,103.40.232.0/22,no-resolve",
+      "IP-CIDR,110.120.0.0/16,no-resolve",
+      "IP-CIDR,110.211.0.0/16,no-resolve",
+      "IP-CIDR,117.121.132.0/22,no-resolve",
+      "IP-CIDR,117.124.236.0/23,no-resolve",
+      "IP-CIDR,122.102.64.0/20,no-resolve",
+      "IP-CIDR,123.66.0.0/16,no-resolve",
+      "IP-CIDR,163.227.40.0/23,no-resolve",
+      "IP-CIDR,165.173.176.0/24,no-resolve",
+      "IP-CIDR,221.174.0.0/17,no-resolve",
+      "IP-CIDR,222.50.0.0/16,no-resolve",
+      "IP-CIDR,61.232.0.0/14,no-resolve"
+    ],
+    "Global": [
+      "DOMAIN-SUFFIX,yandexwebcache.org"
+    ]
+  },
+  "reject_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "8fa54078d1492654939313c0e73488478435fe5088253f2a0bd6c3536f264707"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+      "sha256": "99809ef57bb04640d2690f198c7ab16484945e6aad0f9eca9a02e9a0d60658b2"
+    }
+  ],
+  "decisions": [
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,172.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/pingan",
+          "sha256": "0ccde0e51878106eeaa8f41ef0e91b3990baf9bce2f2d05c006f4118d22e22ba",
+          "line": 8,
+          "text": "172.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 54,
+              "include": "include:pingan @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,1qianbao.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/pingan",
+          "sha256": "0ccde0e51878106eeaa8f41ef0e91b3990baf9bce2f2d05c006f4118d22e22ba",
+          "line": 9,
+          "text": "1qianbao.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 54,
+              "include": "include:pingan @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,4008000000.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/pingan",
+          "sha256": "0ccde0e51878106eeaa8f41ef0e91b3990baf9bce2f2d05c006f4118d22e22ba",
+          "line": 1,
+          "text": "4008000000.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 54,
+              "include": "include:pingan @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,ajkimg.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/58tongcheng",
+          "sha256": "a5d6a2e878e3aceb897c6701184a483f5b907a08c630f831880ee24d0febccdd",
+          "line": 20,
+          "text": "ajkimg.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 208,
+              "include": "include:58tongcheng",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,baishan.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/baishancloud",
+          "sha256": "c9b52766bba057c46823b82dd564c9f958fb42aa18ffb37fd6d6033028ee8fb3",
+          "line": 2,
+          "text": "baishan.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 117,
+              "include": "include:category-cdn-cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            },
+            {
+              "parent": "category-cdn-cn",
+              "line": 1,
+              "include": "include:baishancloud",
+              "sha256": "da9be98434b5c541b687b8e60f555480cbefec48bb6d465de5973b79a7bad376"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,baishancloud.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/baishancloud",
+          "sha256": "c9b52766bba057c46823b82dd564c9f958fb42aa18ffb37fd6d6033028ee8fb3",
+          "line": 4,
+          "text": "baishancloud.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 117,
+              "include": "include:category-cdn-cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            },
+            {
+              "parent": "category-cdn-cn",
+              "line": 1,
+              "include": "include:baishancloud",
+              "sha256": "da9be98434b5c541b687b8e60f555480cbefec48bb6d465de5973b79a7bad376"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,lenovofuturecenter.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/lenovo",
+          "sha256": "c56a0872f674cf61aefb1b11faf590e60e305e144dbb4f7b3c8c062c5a594911",
+          "line": 29,
+          "text": "lenovofuturecenter.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 954,
+              "include": "include:lenovo",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,lujincaifu.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/pingan",
+          "sha256": "0ccde0e51878106eeaa8f41ef0e91b3990baf9bce2f2d05c006f4118d22e22ba",
+          "line": 27,
+          "text": "lujincaifu.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 54,
+              "include": "include:pingan @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,mingyuanfund.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/pingan",
+          "sha256": "0ccde0e51878106eeaa8f41ef0e91b3990baf9bce2f2d05c006f4118d22e22ba",
+          "line": 33,
+          "text": "mingyuanfund.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 54,
+              "include": "include:pingan @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,pacfc.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/pingan",
+          "sha256": "0ccde0e51878106eeaa8f41ef0e91b3990baf9bce2f2d05c006f4118d22e22ba",
+          "line": 19,
+          "text": "pacfc.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 54,
+              "include": "include:pingan @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,qpmcn.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/58tongcheng",
+          "sha256": "a5d6a2e878e3aceb897c6701184a483f5b907a08c630f831880ee24d0febccdd",
+          "line": 49,
+          "text": "qpmcn.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 208,
+              "include": "include:58tongcheng",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,tencentads.com",
+      "decision": "quarantined",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/tencent",
+          "sha256": "e3518ed7689fda4371708c8dbba16d6a29f7630a937bfdce3016e98a33557b85",
+          "line": 40,
+          "text": "tencentads.com @ads",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 964,
+              "include": "include:tencent @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "v2fly tags this domain @ads and its official site identifies it as Tencent Ads. Held under the advertising review policy.",
+      "official_site": {
+        "url": "https://tencentads.com/",
+        "title": "腾讯广告",
+        "sha256": "5793daa9cb66a8b4dfb5949abda26813001b1f727d132e99b57f556a963eb167"
+      }
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,trpcdn.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/baishancloud",
+          "sha256": "c9b52766bba057c46823b82dd564c9f958fb42aa18ffb37fd6d6033028ee8fb3",
+          "line": 7,
+          "text": "trpcdn.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 117,
+              "include": "include:category-cdn-cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            },
+            {
+              "parent": "category-cdn-cn",
+              "line": 1,
+              "include": "include:baishancloud",
+              "sha256": "da9be98434b5c541b687b8e60f555480cbefec48bb6d465de5973b79a7bad376"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,yiqianbao.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/pingan",
+          "sha256": "0ccde0e51878106eeaa8f41ef0e91b3990baf9bce2f2d05c006f4118d22e22ba",
+          "line": 10,
+          "text": "yiqianbao.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 54,
+              "include": "include:pingan @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,yqbimg.net",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/pingan",
+          "sha256": "0ccde0e51878106eeaa8f41ef0e91b3990baf9bce2f2d05c006f4118d22e22ba",
+          "line": 12,
+          "text": "yqbimg.net",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 54,
+              "include": "include:pingan @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,yqbmall.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/pingan",
+          "sha256": "0ccde0e51878106eeaa8f41ef0e91b3990baf9bce2f2d05c006f4118d22e22ba",
+          "line": 13,
+          "text": "yqbmall.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 54,
+              "include": "include:pingan @-!cn",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,zhaoliangji.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/58tongcheng",
+          "sha256": "a5d6a2e878e3aceb897c6701184a483f5b907a08c630f831880ee24d0febccdd",
+          "line": 45,
+          "text": "zhaoliangji.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 208,
+              "include": "include:58tongcheng",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "DOMAIN-SUFFIX,zhaoliangjipc.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/58tongcheng",
+          "sha256": "a5d6a2e878e3aceb897c6701184a483f5b907a08c630f831880ee24d0febccdd",
+          "line": 46,
+          "text": "zhaoliangjipc.com",
+          "china_include_chain": [
+            {
+              "parent": "geolocation-cn",
+              "line": 208,
+              "include": "include:58tongcheng",
+              "sha256": "838433f35e70f2f1796433cd4f447c8dd3d5c6f3852817d3a6d8755ebd77380b"
+            }
+          ]
+        }
+      ],
+      "reason": "Exact domain suffix in the configured v2fly China category, with its inclusion path verified."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,110.120.0.0/23,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 1488,
+          "text": "IP-CIDR,110.120.0.0/23"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/110.120.0.0",
+        "sha256": "a293e746dc55887c68e9b98146ec4bfeed8b2ee1451667da58e8fc68989b653e",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "110.96.0.0",
+        "last": "110.127.255.255"
+      },
+      "replaces_old_network": [
+        "110.120.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=110.120.0.0%2F23",
+        "sha256": "b9266ff3c0cafe768e7446590b8561a785021b1cbc3bb208430fec8fa2f6b642",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,110.120.10.0/24,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 1490,
+          "text": "IP-CIDR,110.120.10.0/24"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/110.120.10.0",
+        "sha256": "b1c5c584069daf27e145e900375f87dd05d90bbb0f5bbc6700199c3a3ff64913",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "110.96.0.0",
+        "last": "110.127.255.255"
+      },
+      "replaces_old_network": [
+        "110.120.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=110.120.10.0%2F24",
+        "sha256": "badad5d6ae2867b328d8f3d019630de59766c56483ca333a69213ca652eee8eb",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,110.120.12.0/24,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 1491,
+          "text": "IP-CIDR,110.120.12.0/24"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/110.120.12.0",
+        "sha256": "f945ff5088ea709564090a9ed106c3a3269275d47e5b3c9c026b2811ffae78de",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "110.96.0.0",
+        "last": "110.127.255.255"
+      },
+      "replaces_old_network": [
+        "110.120.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=110.120.12.0%2F24",
+        "sha256": "22cd0dd15e2e0704f81d957ea234566afee341613021871269ad64b4f9b2750b",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,110.120.8.0/23,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 1489,
+          "text": "IP-CIDR,110.120.8.0/23"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/110.120.8.0",
+        "sha256": "87e5ef98cdbca44a43a84dc6ac78a71279de331f5bac681f14a63f8e238997de",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "110.96.0.0",
+        "last": "110.127.255.255"
+      },
+      "replaces_old_network": [
+        "110.120.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=110.120.8.0%2F23",
+        "sha256": "6cd2ff101a96d6bb4ee468cec6213a4c4a321143721c7c186a60ff653b6d34e3",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,110.211.0.0/23,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 1502,
+          "text": "IP-CIDR,110.211.0.0/23"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/110.211.0.0",
+        "sha256": "7861e5ff179ccf743f29fcefbca72e1fdd3586cfb1f079dae8828dc590abd28a",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "110.192.0.0",
+        "last": "110.223.255.255"
+      },
+      "replaces_old_network": [
+        "110.211.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=110.211.0.0%2F23",
+        "sha256": "656d9d9affccd1abbc60dbe52b667ee95e3e3c0c5c1018fb9a147b866c094740",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,116.157.0.0/16,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 1800,
+          "text": "IP-CIDR,116.157.0.0/16"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/116.157.0.0",
+        "sha256": "439365fa60e5fe873b4ef06a31139fc3f59ac3fb0ca8854f3536cb047b23b42e",
+        "name": "UNICOM",
+        "country": "CN",
+        "first": "116.128.0.0",
+        "last": "116.191.255.255"
+      },
+      "replaces_old_network": [],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=116.157.0.0%2F16",
+        "sha256": "6f267c01b82d69be29cdc2aba667986a0d3b3147b1ddb2a9181c2efd2eddef9b",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,117.124.237.0/24,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 1925,
+          "text": "IP-CIDR,117.124.237.0/24"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/117.124.237.0",
+        "sha256": "3e581ed09a5151e3cdf695679f13fa2cac28ff5e93e9e5e1e36bda9b7d5b73df",
+        "name": "CHINABTN",
+        "country": "CN",
+        "first": "117.124.0.0",
+        "last": "117.127.255.255"
+      },
+      "replaces_old_network": [
+        "117.124.236.0/23"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=117.124.237.0%2F24",
+        "sha256": "38e7f44df68be3d7858d97011df87a63cd6de675c88993d77621fc451789f848",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,123.66.128.0/17,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 2373,
+          "text": "IP-CIDR,123.66.128.0/17"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/123.66.128.0",
+        "sha256": "1ec0c13a23b33b9cb0939d591ed5b3e88ff6b62ebe000697c6a8ac0800b041ab",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "123.64.0.0",
+        "last": "123.95.255.255"
+      },
+      "replaces_old_network": [
+        "123.66.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=123.66.128.0%2F17",
+        "sha256": "c9e8081a6b4cd2282b0baf5abd2b4da69fc8dcefd02a28ae02dc662441562095",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,221.174.16.0/21,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 3812,
+          "text": "IP-CIDR,221.174.16.0/21"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/221.174.16.0",
+        "sha256": "be65da086d38c771cdf0a840fccdd08856d6e50700f8314de33128b311159593",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "221.172.0.0",
+        "last": "221.175.255.255"
+      },
+      "replaces_old_network": [
+        "221.174.0.0/17"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=221.174.16.0%2F21",
+        "sha256": "554b0340acd39a867cfdf973e9279d72e762a1c7c3dcd34df54b7e957fd3d282",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,221.174.24.0/23,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 3813,
+          "text": "IP-CIDR,221.174.24.0/23"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/221.174.24.0",
+        "sha256": "f8dae9337f993703599832d403072ad01267c4d3b47fede76f6d1fc6e78005cc",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "221.172.0.0",
+        "last": "221.175.255.255"
+      },
+      "replaces_old_network": [
+        "221.174.0.0/17"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=221.174.24.0%2F23",
+        "sha256": "a914ea34b4b6a733098bde9e171d61052b5e4b7f3b821b189ae23175258f7583",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,222.50.120.0/23,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 3830,
+          "text": "IP-CIDR,222.50.120.0/23"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/222.50.120.0",
+        "sha256": "2e20d1fc811ab0c8d6e813b8e13c074ad31b308816e690325b989faac1acca9f",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "222.32.0.0",
+        "last": "222.63.255.255"
+      },
+      "replaces_old_network": [
+        "222.50.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=222.50.120.0%2F23",
+        "sha256": "5936cbea79c99e882ece0af1f7559d2deb094b6921a36bb5f953a6c2b291219f",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,222.50.123.0/24,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 3831,
+          "text": "IP-CIDR,222.50.123.0/24"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/222.50.123.0",
+        "sha256": "52fba5d06dbe73deb3e2aa68299ee209b46bb9071c33e21265e929d5e19a9487",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "222.32.0.0",
+        "last": "222.63.255.255"
+      },
+      "replaces_old_network": [
+        "222.50.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=222.50.123.0%2F24",
+        "sha256": "10327c668ee1d137e5563ffb400836838b4fca45e75196f49e1916d490dfcd4e",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,222.50.125.0/24,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 3832,
+          "text": "IP-CIDR,222.50.125.0/24"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/222.50.125.0",
+        "sha256": "b4f1db94d5ff9fa46db372b070db7b952a684dc53a7f684c20a5726a429bb2c1",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "222.32.0.0",
+        "last": "222.63.255.255"
+      },
+      "replaces_old_network": [
+        "222.50.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=222.50.125.0%2F24",
+        "sha256": "49d07d63a55a789a0898c5e7feb0a869fb5cc61a7a4e425dfd0d7ecb9fe7cfe4",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,222.50.126.0/23,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 3833,
+          "text": "IP-CIDR,222.50.126.0/23"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/222.50.126.0",
+        "sha256": "ebfa84f46ff7e2ed1e73546d2cd100c99170602866556e382c8e7b0992897f6a",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "222.32.0.0",
+        "last": "222.63.255.255"
+      },
+      "replaces_old_network": [
+        "222.50.0.0/16"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=222.50.126.0%2F23",
+        "sha256": "da59cb877fb34c1ba302f48d98559029eec6e88647bfa7ecb3944f6deca15932",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,42.240.48.0/23,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 204,
+          "text": "IP-CIDR,42.240.48.0/23"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/42.240.48.0",
+        "sha256": "332e8529e119bf6224541077745a45317708d2d8f060a3989df088cb12ba5b70",
+        "name": "CCBNET",
+        "country": "CN",
+        "first": "42.240.0.0",
+        "last": "42.240.127.255"
+      },
+      "replaces_old_network": [],
+      "route_origin": {
+        "asn": 137735,
+        "registry": "CCBNET (CN)",
+        "registry_url": "https://rdap.apnic.net/autnum/137735",
+        "registry_sha256": "7ae0cf234411ad3a9365ab09a1d98e67ef63a1605273aded759103d7fd1b3921",
+        "routes": [
+          {
+            "prefix": "42.240.48.0/24",
+            "sha256": "de6a50558a4d7859e673ebe9ebf54804e26947d6c3ad00e88f004508784e1729",
+            "url": "https://stat.ripe.net/data/network-info/data.json?resource=42.240.48.0"
+          },
+          {
+            "prefix": "42.240.49.0/24",
+            "sha256": "c283ffb2e123dc9698280428645afabddaf5ca4690a9ac953f70069d7b76a542",
+            "url": "https://stat.ripe.net/data/network-info/data.json?resource=42.240.49.0"
+          }
+        ]
+      },
+      "reason": "Exact China source and CCBNET registry; the separately checked constituent routes originate from the China Construction Bank network."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,42.240.50.0/24,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 205,
+          "text": "IP-CIDR,42.240.50.0/24"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/42.240.50.0",
+        "sha256": "b9285f51f1c5adde4fa9f00f535cfd59d3c559a21cbb3440ecbdda8d4f9722c5",
+        "name": "CCBNET",
+        "country": "CN",
+        "first": "42.240.0.0",
+        "last": "42.240.127.255"
+      },
+      "replaces_old_network": [],
+      "route_origin": {
+        "asn": 137735,
+        "registry": "CCBNET (CN)",
+        "registry_url": "https://rdap.apnic.net/autnum/137735",
+        "registry_sha256": "7ae0cf234411ad3a9365ab09a1d98e67ef63a1605273aded759103d7fd1b3921",
+        "routes": [
+          {
+            "prefix": "42.240.50.0/24",
+            "sha256": "77c2989fcc72844ee56a8bf8632f42111b607bb5b56a34dd554a3443fd7d32ab",
+            "url": "https://stat.ripe.net/data/network-info/data.json?resource=42.240.50.0"
+          }
+        ]
+      },
+      "reason": "Exact China source and CCBNET registry; the separately checked constituent routes originate from the China Construction Bank network."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,43.193.80.0/20,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 219,
+          "text": "IP-CIDR,43.193.80.0/20"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/43.193.80.0",
+        "sha256": "b76e7a376468df0ec1b2dc3c06338658a966c64213f947c2c6aa8dcff6cc8e11",
+        "name": "WESTCLOUDDATA",
+        "country": "CN",
+        "first": "43.192.0.0",
+        "last": "43.193.255.255"
+      },
+      "replaces_old_network": [],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=43.193.80.0%2F20",
+        "sha256": "137e9ef67966a4f140385dc4a7e85ea0cbc85825a8d74fb489b446f3a87488ef",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China.",
+      "aws": {
+        "url": "https://ip-ranges.amazonaws.com/ip-ranges.json",
+        "sha256": "d889737796086abf14244d3a2c467e7eea0ab969b743515e24c651c2f1b74cca",
+        "regions": [
+          "cn-northwest-1"
+        ]
+      }
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,61.232.0.0/15,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 643,
+          "text": "IP-CIDR,61.232.0.0/15"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/61.232.0.0",
+        "sha256": "2c76f053b298cd084d3bbb989cf18b821792f486b85ee7d6adffab63dc35400c",
+        "name": "CRBjB",
+        "country": "CN",
+        "first": "61.232.0.0",
+        "last": "61.232.1.255"
+      },
+      "replaces_old_network": [
+        "61.232.0.0/14"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=61.232.0.0%2F15",
+        "sha256": "c3268081c674cc53384088302b7dab6795261b448551687d338caf9e2b3d1395",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China.",
+      "covering_rdap": {
+        "url": "https://rdap.apnic.net/ip/61.232.0.0/15",
+        "sha256": "cc3dbbbab4e91b44f0e098db5ab68948370437e0fbdcada0a9b690dc8fc06eee",
+        "registry_range": "61.232.0.0–61.237.255.255",
+        "country": "CN"
+      }
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,61.234.0.0/16,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 644,
+          "text": "IP-CIDR,61.234.0.0/16"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/61.234.0.0",
+        "sha256": "3be0c3631f16f12e356e7bd10f0b874fa0e327c25bca29471036b3628e8b85ea",
+        "name": "CTTNET",
+        "country": "CN",
+        "first": "61.232.0.0",
+        "last": "61.237.255.255"
+      },
+      "replaces_old_network": [
+        "61.232.0.0/14"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=61.234.0.0%2F16",
+        "sha256": "064f174167d11ff5679d3af04d992d140f426361608fcc8dc57318a10a5f56bf",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,61.235.64.0/24,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 645,
+          "text": "IP-CIDR,61.235.64.0/24"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/61.235.64.0",
+        "sha256": "7d919bb8cdf9b8e8bfc634d471cb3fc1c93aa66753d998359100094ee20f35ce",
+        "name": "CRGdGzS",
+        "country": "CN",
+        "first": "61.235.64.0",
+        "last": "61.235.64.63"
+      },
+      "replaces_old_network": [
+        "61.232.0.0/14"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=61.235.64.0%2F24",
+        "sha256": "9c1ef72bee16172a600d1120c2ae37af8ff164c7fcc98ac6f9f23a38318a81e0",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,61.235.76.0/24,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 646,
+          "text": "IP-CIDR,61.235.76.0/24"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/61.235.76.0",
+        "sha256": "45d2f74f69e27ce8b2a89a09c8284a5fa441df50f225d8dba35d82b7379f7179",
+        "name": "CRGdGzS",
+        "country": "CN",
+        "first": "61.235.76.0",
+        "last": "61.235.76.255"
+      },
+      "replaces_old_network": [
+        "61.232.0.0/14"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=61.235.76.0%2F24",
+        "sha256": "f336edf12d01596af1912e921677f4baba95b235d385da89a7dd3a2ff2909d67",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "China",
+      "rule": "IP-CIDR,61.235.78.0/24,no-resolve",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+          "sha256": "78a121b50d65be7678cd5b0ae21e5159541e1cb1e33e10b7287af7688eeea5cb",
+          "line": 647,
+          "text": "IP-CIDR,61.235.78.0/24"
+        }
+      ],
+      "rdap": {
+        "url": "https://rdap.apnic.net/ip/61.235.78.0",
+        "sha256": "2ff95008995ca0df4191809b40ea568384186f08240c098186a0642567d1d4d9",
+        "name": "CRGdGzS",
+        "country": "CN",
+        "first": "61.235.78.0",
+        "last": "61.235.78.31"
+      },
+      "replaces_old_network": [
+        "61.232.0.0/14"
+      ],
+      "geolocation": {
+        "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=61.235.78.0%2F24",
+        "sha256": "6ea77979834ce3b54b7f267d1c83923f7df40f5c54ec8115d657c55689409dbe",
+        "time": "2026-11-20T23:00:35",
+        "country_coverage": [
+          {
+            "country": "CN",
+            "percent": 100.0
+          }
+        ]
+      },
+      "reason": "Exact Sukka China prefix; APNIC registration and the checked GeoLite results identify China."
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN,assets.monetizationos.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/cdn.conf",
+          "sha256": "81af054d65759bf26cb99eda27738a0032227691bffc7decd216f322a6ce94fd",
+          "line": 4182,
+          "text": "assets.monetizationos.com"
+        }
+      ],
+      "reason": "Exact CDN host in the original Sukka source. Observed as a subscription widget static asset host and absent from the checked reject rules.",
+      "cdn_source": {
+        "url": "https://raw.githubusercontent.com/SukkaW/Surge/master/Source/domainset/cdn.conf",
+        "sha256": "6c5c0d6698e2288d302e269e034a2070e741de7575196233c44871e03d2b9f72",
+        "line": 5812
+      },
+      "service_evidence": {
+        "url": "https://monetizationos.com/",
+        "sha256": "13dbd773c1fc8506817da63f9ae86dacc7c40680d0603fb16619fb83f614cf7b"
+      }
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,butterfly-effect-cdn.dev",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/cdn.conf",
+          "sha256": "81af054d65759bf26cb99eda27738a0032227691bffc7decd216f322a6ce94fd",
+          "line": 4075,
+          "text": ".butterfly-effect-cdn.dev"
+        }
+      ],
+      "reason": "Exact rule in the configured Global providers and the inspected classification sources.",
+      "cdn_source": {
+        "url": "https://raw.githubusercontent.com/SukkaW/Surge/master/Source/domainset/cdn.conf",
+        "sha256": "6c5c0d6698e2288d302e269e034a2070e741de7575196233c44871e03d2b9f72",
+        "line": 5731
+      },
+      "certificate_evidence": {
+        "url": "https://api.certspotter.com/v1/issuances?domain=butterfly-effect-cdn.dev&include_subdomains=true&expand=dns_names",
+        "sha256": "19828986a38256d9b169c6354b91f17b45127aa080b88071293ce0d41467b847",
+        "dns_names": [
+          "*.butterfly-effect-cdn.dev"
+        ]
+      }
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,elevenlabsusercontent.com",
+      "decision": "approved",
+      "checked_reject_matches": 0,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+          "sha256": "3df860e83644296855bf9bbc6f928f7d6dc7c6db6850357412df2fdeb1dbe3a6",
+          "line": 8555,
+          "text": "+.elevenlabsusercontent.com"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/elevenlabs",
+          "sha256": "88f3412837a17af32533013ab039b988a6c26a519d73846f728b84a19e26487f",
+          "line": 3,
+          "text": "elevenlabsusercontent.com",
+          "china_include_chain": null
+        }
+      ],
+      "reason": "Exact rule in the configured Global providers and the inspected classification sources."
+    }
+  ]
+}
