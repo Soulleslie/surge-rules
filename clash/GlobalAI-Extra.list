@@ -3,8 +3,14 @@ DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
 DOMAIN-KEYWORD,chatgpt
 DOMAIN-KEYWORD,chatgpt-async-webps-prod
 DOMAIN-KEYWORD,codex
+DOMAIN-KEYWORD,colab
+DOMAIN-KEYWORD,datadog
+DOMAIN-KEYWORD,developerprofiles
+DOMAIN-KEYWORD,generativelanguage
 DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,sentry
 DOMAIN-KEYWORD,sift
+IP-ASN,14061
 IP-ASN,399358
 IP-ASN,401518
 PROCESS-NAME,Antigravity

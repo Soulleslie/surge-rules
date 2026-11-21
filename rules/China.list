@@ -5,7 +5,7 @@
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 20
 # DOMAIN-KEYWORD: 10
-# DOMAIN-SUFFIX: 6389
+# DOMAIN-SUFFIX: 6390
 # IP-CIDR: 3871
 # IP-CIDR6: 4
 # USER-AGENT: 30
@@ -5036,6 +5036,7 @@ DOMAIN-SUFFIX,tencent-gcloud.com
 DOMAIN-SUFFIX,tencent.com
 DOMAIN-SUFFIX,tencent.design
 DOMAIN-SUFFIX,tencent.net
+DOMAIN-SUFFIX,tencentads.com
 DOMAIN-SUFFIX,tencentapps.com
 DOMAIN-SUFFIX,tencentbyod.com
 DOMAIN-SUFFIX,tencentcdb.com

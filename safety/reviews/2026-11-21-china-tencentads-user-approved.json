@@ -1,0 +1,21 @@
+{
+  "list": "China",
+  "reviewed_at": "2026-11-21",
+  "baseline_commit": "5f060eeffcf010fe5f5e8c7a07d96eca6c4cbe24",
+  "authorization": "Explicit user approval to include tencentads.com in China.",
+  "prior_review": {
+    "path": "safety/reviews/2026-11-21-china-global-additions.json",
+    "sha256": "dd9ced8e0c9c92075724854ac4b5150e0bad5f6e1e356072d31f383bfc505814"
+  },
+  "summary": {
+    "approved": 1,
+    "quarantined": 0
+  },
+  "decisions": [
+    {
+      "rule": "DOMAIN-SUFFIX,tencentads.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "v2fly tags this domain @ads and its official site identifies it as Tencent Ads. Held under the advertising review policy."
+    }
+  ]
+}

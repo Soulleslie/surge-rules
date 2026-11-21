@@ -1,0 +1,101 @@
+{
+  "list": "GlobalAI",
+  "reviewed_at": "2026-11-21",
+  "baseline_commit": "5f060eeffcf010fe5f5e8c7a07d96eca6c4cbe24",
+  "authorization": "Explicit user approval to include the 17 previously held GlobalAI rules.",
+  "prior_review": {
+    "path": "safety/reviews/2026-11-21-globalai-import.json",
+    "sha256": "d484c0d06327c8d8e880fe8b147c97f9fe73ee15a7baf0a40e8825a4fea15fef"
+  },
+  "summary": {
+    "approved": 17,
+    "quarantined": 0
+  },
+  "decisions": [
+    {
+      "rule": "DOMAIN,browser-intake-datadoghq.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "matches Sukka reject by exact domain or parent suffix"
+    },
+    {
+      "rule": "DOMAIN,copilot-telemetry.githubusercontent.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "matches Sukka reject by exact domain or parent suffix"
+    },
+    {
+      "rule": "DOMAIN,http-intake.logs.us5.datadoghq.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "existing shared quarantine"
+    },
+    {
+      "rule": "DOMAIN,production-copilot-host-westus.webpubsub.azure.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "existing shared quarantine"
+    },
+    {
+      "rule": "DOMAIN,self.events.data.microsoft.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "matches Sukka reject by exact domain or parent suffix"
+    },
+    {
+      "rule": "DOMAIN,static.cloudflareinsights.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "matches Sukka reject by exact domain or parent suffix"
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,colab",
+      "decision": "user-approved",
+      "previous_hold_reason": "exact matcher unconfirmed in the referenced AI category sources"
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,datadog",
+      "decision": "user-approved",
+      "previous_hold_reason": "keyword matches telemetry hosts across unrelated services"
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,developerprofiles",
+      "decision": "user-approved",
+      "previous_hold_reason": "exact matcher unconfirmed in the referenced AI category sources"
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,generativelanguage",
+      "decision": "user-approved",
+      "previous_hold_reason": "exact matcher unconfirmed in the referenced AI category sources"
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,sentry",
+      "decision": "user-approved",
+      "previous_hold_reason": "keyword matches telemetry hosts across unrelated services"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,apis.google.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "exact matcher unconfirmed in the referenced AI category sources"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,events.statsigapi.net",
+      "decision": "user-approved",
+      "previous_hold_reason": "matches Sukka reject by exact domain or parent suffix"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,featuregates.org",
+      "decision": "user-approved",
+      "previous_hold_reason": "matches Sukka reject by exact domain or parent suffix"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,grokbot.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "existing shared quarantine"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,segment.io",
+      "decision": "user-approved",
+      "previous_hold_reason": "matches Sukka reject by exact domain or parent suffix"
+    },
+    {
+      "rule": "IP-ASN,14061,no-resolve",
+      "decision": "user-approved",
+      "previous_hold_reason": "DigitalOcean is a general-purpose hosting network"
+    }
+  ]
+}
