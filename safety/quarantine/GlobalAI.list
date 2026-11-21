@@ -1,0 +1,14 @@
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,copilot-telemetry.githubusercontent.com
+DOMAIN,self.events.data.microsoft.com
+DOMAIN,static.cloudflareinsights.com
+DOMAIN-KEYWORD,colab
+DOMAIN-KEYWORD,datadog
+DOMAIN-KEYWORD,developerprofiles
+DOMAIN-KEYWORD,generativelanguage
+DOMAIN-KEYWORD,sentry
+DOMAIN-SUFFIX,apis.google.com
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,segment.io
+IP-ASN,14061,no-resolve

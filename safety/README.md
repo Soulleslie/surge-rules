@@ -2,6 +2,8 @@
 
 `policy.json` 固定每个白名单的 SHA-256、条数和最低保留比例；`approved/*.list` 是逐条批准数据，`excluded.list` 是此次对照中未获批准的已知条目。该文件名不表示其中每个条目在所有用途下都恶意。同一条规则可以在一个列表被批准，在另一个列表被隔离；批准仅对指定列表生效。
 
+只适用于单个分类的隔离项放在 `quarantine/<名称>.list`，并通过 `lists.<名称>.excluded` 固定 SHA-256 和条数。
+
 所有网络下载的新增项都不能自动成为批准数据。CI 只提交 `rules/` 与 `clash/`；`safety/` 必须通过独立代码审核更新。即使某次上游彻底修复，也不能自动从当前产物反推和扩大白名单。
 
 ## 本次来源审核
@@ -29,7 +31,7 @@ python3 -B scripts/sync.py --mihomo /path/to/mihomo --report /tmp/recovery.json 
 
 正常同步优先验证 manifest 的 `bytes_sha256`。已实测 Google、Steam、China、Global、Speedtest 的完整文件差异仅为 `UPDATED` 注释相差 1–2 秒：只替换该注释的时间就精确匹配声明的完整文件指纹，其余所有字节同时匹配声明的正文指纹。
 
-因此，仅当产物是非二进制 `rules`、明确声明 `dedupe.mode=standard_header_normalized` 且 `normalized_header_lines` 严格为整数 4 时，允许在完整文件指纹不符后校验 `semantic_sha256`。前四行必须依次为 NAME、AUTHOR、REPO、UPDATED，NAME 必须与目标列表完全相同。计算正文指纹时，只去掉这四行，保留第 5 行开始的所有原始字节，包括计数注释、其他注释、空行、顺序和末尾换行。不会删除全部注释或重新序列化正文来匹配指纹。
+仅当非二进制 `rules` 明确声明 `dedupe.mode=standard_header_normalized` 且 `normalized_header_lines` 为整数 4 或 5 时，才允许在完整文件指纹不符后校验 `semantic_sha256`。两种格式的前四行依次是 NAME、AUTHOR、REPO、UPDATED，NAME 必须与目标列表完全相同。GlobalAI 使用的五行格式还要求在首段连续注释中有且只有一行有效的 DESC 注释。计算正文指纹时移除声明的这四行或五行，保留所有其他原始字节，包括计数注释、其他注释、空行、顺序和末尾换行。
 
 不支持的模式、异常头部、缺失指纹和正文指纹不符均保留旧产物并报错；不改写任何期望校验和，也不使用本地恢复模式掩盖失败。报告中的 `integrity_verification` 记录使用的是整文件指纹还是正文指纹。后续逐条白名单、隔离和转换检查不变。只允许索引当前实际使用的两个固定 HTTPS 发布域名：`magicrule.pages.dev`、`rule-26r.pages.dev`，不会自动接纳其他域名或外站重定向。
 

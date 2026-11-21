@@ -61,6 +61,28 @@ class PolicyTests(RepositoryCase):
         self.assertIn('DOMAIN,shared.invalid', policy.clean('One', 'DOMAIN,shared.invalid')[0])
         self.assertNotIn('shared.invalid', policy.clean('Two', 'DOMAIN,other.invalid\nDOMAIN,shared.invalid')[0])
 
+    def test_list_exclusion_is_scoped_and_checksum_verified(self):
+        self.policy({'One': 'DOMAIN,one.invalid\n', 'Two': 'DOMAIN,two.invalid\n'})
+        rule = 'DOMAIN,shared.invalid'
+        excluded = self.write('safety/quarantine/One.list', rule + '\n')
+        path = self.root / 'safety/policy.json'
+        config = json.loads(path.read_text())
+        config['lists']['One']['excluded'] = {
+            'path': 'safety/quarantine/One.list',
+            'sha256': hashlib.sha256(excluded.read_bytes()).hexdigest(),
+            'count': 1,
+        }
+        path.write_text(json.dumps(config))
+        policy = Policy(self.root)
+        _, report = policy.clean('One', 'DOMAIN,one.invalid\n' + rule)
+        self.assertEqual(report['quarantined_rules'], [rule])
+        with self.assertRaises(UnsafeRules) as failure:
+            policy.clean('Two', 'DOMAIN,two.invalid\n' + rule)
+        self.assertEqual(failure.exception.unknown, [rule])
+        excluded.write_text('DOMAIN,other.invalid\n')
+        with self.assertRaisesRegex(UnsafeRules, '校验和'):
+            Policy(self.root)
+
     def test_modified_allowlist_cannot_self_approve(self):
         self.policy({'One': 'DOMAIN,good.invalid\n'})
         self.write('safety/approved/One.list', 'DOMAIN,ad.invalid\n')

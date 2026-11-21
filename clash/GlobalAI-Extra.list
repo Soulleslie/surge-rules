@@ -1,0 +1,23 @@
+# GlobalAI：DOMAIN-KEYWORD / IP-ASN / PROCESS-NAME，由 rules/GlobalAI.list 生成
+DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
+DOMAIN-KEYWORD,chatgpt
+DOMAIN-KEYWORD,chatgpt-async-webps-prod
+DOMAIN-KEYWORD,codex
+DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,sift
+IP-ASN,399358
+IP-ASN,401518
+PROCESS-NAME,Antigravity
+PROCESS-NAME,Augment
+PROCESS-NAME,ChatGPT
+PROCESS-NAME,Claude
+PROCESS-NAME,Codex
+PROCESS-NAME,Cursor
+PROCESS-NAME,Windsurf
+PROCESS-NAME,antigravity
+PROCESS-NAME,augment
+PROCESS-NAME,chatgpt
+PROCESS-NAME,claude
+PROCESS-NAME,codex
+PROCESS-NAME,cursor
+PROCESS-NAME,windsurf

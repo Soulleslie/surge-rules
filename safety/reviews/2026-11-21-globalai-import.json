@@ -1,0 +1,198 @@
+{
+  "list": "GlobalAI",
+  "reviewed_at": "2026-11-21",
+  "upstream": {
+    "url": "https://magicrule.pages.dev/data/_shared/artifacts/GlobalAI_rules_7591fffa97b1e679.list",
+    "sha256": "7d59feba30377643dab89b50a7def953eacf790ad02d107b237ee09e09f5d030",
+    "integrity_verification": "bytes_sha256",
+    "manifest": "https://magicrule.pages.dev/data/rules/Surge/a71f6500ad64b424bc1ca465/manifest.json"
+  },
+  "source_snapshots": {
+    "vpsdance": {
+      "url": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/refs/heads/main/rules/surge/all.list",
+      "sha256": "400667ec1eb1ba6152610fbc0f67bcec658f7da04f28ab7c28f98e75dc4e85d0"
+    },
+    "sukka-ai": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/ai.conf",
+      "sha256": "9bb1deda142ba4e15f17a8bb33fb3154928bbd6fece9ba7b9aa9a3471378b318"
+    },
+    "v2fly": {
+      "url": "https://codeload.github.com/v2fly/domain-list-community/zip/refs/heads/master",
+      "sha256": "3e64ef070d4dee7ac28761a557d2205e5a9e309f5dbf5ac745cb205f1a0833fb"
+    },
+    "reject-domainset": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "8fa54078d1492654939313c0e73488478435fe5088253f2a0bd6c3536f264707"
+    },
+    "reject-non_ip": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    },
+    "reject-ip": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+      "sha256": "99809ef57bb04640d2690f198c7ab16484945e6aad0f9eca9a02e9a0d60658b2"
+    }
+  },
+  "v2fly_category_roots": [
+    "category-ai-!cn",
+    "category-ai-chat-!cn",
+    "category-ai-cn",
+    "category-ai-ru"
+  ],
+  "approved": {
+    "count": 435,
+    "path": "safety/approved/GlobalAI.list",
+    "exact_matches_by_source": {
+      "sukka-ai": 43,
+      "v2fly": 248,
+      "vpsdance": 386
+    },
+    "exact_matches_any_source": 433
+  },
+  "previously_reviewed_ai_keywords": {
+    "path": "safety/approved/OpenAI.list",
+    "rules": [
+      "DOMAIN-KEYWORD,chatgpt",
+      "DOMAIN-KEYWORD,codex"
+    ]
+  },
+  "network_registrations": [
+    {
+      "rule": "IP-CIDR,160.79.104.0/21,no-resolve",
+      "holder": "Anthropic, PBC",
+      "source": "https://rdap.arin.net/registry/ip/160.79.104.0"
+    },
+    {
+      "rule": "IP-CIDR6,2604:f20::/32,no-resolve",
+      "holder": "OpenAI OpCo, LLC",
+      "source": "https://rdap.arin.net/registry/ip/2604:f20::"
+    },
+    {
+      "rule": "IP-CIDR6,2607:6bc0::/32,no-resolve",
+      "holder": "Anthropic, PBC",
+      "source": "https://rdap.arin.net/registry/ip/2607:6bc0::"
+    },
+    {
+      "rule": "IP-ASN,399358,no-resolve",
+      "holder": "Anthropic, PBC",
+      "source": "https://rdap.arin.net/registry/autnum/399358"
+    },
+    {
+      "rule": "IP-ASN,401518,no-resolve",
+      "holder": "OpenAI OpCo, LLC",
+      "source": "https://rdap.arin.net/registry/autnum/401518"
+    }
+  ],
+  "surge_only": [
+    "URL-REGEX,https://www\\.google\\.com/.*continue=https://gemini\\.google\\.com.+"
+  ],
+  "quarantined": [
+    {
+      "rule": "DOMAIN,browser-intake-datadoghq.com",
+      "reason": "matches Sukka reject by exact domain or parent suffix",
+      "matches": [
+        "DOMAIN-SUFFIX,browser-intake-datadoghq.com"
+      ]
+    },
+    {
+      "rule": "DOMAIN,copilot-telemetry.githubusercontent.com",
+      "reason": "matches Sukka reject by exact domain or parent suffix",
+      "matches": [
+        "DOMAIN-SUFFIX,copilot-telemetry.githubusercontent.com"
+      ]
+    },
+    {
+      "rule": "DOMAIN,http-intake.logs.us5.datadoghq.com",
+      "reason": "existing shared quarantine",
+      "source": "safety/excluded.list"
+    },
+    {
+      "rule": "DOMAIN,production-copilot-host-westus.webpubsub.azure.com",
+      "reason": "existing shared quarantine",
+      "source": "safety/excluded.list"
+    },
+    {
+      "rule": "DOMAIN,self.events.data.microsoft.com",
+      "reason": "matches Sukka reject by exact domain or parent suffix",
+      "matches": [
+        "DOMAIN-SUFFIX,data.microsoft.com"
+      ]
+    },
+    {
+      "rule": "DOMAIN,static.cloudflareinsights.com",
+      "reason": "matches Sukka reject by exact domain or parent suffix",
+      "matches": [
+        "DOMAIN-SUFFIX,cloudflareinsights.com"
+      ]
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,colab",
+      "reason": "exact matcher unconfirmed in the referenced AI category sources"
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,datadog",
+      "reason": "keyword matches telemetry hosts across unrelated services",
+      "sources": [
+        {
+          "provider": "vpsdance",
+          "line": 93,
+          "text": "DOMAIN-KEYWORD,datadog"
+        }
+      ]
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,developerprofiles",
+      "reason": "exact matcher unconfirmed in the referenced AI category sources"
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,generativelanguage",
+      "reason": "exact matcher unconfirmed in the referenced AI category sources"
+    },
+    {
+      "rule": "DOMAIN-KEYWORD,sentry",
+      "reason": "keyword matches telemetry hosts across unrelated services",
+      "sources": [
+        {
+          "provider": "vpsdance",
+          "line": 94,
+          "text": "DOMAIN-KEYWORD,sentry"
+        }
+      ]
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,apis.google.com",
+      "reason": "exact matcher unconfirmed in the referenced AI category sources"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,events.statsigapi.net",
+      "reason": "matches Sukka reject by exact domain or parent suffix",
+      "matches": [
+        "DOMAIN-SUFFIX,events.statsigapi.net"
+      ]
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,featuregates.org",
+      "reason": "matches Sukka reject by exact domain or parent suffix",
+      "matches": [
+        "DOMAIN-SUFFIX,featuregates.org"
+      ]
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,grokbot.com",
+      "reason": "existing shared quarantine",
+      "source": "safety/excluded.list"
+    },
+    {
+      "rule": "DOMAIN-SUFFIX,segment.io",
+      "reason": "matches Sukka reject by exact domain or parent suffix",
+      "matches": [
+        "DOMAIN-SUFFIX,segment.io"
+      ]
+    },
+    {
+      "rule": "IP-ASN,14061,no-resolve",
+      "reason": "DigitalOcean is a general-purpose hosting network",
+      "source": "https://rdap.arin.net/registry/autnum/14061"
+    }
+  ]
+}

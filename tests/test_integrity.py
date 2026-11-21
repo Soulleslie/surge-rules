@@ -1,7 +1,7 @@
 """Regression coverage for the upstream's explicitly declared header deduplication.
 
-The fallback authenticates the exact bytes after the four metadata lines. It
-must never normalize, sort, strip comments from, or rewrite the rule body.
+The fallback authenticates the exact bytes outside the declared metadata lines.
+It must preserve rule lines and comments that are part of the body digest.
 """
 
 import copy
@@ -118,8 +118,8 @@ class ArtifactIntegrityTests(unittest.TestCase):
                     artifact['dedupe']['mode'] = mode
                 self.assert_unsafe(self.document(timestamp=self.SHARED_TIME), artifact)
 
-    def test_header_count_requires_exact_integer_four(self):
-        for count in [None, 0, 3, 5, 4.0, '4', True, False]:
+    def test_header_count_requires_supported_integer(self):
+        for count in [None, 0, 3, 6, 4.0, 5.0, '4', '5', True, False]:
             with self.subTest(count=count):
                 artifact = self.artifact()
                 if count is None:
@@ -127,6 +127,35 @@ class ArtifactIntegrityTests(unittest.TestCase):
                 else:
                     artifact['dedupe']['normalized_header_lines'] = count
                 self.assert_unsafe(self.document(timestamp=self.SHARED_TIME), artifact)
+
+    def description_artifact(self):
+        artifact = self.artifact()
+        original = self.BODY.replace(b'# DOMAIN-SUFFIX: 1\n',
+                                     b'# DOMAIN-SUFFIX: 1\n# DESC: Original\n')
+        artifact['dedupe'].update(normalized_header_lines=5,
+                                  bytes_sha256=self.digest(self.document(body=original)))
+        return artifact
+
+    def test_five_line_normalization_preserves_all_non_metadata_bytes(self):
+        artifact = self.description_artifact()
+        body = self.BODY.replace(b'# DOMAIN-SUFFIX: 1\n',
+                                 '# DOMAIN-SUFFIX: 1\n# DESC: 已更新\n'.encode('utf-8'))
+        self.assertEqual(self.verify(self.document(body=body), artifact), 'semantic_sha256')
+        for changed in [body.replace(b'# DOMAIN: 2', b'# DOMAIN: 3'),
+                        body.replace(b'a.example', b'ads.example'),
+                        body[:-1]]:
+            with self.subTest(body=changed):
+                self.assert_unsafe(self.document(body=changed), artifact)
+
+    def test_five_line_normalization_requires_one_complete_leading_description(self):
+        artifact = self.description_artifact()
+        for body in [self.BODY,
+                     self.BODY + b'# DESC: After the rules\n',
+                     b'# DESC: First\n# DESC: Second\n' + self.BODY,
+                     b'# DESC: \n' + self.BODY,
+                     '# DESC: Original\u2028DOMAIN,unverified.example\n'.encode('utf-8') + self.BODY]:
+            with self.subTest(body=body):
+                self.assert_unsafe(self.document(body=body), artifact)
 
     def test_binary_artifact_cannot_use_fallback(self):
         for binary in [None, True, 0, 'false']:

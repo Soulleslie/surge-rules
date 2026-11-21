@@ -44,14 +44,35 @@ def fetch(url):
     return data
 
 
-def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
-    """Verify exact bytes, or the explicitly declared four-header body digest.
+def valid_metadata_line(line: bytes) -> bool:
+    """A normalized byte line must also be one line to the rules parser."""
+    try:
+        decoded = line.decode('utf-8')
+    except UnicodeDecodeError:
+        return False
+    return decoded.splitlines() == [decoded] and not re.search(rb'[\x00-\x1f\x7f]', line)
 
-    Shared text artifacts may have regenerated NAME/AUTHOR/REPO/UPDATED comments.
-    Only those four leading metadata lines are eligible for normalization. Every
-    remaining byte (including counts, comments, order and newline) is still hashed.
-    Unknown modes, five-line normalization and binary fallbacks fail closed.
-    """
+
+def without_description(body: bytes) -> bytes:
+    """Remove the single DESC comment in the leading header comment block."""
+    lines = body.split(b'\n')
+    descriptions = []
+    for index, raw_line in enumerate(lines):
+        line = raw_line.removesuffix(b'\r')
+        if not line.startswith(b'#'):
+            break
+        if line.startswith(b'# DESC:'):
+            if not line.startswith(b'# DESC: ') or not line[8:].strip() or not valid_metadata_line(line):
+                raise UnsafeRules('正文 SHA-256 校验的 DESC 注释格式不符')
+            descriptions.append(index)
+    if len(descriptions) != 1 or descriptions[0] == len(lines) - 1:
+        raise UnsafeRules('五行头部校验要求头部有且只有一行完整的 DESC 注释')
+    del lines[descriptions[0]]
+    return b'\n'.join(lines)
+
+
+def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
+    """Verify exact bytes, or the declared digest of the rules and fixed comments."""
     dedupe = artifact.get('dedupe')
     if not isinstance(dedupe, dict):
         raise UnsafeRules('manifest 缺少有效的产物 SHA-256')
@@ -62,10 +83,10 @@ def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
         return 'bytes_sha256'
 
     semantic = dedupe.get('semantic_sha256')
+    normalized_lines = dedupe.get('normalized_header_lines')
     if (artifact.get('key') != 'rules' or artifact.get('binary') is not False
             or dedupe.get('mode') != 'standard_header_normalized'
-            or type(dedupe.get('normalized_header_lines')) is not int
-            or dedupe['normalized_header_lines'] != 4
+            or type(normalized_lines) is not int or normalized_lines not in (4, 5)
             or not isinstance(semantic, str) or not re.fullmatch('[0-9a-f]{64}', semantic)):
         raise UnsafeRules('产物 SHA-256 不符，且未声明支持的正文校验协议')
     parts = data.split(b'\n', 4)
@@ -76,9 +97,10 @@ def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
             or not headers[1].startswith(b'# AUTHOR: ') or not headers[1][10:].strip()
             or not headers[2].startswith(b'# REPO: ') or not headers[2][8:].strip()
             or not re.fullmatch(rb'# UPDATED: \d{4}-\d\d-\d\d \d\d:\d\d:\d\d', headers[3])
-            or any(re.search(rb'[\x00-\x1f\x7f]', line) for line in headers)):
+            or not all(valid_metadata_line(line) for line in headers)):
         raise UnsafeRules('正文 SHA-256 校验的元数据头格式或规则名称不符')
-    if hashlib.sha256(parts[4]).hexdigest() != semantic:
+    body = without_description(parts[4]) if normalized_lines == 5 else parts[4]
+    if hashlib.sha256(body).hexdigest() != semantic:
         raise UnsafeRules('产物正文 SHA-256 与 manifest 不符')
     return 'semantic_sha256'
 

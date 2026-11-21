@@ -66,6 +66,7 @@ class Policy:
             raise UnsafeRules('最低保留比例不能低于 90%')
         self.excluded = set(parse(self.read_verified(self.config['excluded'])))
         self.approved = {}
+        self.list_excluded = {}
         for name, item in self.config['lists'].items():
             if not re.fullmatch(r'[A-Za-z0-9]+', name):
                 raise UnsafeRules('审核列表名称不合法')
@@ -73,6 +74,12 @@ class Policy:
             if len(lines) != item['count']:
                 raise UnsafeRules(f'{name}: 审核条数与记录不符')
             self.approved[name] = lines
+            if 'excluded' in item:
+                excluded = item['excluded']
+                rules = set(parse(self.read_verified(excluded)))
+                if len(rules) != excluded['count']:
+                    raise UnsafeRules(f'{name}: 隔离条数与记录不符')
+                self.list_excluded[name] = rules
 
     def read_verified(self, item):
         path = Path(item['path'])
@@ -90,8 +97,10 @@ class Policy:
             raise UnsafeRules(f'{name}: 缺少独立审核白名单')
         lines = parse(text)
         approved = self.approved[name]
-        unknown = set(lines) - approved - self.excluded
-        quarantined = sorted((set(lines) - approved) & self.excluded)
+        unapproved = set(lines) - approved
+        excluded = self.excluded | self.list_excluded.get(name, set())
+        unknown = unapproved - excluded
+        quarantined = sorted(unapproved & excluded)
         # Never silently bless an unknown rule, even a single rule or a small growth.
         if unknown:
             raise UnsafeRules(f'{len(unknown)} 条未经审核的新规则，保留旧版', unknown=unknown, quarantined=quarantined)

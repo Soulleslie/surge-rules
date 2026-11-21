@@ -2,12 +2,12 @@
 
 每天北京时间 08:00 从 [MagicRule](https://magicrule.pages.dev/) 同步经过本地审核的 Surge 规则，并生成 Clash 产物。GitHub Actions 调度可能延迟，也可在 Actions → Sync rules → Run workflow 手动运行。
 
-上游曾把广告规则追加到 Apple、Lan、Telegram、GlobalMedia、Speedtest；连 11 月 7 日的冻结旧版也有残留。因此现在所有 28 个列表都使用 `safety/approved/` 中独立、固定的逐条白名单。五个受影响列表已对照各自原始来源重审，记录在 `safety/review.json`。
+上游曾把广告规则追加到 Apple、Lan、Telegram、GlobalMedia、Speedtest；连 11 月 7 日的冻结旧版也有残留。因此现在所有 29 个列表都使用 `safety/approved/` 中独立、固定的逐条白名单。五个受影响列表已对照各自原始来源重审，记录在 `safety/review.json`。
 
 - 已审核规则才允许发布，规则类型和 `no-resolve` 参数也是审核身份的一部分。
-- 已知未批准条目由 `safety/excluded.list` 隔离；不会把所有 Advertising 条目一概删除。
+- 已知未批准条目由 `safety/excluded.list` 或目标列表的 `safety/quarantine/` 文件隔离。
 - 出现任何其他未经审核的新条目，即使只有一条，也暂停更新该列表并保留 Surge 和 Clash 旧版。
-- 从原始上游下载开始验证 TLS、发布地址、manifest 身份和 SHA-256。优先核对整文件指纹；仅在明确声明四行头部标准化、头部标签和列表名称均正确时，才验证其余完整字节的 `semantic_sha256`。这允许注释时间变化，但不允许正文、计数或换行发生未声明的变化。
+- 从原始上游下载开始验证 TLS、发布地址、manifest 身份和 SHA-256。优先核对整文件指纹。上游明确声明支持的头部标准化格式时，校验规定的元数据行后可核对其余完整字节的 `semantic_sha256`。
 - 清理后剩余条数不能低于固定白名单的 90%，防止逐次减少绕过检查。
 - 网络任务只提交 `rules/` 和 `clash/`，不能自动修改或扩大审核白名单。
 
@@ -18,6 +18,7 @@
 要同步哪些规则，在 `sources.json` 里配置：
 
 - `rules/<名称>.list`：通过本地审核白名单过滤后的规则，注释里的类型计数会重新生成。
+- `rules/GlobalAI.list`：GlobalAI 分流，使用同名的 Clash 域名、IP 和经典规则文件。Gemini 跳转的 `URL-REGEX` 仅在 Surge 产物中保留。
 - `rules/China.list`：China 规则。当前批准的 IP 规则带 `no-resolve`，不含 `GEOIP`；`no_geoip` 配置已移除，匹配类型和参数的变化由固定白名单阻止。可同时用于分流和 DNS 映射：
 
 ```
