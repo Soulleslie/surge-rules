@@ -1,0 +1,113 @@
+{
+  "list": "Cloudflare",
+  "reviewed_at": "2026-11-25",
+  "baseline_commit": "36cc256056751e1f7ff28de4029ff91bbe03b4c9",
+  "upstream": {
+    "count": 99,
+    "integrity_verification": "bytes_sha256",
+    "manifest": "https://magicrule.pages.dev/data/rules/Surge/534fa8682ff5a4171e21af88/manifest.json",
+    "sha256": "6c2d8cde6898ec7c44c7ccb6dbb73792a5bcb99a273175a40197f6872b4673a4",
+    "url": "https://magicrule.pages.dev/data/_shared/artifacts/Cloudflare_rules_0b5a777a5d47686a.list"
+  },
+  "source_snapshots": {
+    "cloudflare-official-ipv4": {
+      "url": "https://www.cloudflare.com/ips-v4",
+      "sha256": "f02c6d83bc01ab0ae8577160e036d700c7455359bce054df884e5d7d9e4e9e7b"
+    },
+    "cloudflare-official-ipv6": {
+      "url": "https://www.cloudflare.com/ips-v6",
+      "sha256": "9e9d39e3e83bad00c4decafd53c63fa62029f3d95db68de937d2be28234ca0a9"
+    },
+    "cloudflare-official-spa": {
+      "url": "https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/web-analytics/get-started/web-analytics-spa.mdx",
+      "sha256": "2c38f1af1e14933c1ed0f88632e86f4c797ad3d5352a5abf46a43c951e094c15"
+    },
+    "lm-firefly-clash": {
+      "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/PROXY/Cloudflare.yaml",
+      "sha256": "9958ea2eb658e30f47843463348bce90a0990fc411a5b3ee20934c70db096b0b"
+    },
+    "lm-firefly-surge": {
+      "url": "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Cloudflare.list",
+      "sha256": "85a399ebcb6c08891909869cb4a10b321dd77de10d3fd17e4ef2d4ce9f82969e"
+    },
+    "sukka-reject-domainset": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "42fa81ea0490d43dd0987cc5e4ed8b748c7c740cae62331e633c82d8b7e5473e"
+    },
+    "sukka-reject-ip": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+      "sha256": "99809ef57bb04640d2690f198c7ab16484945e6aad0f9eca9a02e9a0d60658b2"
+    },
+    "sukka-reject-non_ip": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    },
+    "sve1r": {
+      "url": "https://raw.githubusercontent.com/sve1r/Rules-For-Quantumult-X/develop/Rules/Services/Cloudflare.list",
+      "sha256": "91d340c70d200cbff56c83a3733d53e7452a85d1743ba188f2b120cb9be721e0"
+    },
+    "v2fly-cloudflare": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/cloudflare",
+      "sha256": "f816d9f9f42973b798fc8fefb8022e7a08eedd40735a8d583627032af45440df"
+    },
+    "v2fly-cloudflare-cn": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/cloudflare-cn",
+      "sha256": "31820e482f40ad502750e8bb984777cdc8aed5ade4ad3d84dcd9a495ac055bd1"
+    },
+    "v2fly-cloudflareipfs": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/cloudflare-ipfs",
+      "sha256": "2e781c1f6906af7ae79273b9cc8e975b2fc94ed0a6b7c13718de8cb51bad1c8d"
+    }
+  },
+  "summary": {
+    "approved": 99,
+    "quarantined": 0,
+    "rule_counts": {
+      "DOMAIN-SUFFIX": 77,
+      "IP-CIDR": 15,
+      "IP-CIDR6": 7
+    }
+  },
+  "domain_review": {
+    "v2fly_exact_domain_count": 76,
+    "v2fly_includes": [
+      "cloudflare-cn",
+      "cloudflare-ipfs"
+    ],
+    "other_exact_match": {
+      "rule": "DOMAIN-SUFFIX,one.one.one.one",
+      "sources": [
+        [
+          "lm-firefly-clash",
+          26
+        ],
+        [
+          "lm-firefly-surge",
+          25
+        ]
+      ],
+      "covered_by": "DOMAIN-SUFFIX,one.one.one"
+    },
+    "telemetry_domains_in_cloudflare_category": [
+      "cloudflareinsights-cn.com",
+      "cloudflareinsights.com"
+    ],
+    "sukka_reject_matches": {
+      "cloudflareinsights.com": [
+        "DOMAIN-SUFFIX,cloudflareinsights.com"
+      ]
+    },
+    "sukka_reject_descendant_counts": {
+      "cloudflare.com": 3,
+      "pages.dev": 6,
+      "videodelivery.net": 1,
+      "workers.dev": 12
+    },
+    "decision": "Retain Cloudflare product and shared-hosting suffixes. cloudflareinsights.com is a Cloudflare Web Analytics domain documented by Cloudflare and tagged as telemetry by v2fly; it belongs to this provider-specific list. Shared hosting suffixes also match customer sites, including individual subdomains listed by Sukka."
+  },
+  "network_review": {
+    "decision": "All 22 CIDRs exactly match the current official Cloudflare IPv4 and IPv6 lists. They cover IP space used by Cloudflare customers and retain the upstream no-resolve flags.",
+    "sukka_reject_ip_overlaps": {}
+  },
+  "quarantined": []
+}

@@ -153,6 +153,11 @@
         "sha256": "5467d701d422a657bd85d5b8da7a347165d3933a4b7396b6fbf76ff77673a8f0",
         "count": 14
       }
+    },
+    "Cloudflare": {
+      "path": "safety/approved/Cloudflare.list",
+      "sha256": "17f569bdd36d6c2eda5790648733b28b55fae8bad1c0b320569209d432efe2f9",
+      "count": 99
     }
   },
   "excluded": {
@@ -224,6 +229,12 @@
       "approved": 1,
       "quarantined": 0,
       "authorization": "explicit-user-override"
+    },
+    {
+      "path": "safety/reviews/2026-11-25-cloudflare-import.json",
+      "sha256": "91c16d780fc08d5bd059fe0c0be71568c8a9127547828c4909d797d240bbf18b",
+      "approved": 99,
+      "quarantined": 0
     }
   ]
 }
