@@ -18,16 +18,16 @@
 要同步哪些规则，在 `sources.json` 里配置：
 
 - `rules/<名称>.list`：通过本地审核白名单过滤后的规则，注释里的类型计数会重新生成。
-- `rules/GlobalAI.list`：GlobalAI 分流，使用同名的 Clash 域名、IP 和经典规则文件。Gemini 跳转的 `URL-REGEX` 仅在 Surge 产物中保留。
+- [GlobalAI.list](https://raw.githubusercontent.com/Soulleslie/surge-rules/refs/heads/main/rules/GlobalAI.list) 用于 GlobalAI 分流，Clash 使用同名的域名、IP 和经典规则文件。Gemini 跳转的 `URL-REGEX` 仅在 Surge 产物中保留。
 - `rules/China.list`：China 规则。当前批准的 IP 规则带 `no-resolve`，不含 `GEOIP`；`no_geoip` 配置已移除，匹配类型和参数的变化由固定白名单阻止。可同时用于分流和 DNS 映射：
 
 ```
 [Rule]
-RULE-SET,https://raw.githubusercontent.com/Soulleslie/surge-rules/main/rules/China.list,DIRECT
+RULE-SET,https://raw.githubusercontent.com/Soulleslie/surge-rules/refs/heads/main/rules/China.list,DIRECT
 GEOIP,CN,DIRECT
 
 [Host]
-RULE-SET:https://raw.githubusercontent.com/Soulleslie/surge-rules/main/rules/China.list = server:system
+RULE-SET:https://raw.githubusercontent.com/Soulleslie/surge-rules/refs/heads/main/rules/China.list = server:system
 ```
 
 本地手动同步（要求先安装 CI 中固定版本的 mihomo）：
@@ -56,7 +56,7 @@ rule-providers:
     type: http
     behavior: domain
     format: mrs
-    url: https://raw.githubusercontent.com/Soulleslie/surge-rules/main/clash/Google.mrs
+    url: https://raw.githubusercontent.com/Soulleslie/surge-rules/refs/heads/main/clash/Google.mrs
     path: ./rules/Google.mrs
     interval: 86400
 
