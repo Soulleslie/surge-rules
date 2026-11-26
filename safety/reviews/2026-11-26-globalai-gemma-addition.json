@@ -1,0 +1,66 @@
+{
+  "list": "GlobalAI",
+  "reviewed_at": "2026-11-26T04:16:58+00:00",
+  "baseline_commit": "e3e873de5a04e667544ae10fd986cbb7f2077a22",
+  "upstream": {
+    "url": "https://magicrule.pages.dev/data/_shared/artifacts/GlobalAI_rules_7591fffa97b1e679.list",
+    "sha256": "1f5ad24a923e4cc1ec9a9a9ee37de33a613b672bcfbee30295fb5504343ad007",
+    "integrity_verification": "bytes_sha256",
+    "manifest": "https://magicrule.pages.dev/data/rules/Surge/a71f6500ad64b424bc1ca465/manifest.json"
+  },
+  "summary": {
+    "approved": 1,
+    "quarantined": 0,
+    "upstream_removed": 0
+  },
+  "evidence": [
+    {
+      "provider": "v2fly",
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/dfa5b1c2258289bdbee70d06352cca23b9bdac7f/data/google-deepmind",
+      "sha256": "fa60e3f80e1487e38c04c92973102ff481c961e620b9bb11fb8585451f5ff2db",
+      "include_path": [
+        "category-ai-!cn",
+        "google-deepmind"
+      ],
+      "line": 77,
+      "text": "gemma.ai"
+    },
+    {
+      "provider": "vpsdance",
+      "url": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/refs/heads/main/rules/surge/all.list",
+      "sha256": "b1684f186649078fef50201138334729c0349dfb70251d134a8ab9a7481b41df",
+      "line": 328,
+      "text": "DOMAIN-SUFFIX,gemma.ai"
+    },
+    {
+      "url": "https://gemma.ai/",
+      "sha256": "77ee7fdb7a3cadaca98bc0a15bf53cf38cb9e5b8936fc2660b69c4968e579024",
+      "title": "Google Gemma Open Models - Gemma Docs",
+      "author": "Google DeepMind"
+    }
+  ],
+  "sukka_reject_check": {
+    "snapshots": [
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+        "sha256": "22830f3503d3432946e3bc4d8f152b109b9437d1857b2a2ac73493a498cf42a9"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+        "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+        "sha256": "99809ef57bb04640d2690f198c7ab16484945e6aad0f9eca9a02e9a0d60658b2"
+      }
+    ],
+    "domain_matches": []
+  },
+  "decisions": [
+    {
+      "rule": "DOMAIN-SUFFIX,gemma.ai",
+      "decision": "approved",
+      "reason": "Exact suffix in the two configured AI sources. The site hosts Google DeepMind Gemma documentation. The Sukka reject comparison found no match."
+    }
+  ]
+}
