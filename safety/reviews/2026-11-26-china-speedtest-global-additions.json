@@ -1,0 +1,830 @@
+{
+  "reviewed_at": "2026-11-26T03:58:58-08:00",
+  "baseline_commit": "9c2044063bac061d875dcf8dde4f287b030c4c18",
+  "summary": {
+    "China": {
+      "approved": 27,
+      "quarantined": 0,
+      "upstream_removed": 40
+    },
+    "Speedtest": {
+      "approved": 14,
+      "quarantined": 1,
+      "upstream_removed": 0
+    },
+    "Global": {
+      "approved": 46,
+      "quarantined": 41,
+      "upstream_removed": 207
+    }
+  },
+  "upstream_artifacts": {
+    "China": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list",
+      "sha256": "c20a8b696baf0e372fbcf63e0e62e3ffbc4df55fe206a832a9a51f1b49681b4a",
+      "integrity_verification": "semantic_sha256"
+    },
+    "Speedtest": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/Speedtest_rules_6431e293aaca07be.list",
+      "sha256": "8f985eda109e70d753fac451b3a5cfa404bcce3c7794d2d39a49013c8f5b2191",
+      "integrity_verification": "bytes_sha256"
+    },
+    "Global": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/Global_rules_b5f3bb33d8a4698a.list",
+      "sha256": "e5d6d84dad55553c70c3ababd6d38543350ef051db6e6568fa799897ee84f153",
+      "integrity_verification": "semantic_sha256"
+    }
+  },
+  "upstream_removals": {
+    "China": [
+      "DOMAIN-SUFFIX,xihuan",
+      "IP-CIDR,117.124.237.0/24,no-resolve",
+      "IP-CIDR,128.107.24.0/23,no-resolve",
+      "IP-CIDR,163.52.28.0/23,no-resolve",
+      "IP-CIDR,180.203.0.0/23,no-resolve",
+      "IP-CIDR,180.203.3.0/24,no-resolve",
+      "IP-CIDR,203.107.14.0/24,no-resolve",
+      "IP-CIDR,210.72.240.0/23,no-resolve",
+      "IP-CIDR,210.72.243.0/24,no-resolve",
+      "IP-CIDR,210.72.245.0/24,no-resolve",
+      "IP-CIDR,210.72.246.0/24,no-resolve",
+      "IP-CIDR,210.77.176.0/22,no-resolve",
+      "IP-CIDR,210.77.180.0/23,no-resolve",
+      "IP-CIDR,210.77.184.0/24,no-resolve",
+      "IP-CIDR,210.77.189.0/24,no-resolve",
+      "IP-CIDR,210.77.190.0/23,no-resolve",
+      "IP-CIDR,211.144.16.0/24,no-resolve",
+      "IP-CIDR,211.144.18.0/23,no-resolve",
+      "IP-CIDR,211.160.10.0/23,no-resolve",
+      "IP-CIDR,211.160.16.0/24,no-resolve",
+      "IP-CIDR,211.160.18.0/23,no-resolve",
+      "IP-CIDR,211.160.195.0/24,no-resolve",
+      "IP-CIDR,211.160.20.0/23,no-resolve",
+      "IP-CIDR,211.160.203.0/24,no-resolve",
+      "IP-CIDR,211.160.205.0/24,no-resolve",
+      "IP-CIDR,211.160.22.0/24,no-resolve",
+      "IP-CIDR,211.160.24.0/24,no-resolve",
+      "IP-CIDR,211.160.244.0/24,no-resolve",
+      "IP-CIDR,211.160.246.0/23,no-resolve",
+      "IP-CIDR,211.160.248.0/21,no-resolve",
+      "IP-CIDR,211.160.27.0/24,no-resolve",
+      "IP-CIDR,211.160.4.0/24,no-resolve",
+      "IP-CIDR,211.160.46.0/24,no-resolve",
+      "IP-CIDR,211.160.62.0/24,no-resolve",
+      "IP-CIDR,211.160.9.0/24,no-resolve",
+      "IP-CIDR,211.99.25.0/24,no-resolve",
+      "IP-CIDR,211.99.26.0/24,no-resolve",
+      "IP-CIDR,211.99.28.0/22,no-resolve",
+      "IP-CIDR,218.241.112.0/22,no-resolve",
+      "IP-CIDR,45.248.108.0/23,no-resolve"
+    ],
+    "Speedtest": [],
+    "Global": [
+      "DOMAIN,openaiassets.blob.core.windows.net",
+      "DOMAIN,openaicomproductionae4b.blob.core.windows.net",
+      "DOMAIN,static.gamma.app",
+      "DOMAIN-SUFFIX,030buy.com",
+      "DOMAIN-SUFFIX,40shopping.com",
+      "DOMAIN-SUFFIX,92ccav.com",
+      "DOMAIN-SUFFIX,aanaan.com",
+      "DOMAIN-SUFFIX,accim.org",
+      "DOMAIN-SUFFIX,aeasyshop.com",
+      "DOMAIN-SUFFIX,aircrack-ng.org",
+      "DOMAIN-SUFFIX,airmay.com",
+      "DOMAIN-SUFFIX,ajtalk.com",
+      "DOMAIN-SUFFIX,annstores.net",
+      "DOMAIN-SUFFIX,anthropic.com",
+      "DOMAIN-SUFFIX,anthropic.team",
+      "DOMAIN-SUFFIX,aokwholesale.net",
+      "DOMAIN-SUFFIX,api.moomoobull.com",
+      "DOMAIN-SUFFIX,api.shuaiapi.com",
+      "DOMAIN-SUFFIX,assets.nxtrace.org",
+      "DOMAIN-SUFFIX,bag-glasses1.com",
+      "DOMAIN-SUFFIX,bandgirlz.com",
+      "DOMAIN-SUFFIX,baxsound.com",
+      "DOMAIN-SUFFIX,bbc.pdn.tritondigital.com",
+      "DOMAIN-SUFFIX,bbestmall.com",
+      "DOMAIN-SUFFIX,begin-trade.com",
+      "DOMAIN-SUFFIX,bianlei.com",
+      "DOMAIN-SUFFIX,biitii.com",
+      "DOMAIN-SUFFIX,billypan.com",
+      "DOMAIN-SUFFIX,bloommicroventures.com",
+      "DOMAIN-SUFFIX,bookonsky.net",
+      "DOMAIN-SUFFIX,bossae.com",
+      "DOMAIN-SUFFIX,brandeasygo.com",
+      "DOMAIN-SUFFIX,brandelectronic.com",
+      "DOMAIN-SUFFIX,brandproducts1688.com",
+      "DOMAIN-SUFFIX,brands098.com",
+      "DOMAIN-SUFFIX,businesswebwise.com",
+      "DOMAIN-SUFFIX,buy-from-shanghai.com",
+      "DOMAIN-SUFFIX,buyshoponly.com",
+      "DOMAIN-SUFFIX,buzzardflapper.com",
+      "DOMAIN-SUFFIX,cg.play-analytics.com",
+      "DOMAIN-SUFFIX,chatbotclaude.com",
+      "DOMAIN-SUFFIX,cheapheadsetmall.com",
+      "DOMAIN-SUFFIX,cheapheadsetshop.com",
+      "DOMAIN-SUFFIX,cheapshoesvip.com",
+      "DOMAIN-SUFFIX,cheapwireless04.com",
+      "DOMAIN-SUFFIX,chihair-straightener.com",
+      "DOMAIN-SUFFIX,chinaclothesstore.com",
+      "DOMAIN-SUFFIX,ciattackers.com",
+      "DOMAIN-SUFFIX,claude.app",
+      "DOMAIN-SUFFIX,claude.com",
+      "DOMAIN-SUFFIX,claude.dev",
+      "DOMAIN-SUFFIX,claude.site",
+      "DOMAIN-SUFFIX,claudeacademy.com",
+      "DOMAIN-SUFFIX,claudemcpclient.com",
+      "DOMAIN-SUFFIX,claudemcpcontent.com",
+      "DOMAIN-SUFFIX,claudepages.dev",
+      "DOMAIN-SUFFIX,claudestudio.com",
+      "DOMAIN-SUFFIX,claudeusercontent.com",
+      "DOMAIN-SUFFIX,cmhalq.com",
+      "DOMAIN-SUFFIX,cnshopin.com",
+      "DOMAIN-SUFFIX,cqcorea.com",
+      "DOMAIN-SUFFIX,cuffiesaldi.com",
+      "DOMAIN-SUFFIX,danemarket.com",
+      "DOMAIN-SUFFIX,dataplane.rudderstack.com",
+      "DOMAIN-SUFFIX,deno.dev",
+      "DOMAIN-SUFFIX,detaliczny.com",
+      "DOMAIN-SUFFIX,download.dappcdn.com",
+      "DOMAIN-SUFFIX,dtsell.com",
+      "DOMAIN-SUFFIX,dxiong.com",
+      "DOMAIN-SUFFIX,earphonescheapest.com",
+      "DOMAIN-SUFFIX,ebuyheadphones.com",
+      "DOMAIN-SUFFIX,esim.redteago.com",
+      "DOMAIN-SUFFIX,etheadphones.com",
+      "DOMAIN-SUFFIX,famosascalvas.com",
+      "DOMAIN-SUFFIX,fanqiang.tk",
+      "DOMAIN-SUFFIX,foolsmountain.com",
+      "DOMAIN-SUFFIX,forums-free.com",
+      "DOMAIN-SUFFIX,free-aa.com",
+      "DOMAIN-SUFFIX,free-sns.com",
+      "DOMAIN-SUFFIX,frishoes.com",
+      "DOMAIN-SUFFIX,get.dappcdn.com",
+      "DOMAIN-SUFFIX,gmnetworks.net",
+      "DOMAIN-SUFFIX,good.news",
+      "DOMAIN-SUFFIX,goodsdunk.net",
+      "DOMAIN-SUFFIX,headphonepubs.com",
+      "DOMAIN-SUFFIX,headphones-cool.com",
+      "DOMAIN-SUFFIX,headphoneshome.com",
+      "DOMAIN-SUFFIX,headphoneshotsales.com",
+      "DOMAIN-SUFFIX,headphonesol.com",
+      "DOMAIN-SUFFIX,headphonessupply.com",
+      "DOMAIN-SUFFIX,headphonezip.com",
+      "DOMAIN-SUFFIX,headset987.com",
+      "DOMAIN-SUFFIX,hipaa6020.com",
+      "DOMAIN-SUFFIX,hipzoom.net",
+      "DOMAIN-SUFFIX,honawalaan.com",
+      "DOMAIN-SUFFIX,hottestheadphonesonline.com",
+      "DOMAIN-SUFFIX,hrsaz.com",
+      "DOMAIN-SUFFIX,huasing.org",
+      "DOMAIN-SUFFIX,igoshopping.net",
+      "DOMAIN-SUFFIX,illianacomputerrecycling.com",
+      "DOMAIN-SUFFIX,imgmega.com",
+      "DOMAIN-SUFFIX,incentivetravelgifts.com",
+      "DOMAIN-SUFFIX,iphonecase2013.com",
+      "DOMAIN-SUFFIX,islamiccenterofnewlondon.com",
+      "DOMAIN-SUFFIX,kickshatchannel.com",
+      "DOMAIN-SUFFIX,kopfhorergunstigshop.com",
+      "DOMAIN-SUFFIX,leecountytimes.com",
+      "DOMAIN-SUFFIX,lexuemei.com",
+      "DOMAIN-SUFFIX,lfpcontent.com",
+      "DOMAIN-SUFFIX,linpie.com",
+      "DOMAIN-SUFFIX,luckyissue.com",
+      "DOMAIN-SUFFIX,lyzsxx.com",
+      "DOMAIN-SUFFIX,makeeu.com",
+      "DOMAIN-SUFFIX,mallheadphone.com",
+      "DOMAIN-SUFFIX,mbheadphone.com",
+      "DOMAIN-SUFFIX,micstl.com",
+      "DOMAIN-SUFFIX,monsterproduct.net",
+      "DOMAIN-SUFFIX,moreheadphones.com",
+      "DOMAIN-SUFFIX,msnbc.com",
+      "DOMAIN-SUFFIX,mymaji.com",
+      "DOMAIN-SUFFIX,nanzao.com",
+      "DOMAIN-SUFFIX,natado.com",
+      "DOMAIN-SUFFIX,neborder.com",
+      "DOMAIN-SUFFIX,netcolony.com",
+      "DOMAIN-SUFFIX,netfirms.com",
+      "DOMAIN-SUFFIX,newbemany.com",
+      "DOMAIN-SUFFIX,newlysprung.net",
+      "DOMAIN-SUFFIX,newschristmasshopping.com",
+      "DOMAIN-SUFFIX,nflhotsalejerseys.com",
+      "DOMAIN-SUFFIX,nicesshop.net",
+      "DOMAIN-SUFFIX,ning.com",
+      "DOMAIN-SUFFIX,offerairjordanlebron.com",
+      "DOMAIN-SUFFIX,ogameblog.com",
+      "DOMAIN-SUFFIX,ohchr.org",
+      "DOMAIN-SUFFIX,onsaletrend.com",
+      "DOMAIN-SUFFIX,openai.com",
+      "DOMAIN-SUFFIX,openai.org",
+      "DOMAIN-SUFFIX,over-blog.com",
+      "DOMAIN-SUFFIX,ovi.com",
+      "DOMAIN-SUFFIX,owind.com",
+      "DOMAIN-SUFFIX,page.tl",
+      "DOMAIN-SUFFIX,paulsimon-music.com",
+      "DOMAIN-SUFFIX,perfectkickz.net",
+      "DOMAIN-SUFFIX,personeelsland.com",
+      "DOMAIN-SUFFIX,picknicekicks.net",
+      "DOMAIN-SUFFIX,pickshoesclothes.com",
+      "DOMAIN-SUFFIX,pocketbiketrader.com",
+      "DOMAIN-SUFFIX,puredns.org",
+      "DOMAIN-SUFFIX,pythonic.life",
+      "DOMAIN-SUFFIX,pytorch.org",
+      "DOMAIN-SUFFIX,qx.net",
+      "DOMAIN-SUFFIX,radiotime.com",
+      "DOMAIN-SUFFIX,rbsgr.com",
+      "DOMAIN-SUFFIX,reform-apple.com",
+      "DOMAIN-SUFFIX,repsneakermall.com",
+      "DOMAIN-SUFFIX,repswing.com",
+      "DOMAIN-SUFFIX,rocketbbs.com",
+      "DOMAIN-SUFFIX,saboom.com",
+      "DOMAIN-SUFFIX,salecheaphandbags.com",
+      "DOMAIN-SUFFIX,samebags.com",
+      "DOMAIN-SUFFIX,sanvaras.com",
+      "DOMAIN-SUFFIX,sbti.unun.dev",
+      "DOMAIN-SUFFIX,scnshop.cc",
+      "DOMAIN-SUFFIX,shoers.com",
+      "DOMAIN-SUFFIX,shoestop2.com",
+      "DOMAIN-SUFFIX,shopping-days.net",
+      "DOMAIN-SUFFIX,shoppinguheadphones.com",
+      "DOMAIN-SUFFIX,skykiwi.com",
+      "DOMAIN-SUFFIX,sneaker666.com",
+      "DOMAIN-SUFFIX,sneakerpage.net",
+      "DOMAIN-SUFFIX,sneakerskick.com",
+      "DOMAIN-SUFFIX,sogoo.org",
+      "DOMAIN-SUFFIX,soifind.com",
+      "DOMAIN-SUFFIX,soso7778.com",
+      "DOMAIN-SUFFIX,sou-tong.org",
+      "DOMAIN-SUFFIX,soylentnews.org",
+      "DOMAIN-SUFFIX,specialtyheadphones.com",
+      "DOMAIN-SUFFIX,spiritclubs.com",
+      "DOMAIN-SUFFIX,sprite.org",
+      "DOMAIN-SUFFIX,streetvoice.com",
+      "DOMAIN-SUFFIX,sulwerphoto.com",
+      "DOMAIN-SUFFIX,sunglassessale2014.com",
+      "DOMAIN-SUFFIX,superearsenjoy.com",
+      "DOMAIN-SUFFIX,supplybestjerseys.com",
+      "DOMAIN-SUFFIX,syx86.com",
+      "DOMAIN-SUFFIX,szwinnertechnology.com",
+      "DOMAIN-SUFFIX,takegoto.com",
+      "DOMAIN-SUFFIX,taragana.com",
+      "DOMAIN-SUFFIX,thechinastory.org",
+      "DOMAIN-SUFFIX,theuab.net",
+      "DOMAIN-SUFFIX,tianlawoffice.com",
+      "DOMAIN-SUFFIX,tradevip1.com",
+      "DOMAIN-SUFFIX,tteshop.com",
+      "DOMAIN-SUFFIX,ucam.org",
+      "DOMAIN-SUFFIX,updatestar.com",
+      "DOMAIN-SUFFIX,v-has.com",
+      "DOMAIN-SUFFIX,vipheadphones.com",
+      "DOMAIN-SUFFIX,vipshoes2.com",
+      "DOMAIN-SUFFIX,vpser.net",
+      "DOMAIN-SUFFIX,wasdj.com",
+      "DOMAIN-SUFFIX,wholesale-exporter1.com",
+      "DOMAIN-SUFFIX,wholesalediscountpurses.com",
+      "DOMAIN-SUFFIX,wholesalefine.com",
+      "DOMAIN-SUFFIX,wholesaleonlinemart.com",
+      "DOMAIN-SUFFIX,worldcoinpay.com",
+      "DOMAIN-SUFFIX,wuerkaixi.com",
+      "DOMAIN-SUFFIX,wwwhost.biz"
+    ]
+  },
+  "reject_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "6c0426c3c56cd16253d35c55192f3d90ffdeacf53c1332f44d1255c4e7d427e2"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+      "sha256": "99809ef57bb04640d2690f198c7ab16484945e6aad0f9eca9a02e9a0d60658b2"
+    }
+  ],
+  "reason_descriptions": {
+    "china_domain": "Exact suffix in the configured v2fly China input, including its category path. No checked Sukka reject match.",
+    "china_ip": "Exact Sukka China CIDR with no-resolve. APNIC registration covers the prefix in China, GeoLite identifies its full range as CN, and no reject CIDR overlaps.",
+    "speedtest": "Exact hostname in the configured Sukka Speedtest category, with public DNS answers and no checked domain or IP reject match.",
+    "speedtest_missing_dns": "Sukka lists the host, but Google DNS returned NXDOMAIN for A and AAAA, confirmed by Cloudflare DNS. Held pending a working endpoint.",
+    "global_source": "Exact rule in a configured Global provider. Any recorded Sukka reject hits apply to individual child names of the independently classified service.",
+    "global_official": "The official service source identifies this exact API endpoint or service suffix and supports its Global classification.",
+    "global_arkose": "The configured GlobalAI provider VPSDance gives this exact hostname as a suffix for a Microsoft Copilot dependency.",
+    "global_keyword": "Substring matching can affect unrelated hosts. The configured Global inputs did not corroborate the exact keyword with this scope.",
+    "global_parent": "Independent sources corroborate only narrower child names. The expanded parent suffix is held.",
+    "global_conflicting_parent": "The Global source supports only cg.play-analytics.com, while its direct list marks the parent suffix. The broader replacement is held.",
+    "global_unconfirmed": "No independent source verified that this exact match belongs to the Global ruleset."
+  },
+  "evidence_fields": {
+    "sources": "Source references, optionally with the line number and verbatim rule.",
+    "rdap": "Source reference, registered network name, country, first address, last address.",
+    "geo": "Source reference, country, percent of the candidate network.",
+    "dns": "DNS source reference and returned values, or lookup references documenting NXDOMAIN."
+  },
+  "source_catalog": {
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-games-cn": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-games-cn",
+      "sha256": "9b7f161913400ce07778896e92cdeef3260ec270df03f683bc06891f0ac25c9e"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-cn": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-cn",
+      "sha256": "363c58e6bf0394f204135bb4cb9ae6e20ec395a2ffaea10c66db95708600d384"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-automobile-cn": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-automobile-cn",
+      "sha256": "8982ac950bfdb10bffadd91e3d0199e2d4f897b7613491c33f913440088ae064"
+    },
+    "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+      "sha256": "388419bfb5ec1f9945e6a562a4ba75577d14370ddaa367f72a226ecfc0201221"
+    },
+    "https://rdap.apnic.net/ip/180.203.0.0": {
+      "url": "https://rdap.apnic.net/ip/180.203.0.0",
+      "sha256": "a4aced5815d7b628f230509931d1ae0aacfa5055c63095f14f85bc0ca02cfba6"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=180.203.0.0%2F22": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=180.203.0.0%2F22",
+      "sha256": "02e0336ec22ae121e6783ef6e36a078153e34b2bba5e5c6eb41065afa8e74607"
+    },
+    "https://rdap.apnic.net/ip/210.72.240.0": {
+      "url": "https://rdap.apnic.net/ip/210.72.240.0",
+      "sha256": "be2b6b5e6fb5b634101c31a5111ee0becfa238a9f36302a9179ee5684fbd32c6"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=210.72.240.0%2F21": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=210.72.240.0%2F21",
+      "sha256": "1b2c93a395e53e465778ee923e61fbb1f265f327856005fff3b24daefec1803c"
+    },
+    "https://rdap.apnic.net/ip/210.77.176.0": {
+      "url": "https://rdap.apnic.net/ip/210.77.176.0",
+      "sha256": "ee3fa904968b32b642c0c7e2d77ce61af4485989758559554130eb8715aa1c75"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=210.77.176.0%2F20": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=210.77.176.0%2F20",
+      "sha256": "071d20aea74feb446558b31d0c5e0e96669e283bdaa240fb988ff61ee82478d5"
+    },
+    "https://rdap.apnic.net/ip/211.144.16.0": {
+      "url": "https://rdap.apnic.net/ip/211.144.16.0",
+      "sha256": "873f46168a829ed9fb42e8ba542f1d92cb4b054d73ee416f8f03674d3aca3aa7"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.144.16.0%2F22": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.144.16.0%2F22",
+      "sha256": "3b79eee819102de8cc7f228cf56eb748a70ccee302733bf84ecf5cecb8bd7e24"
+    },
+    "https://rdap.apnic.net/ip/211.160.16.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.16.0",
+      "sha256": "592b9f1244eb7f8ce0716c8457f8ab3936d615a412d63932cc597711b794ca88"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.16.0%2F21": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.16.0%2F21",
+      "sha256": "4fac13737df4416950ecdff0ce03026139d31fcd5ecb41f4351cd3a5e1478ec8"
+    },
+    "https://rdap.apnic.net/ip/211.160.194.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.194.0",
+      "sha256": "ccd9b7b60c1f4a5c3dc9389ad3221d2e16d1e3595a258b3b8ae4f3d891bb7b7b"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.194.0%2F23": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.194.0%2F23",
+      "sha256": "669df9f5921897e6e1ae3fd20481d0d14456b2c5df8f96eb8aa106f666f10447"
+    },
+    "https://rdap.apnic.net/ip/211.160.202.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.202.0",
+      "sha256": "9782063ffe03388f479259a9acc1e31b98768f730d48079f742f5b827fd83807"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.202.0%2F23": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.202.0%2F23",
+      "sha256": "0ce4cc495956bfe6a1f58fbc40b4f1fc72217479f860536cc969bdad84540077"
+    },
+    "https://rdap.apnic.net/ip/211.160.204.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.204.0",
+      "sha256": "c922208048bd0273c8057d78a4fabf0ff7c9ea2d190002656d77dc45da215997"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.204.0%2F23": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.204.0%2F23",
+      "sha256": "985c4cb948e32a780edc2a6718780a54a3ab7aed5a6aac6f7645715301016006"
+    },
+    "https://rdap.apnic.net/ip/211.160.24.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.24.0",
+      "sha256": "73d2fc80c6bd88b6bf359a83033a631b6c082c1182172f272d3f0b21b7e0d9ca"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.24.0%2F22": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.24.0%2F22",
+      "sha256": "ec1bb2cc24a94bb6df705cffbe6db6793b21051d56abbd548f3eb79a36a0965f"
+    },
+    "https://rdap.apnic.net/ip/211.160.240.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.240.0",
+      "sha256": "7430d2a487c595b4218014d218749e8fbec3833758ef4a49e348c1d8749569ac"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.240.0%2F20": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.240.0%2F20",
+      "sha256": "4c119b5b2f5805655a4e645462d0a46c1ce70790f8df718b8a6221f5e24b7be5"
+    },
+    "https://rdap.apnic.net/ip/211.160.4.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.4.0",
+      "sha256": "66b4788cbf5c428f4d12d95c3472145131bb7b4471539a18b38f2e1905071998"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.4.0%2F23": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.4.0%2F23",
+      "sha256": "8678455a7a160387bb9e99c0cf43a034cf12d8a88208c9f4abaf13b32e38169c"
+    },
+    "https://rdap.apnic.net/ip/211.160.46.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.46.0",
+      "sha256": "75e5e979b3cc2056756f9fef3bde524ad9d2ea0165bf0356d90321310bd4ba0f"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.46.0%2F23": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.46.0%2F23",
+      "sha256": "17e62013f49d6d159ae0e05945d820efed055d3dd395e3992f240c4ef63cc44b"
+    },
+    "https://rdap.apnic.net/ip/211.160.62.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.62.0",
+      "sha256": "1ae3b58d1b2643977c5510f59eeb95537e6cb32c0a2c119a64a152099732959d"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.62.0%2F23": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.62.0%2F23",
+      "sha256": "46731726b8d55ed055e3b5e3756863bcb143e228bc5e00e74a79bda125157a9f"
+    },
+    "https://rdap.apnic.net/ip/211.160.8.0": {
+      "url": "https://rdap.apnic.net/ip/211.160.8.0",
+      "sha256": "d9deafb134684e1132de6e210f55949dfa320b4471e59c3c94ac52df42574a7a"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.8.0%2F22": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.8.0%2F22",
+      "sha256": "5174f818a8125be52bd321bab6d160ba1b0c24373849e3bfa53b2b6c62f30cf5"
+    },
+    "https://rdap.apnic.net/ip/211.99.24.0": {
+      "url": "https://rdap.apnic.net/ip/211.99.24.0",
+      "sha256": "e545fc58b43d0eb4c712513b704c4eb85a5a8bbb7de1c87623e697c686a6ad26"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.99.24.0%2F21": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.99.24.0%2F21",
+      "sha256": "e5f359bbd9afa4a6ad3a6bf75bedea45cf429730646faabb93ece5a5f2ea512f"
+    },
+    "https://rdap.apnic.net/ip/218.241.113.0": {
+      "url": "https://rdap.apnic.net/ip/218.241.113.0",
+      "sha256": "83d534684d1231ed9f8b8211df72980ff053a129f70c50c79c8a5327111abe01"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=218.241.113.0%2F24": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=218.241.113.0%2F24",
+      "sha256": "90d37f0815099a8435d524b77a24063a2adcd169ecb246f912c77f1313cda021"
+    },
+    "https://rdap.apnic.net/ip/218.241.114.0": {
+      "url": "https://rdap.apnic.net/ip/218.241.114.0",
+      "sha256": "61aee5fc011302f954a243fc5f0728e68ed355a81f179da10327814a4fb88947"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=218.241.114.0%2F23": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=218.241.114.0%2F23",
+      "sha256": "75b64e11307bd7551e102a6995ffd73c36e3ca63d19dbe14d8c7b8e6f960b834"
+    },
+    "https://rdap.apnic.net/ip/45.248.109.0": {
+      "url": "https://rdap.apnic.net/ip/45.248.109.0",
+      "sha256": "3ff07aff47a1a8edb34251e8276a6d5a67ea37ed20b09f15ae36f698e551039e"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=45.248.109.0%2F24": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=45.248.109.0%2F24",
+      "sha256": "8732389afcf93c73b92ca59a78807aec91faf66a4224a4fcc002d30986a3ee9c"
+    },
+    "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf",
+      "sha256": "0440717c808d9839bf872b02be8ed3e6c8ca312b847d87be094366b4825be0a0"
+    },
+    "https://dns.google/resolve?name=fetdl2.seed.net.tw&type=A": {
+      "url": "https://dns.google/resolve?name=fetdl2.seed.net.tw&type=A",
+      "sha256": "013d1bffffb9b5454abf79251792b94a0443f246700082994af63df70f26fdf2"
+    },
+    "https://dns.google/resolve?name=fetdl2.seed.net.tw&type=AAAA": {
+      "url": "https://dns.google/resolve?name=fetdl2.seed.net.tw&type=AAAA",
+      "sha256": "70147eba1a4f8de399d0b32d2c292f76bb796ab7ace9b6b49f848fac1ac17b06"
+    },
+    "https://dns.google/resolve?name=fetml1.seed.net.tw&type=A": {
+      "url": "https://dns.google/resolve?name=fetml1.seed.net.tw&type=A",
+      "sha256": "58f74a87168269e668124e0877c7bd2bb7da1497ae3ca680536a6b081b048d4f"
+    },
+    "https://dns.google/resolve?name=fetml1.seed.net.tw&type=AAAA": {
+      "url": "https://dns.google/resolve?name=fetml1.seed.net.tw&type=AAAA",
+      "sha256": "0c1801fe8cf52bd534c7f6576a51fa9506f805a10e689762587c07d58d872b6b"
+    },
+    "https://dns.google/resolve?name=kc.speedtest.rustbanned.net&type=A": {
+      "url": "https://dns.google/resolve?name=kc.speedtest.rustbanned.net&type=A",
+      "sha256": "1b7b126eaac1e1db923e22deee5ad4b79dab4d7c291fad7ed12106fc211efa1a"
+    },
+    "https://dns.google/resolve?name=kc.speedtest.rustbanned.net&type=AAAA": {
+      "url": "https://dns.google/resolve?name=kc.speedtest.rustbanned.net&type=AAAA",
+      "sha256": "adb169b79367c12513191c6dabea27c76f557e995859e11d528299f7a35e770c"
+    },
+    "https://dns.google/resolve?name=lhr.speedtest.rustbanned.net&type=A": {
+      "url": "https://dns.google/resolve?name=lhr.speedtest.rustbanned.net&type=A",
+      "sha256": "fc4bf9865f807ba21fed4ea8e7c2f5a1be7cf6ec0406609aadc14865a6432d7f"
+    },
+    "https://dns.google/resolve?name=lhr.speedtest.rustbanned.net&type=AAAA": {
+      "url": "https://dns.google/resolve?name=lhr.speedtest.rustbanned.net&type=AAAA",
+      "sha256": "c59f006ed1da457f085d47113ce35b4125fe6a835ae7950208b96f39ff2dea48"
+    },
+    "https://dns.google/resolve?name=librespeed-dtw.rackgenius.com&type=A": {
+      "url": "https://dns.google/resolve?name=librespeed-dtw.rackgenius.com&type=A",
+      "sha256": "b080386361755894f5fde5a3f26fc23f6b176e65ffe728fef1a49e421ada0f6b"
+    },
+    "https://dns.google/resolve?name=librespeed-dtw.rackgenius.com&type=AAAA": {
+      "url": "https://dns.google/resolve?name=librespeed-dtw.rackgenius.com&type=AAAA",
+      "sha256": "2f530262aeb4a5b77f096742409e7748c7a2a736646e5b6ba022296d7c9a0b77"
+    },
+    "https://librespeed.org/backend-servers/servers.php": {
+      "url": "https://librespeed.org/backend-servers/servers.php",
+      "sha256": "6a56557366036e02f0448062076e0bdc3ce7699a8dcf03a9b2ddfd146f527f92"
+    },
+    "https://dns.google/resolve?name=msk.speedtest.reynard.cloud&type=A": {
+      "url": "https://dns.google/resolve?name=msk.speedtest.reynard.cloud&type=A",
+      "sha256": "5a542f63a860ee35d46944785390e6898cfd7ec37178945deba905ff4ab73e69"
+    },
+    "https://dns.google/resolve?name=msk.speedtest.reynard.cloud&type=AAAA": {
+      "url": "https://dns.google/resolve?name=msk.speedtest.reynard.cloud&type=AAAA",
+      "sha256": "095366c33177c47b812c73674cdfed6c5d01df5b561f3414fe523b24c9880f98"
+    },
+    "https://cloudflare-dns.com/dns-query?name=msk.speedtest.reynard.cloud&type=A": {
+      "url": "https://cloudflare-dns.com/dns-query?name=msk.speedtest.reynard.cloud&type=A",
+      "sha256": "cf45127b37632ad5007ec18439d5001f24ccee186ecec9266b4dd825d7c7d63f"
+    },
+    "https://dns.google/resolve?name=seednet-hc1.seed.net.tw&type=A": {
+      "url": "https://dns.google/resolve?name=seednet-hc1.seed.net.tw&type=A",
+      "sha256": "bddef5d94b2e41aa1410583f27fd96abd303af6755a4d9d75bf87191591252e5"
+    },
+    "https://dns.google/resolve?name=seednet-hc1.seed.net.tw&type=AAAA": {
+      "url": "https://dns.google/resolve?name=seednet-hc1.seed.net.tw&type=AAAA",
+      "sha256": "6b7d3e8c4ada59cd264d8750fa85e3d001705cb80cec1251c1344c4746aa67d2"
+    },
+    "https://dns.google/resolve?name=seednet-ntp2.seed.net.tw&type=A": {
+      "url": "https://dns.google/resolve?name=seednet-ntp2.seed.net.tw&type=A",
+      "sha256": "532ae78edc359c5680f3c0e7d0003e9494fdb0ecc6198eef6a49077ef7b9bf1e"
+    },
+    "https://dns.google/resolve?name=seednet-ntp2.seed.net.tw&type=AAAA": {
+      "url": "https://dns.google/resolve?name=seednet-ntp2.seed.net.tw&type=AAAA",
+      "sha256": "4f6f2d43279c5cfba51c8f82fc4ba783e7346aa7f2bb49439b22aaeb95cfdbe4"
+    },
+    "https://dns.google/resolve?name=seednet-tp1.seed.net.tw&type=A": {
+      "url": "https://dns.google/resolve?name=seednet-tp1.seed.net.tw&type=A",
+      "sha256": "8df3021a2e42cefd5e8e96ca0aa4178990c20c4efa7dbf78658b1abccb90ec70"
+    },
+    "https://dns.google/resolve?name=seednet-tp1.seed.net.tw&type=AAAA": {
+      "url": "https://dns.google/resolve?name=seednet-tp1.seed.net.tw&type=AAAA",
+      "sha256": "55238a6fd9d8d50304d612bc279dea6ce361d32dafe43896b59941fdc1d756e7"
+    },
+    "https://dns.google/resolve?name=speed-fra.laudat.org&type=A": {
+      "url": "https://dns.google/resolve?name=speed-fra.laudat.org&type=A",
+      "sha256": "3b7d8a22423359e7e8539162d505dba9e0d1c605875aeb792d22a49d0d92c6a4"
+    },
+    "https://dns.google/resolve?name=speed-fra.laudat.org&type=AAAA": {
+      "url": "https://dns.google/resolve?name=speed-fra.laudat.org&type=AAAA",
+      "sha256": "b2d61c7cef002073e1b26eaaf9379c615dd0e2b09c43197cff4d1c73e44118ed"
+    },
+    "https://dns.google/resolve?name=speedtest-albuquerque.resoundnetworks.com&type=A": {
+      "url": "https://dns.google/resolve?name=speedtest-albuquerque.resoundnetworks.com&type=A",
+      "sha256": "34dab8b61f2274db8d0568c053f63418d25fd753105db5d710ff3077b9e0b7f7"
+    },
+    "https://dns.google/resolve?name=speedtest-albuquerque.resoundnetworks.com&type=AAAA": {
+      "url": "https://dns.google/resolve?name=speedtest-albuquerque.resoundnetworks.com&type=AAAA",
+      "sha256": "13455b30689c7cd7355dedb59b91f2c706f09d0909b7e5bc85cf5bc5ab5b42fa"
+    },
+    "https://dns.google/resolve?name=speedtest.edgefox.net&type=A": {
+      "url": "https://dns.google/resolve?name=speedtest.edgefox.net&type=A",
+      "sha256": "c38f41fea1f1f65cffda8fe69325b134bdeaeafd6b5ea3e79a61f77752790d0b"
+    },
+    "https://dns.google/resolve?name=speedtest.edgefox.net&type=AAAA": {
+      "url": "https://dns.google/resolve?name=speedtest.edgefox.net&type=AAAA",
+      "sha256": "24cff07f74cb7a6fce7d83a506f5dc80912f5aa064083fb2f4d96374d712d7d3"
+    },
+    "https://dns.google/resolve?name=speedtest.ilitha.com&type=A": {
+      "url": "https://dns.google/resolve?name=speedtest.ilitha.com&type=A",
+      "sha256": "59ea7bc34cec73f98bb5954bec48a1eaf774fa8f8e82d2dc73098e466118e208"
+    },
+    "https://dns.google/resolve?name=speedtest.ilitha.com&type=AAAA": {
+      "url": "https://dns.google/resolve?name=speedtest.ilitha.com&type=AAAA",
+      "sha256": "8ef8f6bc0866e3a82dd2e6a943a404cb6d9b96d017ae99f2b2eb383b5f257257"
+    },
+    "https://dns.google/resolve?name=speedtest.opiquad.it&type=A": {
+      "url": "https://dns.google/resolve?name=speedtest.opiquad.it&type=A",
+      "sha256": "3a129a80899e70ed29d52a6a6b35230802b009c8f27fcf1dad4475f10879b85b"
+    },
+    "https://dns.google/resolve?name=speedtest.opiquad.it&type=AAAA": {
+      "url": "https://dns.google/resolve?name=speedtest.opiquad.it&type=AAAA",
+      "sha256": "b9f48f8af772d21856abf150b06306204d249436548007ab7fa5d92e8ab59b91"
+    },
+    "https://dns.google/resolve?name=speedtest.speednetmacapa.com.br&type=A": {
+      "url": "https://dns.google/resolve?name=speedtest.speednetmacapa.com.br&type=A",
+      "sha256": "e1604359945b427f7c898514e85e0d1db8f2d44673807e827b844d545abe5453"
+    },
+    "https://dns.google/resolve?name=speedtest.speednetmacapa.com.br&type=AAAA": {
+      "url": "https://dns.google/resolve?name=speedtest.speednetmacapa.com.br&type=AAAA",
+      "sha256": "fcf2a26da739e1f877478188737ab1b4e41befab4eda3093ad505497da244de9"
+    },
+    "https://raw.githubusercontent.com/togethercomputer/together-python/main/src/together/constants.py": {
+      "url": "https://raw.githubusercontent.com/togethercomputer/together-python/main/src/together/constants.py",
+      "sha256": "914bda044656d9f5aeb894177e839078bdc345aff8934180236aef4a235236f8"
+    },
+    "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt": {
+      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+      "sha256": "3d243d593fecf3f7949569bce0a5417c546b8fc2cd0100f92f2ba41d85f6a771"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-!cn": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-!cn",
+      "sha256": "802793e97d64fe91a28e5a47ed0c0ab4def0605b28a95f4d8933587d0dfd37df"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal",
+      "sha256": "b8488a91ef74d8ea7231318d25b2cbb5608f17211d59391ff959e713f7bd8da4"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nixos": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nixos",
+      "sha256": "c8726bfce6479f9a4ac0bacb5fcdfbb34988f00ce40ea2509d6ed6c86d4100a6"
+    },
+    "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/refs/heads/main/rules/surge/all.list": {
+      "url": "https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/refs/heads/main/rules/surge/all.list",
+      "sha256": "b1684f186649078fef50201138334729c0349dfb70251d134a8ab9a7481b41df"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/cnbc": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/cnbc",
+      "sha256": "0644ed9747bcf212c13f0bc377edea95621e1f2e136e346a35f511152a02af38"
+    },
+    "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements": {
+      "url": "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements",
+      "sha256": "069c8df22841e7ac82f258247f9123829407c35b5308f0f2b6a87d647f5ccdf7"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bing": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bing",
+      "sha256": "18a0806696219a4847342c9398853819cd1f85523ea43c6a127d5f6cbc0ef182"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-ai-!cn": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-ai-!cn",
+      "sha256": "68c652a6ec62fc8d8316c255fb32f94389b084a1b886def6f9e8e631314a11bf"
+    },
+    "https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt": {
+      "url": "https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt",
+      "sha256": "434830866c66529cdee1f5c025eefd966579daf3bb03a3af435c9a131ffa9789"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/fastly": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/fastly",
+      "sha256": "40010cf5ddc2aef20eea6f54bb75d0a09c49f4692a838cd4dec992c3af047e3b"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/megafon": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/megafon",
+      "sha256": "cb73b96ed768d8aaf761fe9f9e6bac4a47b9451337145d57a428aeb3fce548f7"
+    },
+    "https://moomoobull.com/": {
+      "url": "https://moomoobull.com/",
+      "sha256": "e7e72020b0dc2acbcf3b6c700c48af0cb93ae45eb24dcbe894b4120b5aa7ef24"
+    },
+    "https://raw.githubusercontent.com/nxtrace/NTrace-core/main/README.md": {
+      "url": "https://raw.githubusercontent.com/nxtrace/NTrace-core/main/README.md",
+      "sha256": "685e30e2d6043eb554865f80b2a1842759ff60dc35084a28ef8ec83e608137ec"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/rostelecom": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/rostelecom",
+      "sha256": "474c3c447a6ece0a6ccd4c34e45b75e99d885bf127d149f44d9d6068927d1e8d"
+    },
+    "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt": {
+      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+      "sha256": "90575b69cf5f8acd8aa70ddeb9752fbbc170c81d525a920b023a7049e94967b6"
+    },
+    "https://redteago.com/": {
+      "url": "https://redteago.com/",
+      "sha256": "7208badb8c455a55a9cb218fc193e947f293a0538aef11a0a3bd5952f3ead56b"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-dev": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-dev",
+      "sha256": "4f86613de8782a981bcfe6f33c1b9a18c4baf19ff1da492aff6ba272240b2d39"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/unity": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/unity",
+      "sha256": "2dc2869e4aced4b0b68eb160c01a7ce7ae0384c550316cb434124d26b0819d71"
+    }
+  },
+  "decisions": [
+    {"list": "China", "rule": "DOMAIN-SUFFIX,chunithm.wahlap.com", "decision": "approved", "reason": "china_domain", "evidence": {"sources": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-games-cn", 97, "chunithm.wahlap.com"]], "v2fly_paths": [["geolocation-cn", "category-entertainment-cn", "category-games-cn"]]}},
+    {"list": "China", "rule": "DOMAIN-SUFFIX,echooai.com", "decision": "approved", "reason": "china_domain", "evidence": {"sources": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-cn", 255, "echooai.com"]], "v2fly_paths": [["geolocation-cn"]]}},
+    {"list": "China", "rule": "DOMAIN-SUFFIX,faw-vw.com", "decision": "approved", "reason": "china_domain", "evidence": {"sources": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-automobile-cn", 25, "faw-vw.com # 一汽-大众"]], "v2fly_paths": [["geolocation-cn", "category-automobile-cn"]]}},
+    {"list": "China", "rule": "DOMAIN-SUFFIX,fazhipro.com", "decision": "approved", "reason": "china_domain", "evidence": {"sources": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-cn", 256, "fazhipro.com"]], "v2fly_paths": [["geolocation-cn"]]}},
+    {"list": "China", "rule": "DOMAIN-SUFFIX,icc.link", "decision": "approved", "reason": "china_domain", "evidence": {"sources": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-cn", 32, "icc.link"]], "v2fly_paths": [["geolocation-cn"]]}},
+    {"list": "China", "rule": "DOMAIN-SUFFIX,maimai.wahlap.com", "decision": "approved", "reason": "china_domain", "evidence": {"sources": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-games-cn", 95, "maimai.wahlap.com"]], "v2fly_paths": [["geolocation-cn", "category-entertainment-cn", "category-games-cn"]]}},
+    {"list": "China", "rule": "DOMAIN-SUFFIX,saasfz.com", "decision": "approved", "reason": "china_domain", "evidence": {"sources": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-cn", 257, "saasfz.com"]], "v2fly_paths": [["geolocation-cn"]]}},
+    {"list": "China", "rule": "DOMAIN-SUFFIX,tgk-wcaime.wahlap.com", "decision": "approved", "reason": "china_domain", "evidence": {"sources": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-games-cn", 93, "tgk-wcaime.wahlap.com"]], "v2fly_paths": [["geolocation-cn", "category-entertainment-cn", "category-games-cn"]]}},
+    {"list": "China", "rule": "DOMAIN-SUFFIX,wahlap.net", "decision": "approved", "reason": "china_domain", "evidence": {"sources": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-games-cn", 91, "wahlap.net"]], "v2fly_paths": [["geolocation-cn", "category-entertainment-cn", "category-games-cn"]]}},
+    {"list": "China", "rule": "IP-CIDR,180.203.0.0/22,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 2819, "IP-CIDR,180.203.0.0/22"]], "rdap": ["https://rdap.apnic.net/ip/180.203.0.0", "FibrLINK", "CN", "180.202.0.0", "180.203.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=180.203.0.0%2F22", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,210.72.240.0/21,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3340, "IP-CIDR,210.72.240.0/21"]], "rdap": ["https://rdap.apnic.net/ip/210.72.240.0", "FibrLINK", "CN", "210.72.224.0", "210.72.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=210.72.240.0%2F21", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,210.77.176.0/20,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3369, "IP-CIDR,210.77.176.0/20"]], "rdap": ["https://rdap.apnic.net/ip/210.77.176.0", "SPINET", "CN", "210.77.176.0", "210.77.191.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=210.77.176.0%2F20", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.144.16.0/22,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3448, "IP-CIDR,211.144.16.0/22"]], "rdap": ["https://rdap.apnic.net/ip/211.144.16.0", "BGTELECOM", "CN", "211.144.16.0", "211.144.31.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.144.16.0%2F22", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.16.0/21,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3526, "IP-CIDR,211.160.16.0/21"]], "rdap": ["https://rdap.apnic.net/ip/211.160.16.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.16.0%2F21", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.194.0/23,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3538, "IP-CIDR,211.160.194.0/23"]], "rdap": ["https://rdap.apnic.net/ip/211.160.194.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.194.0%2F23", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.202.0/23,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3540, "IP-CIDR,211.160.202.0/23"]], "rdap": ["https://rdap.apnic.net/ip/211.160.202.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.202.0%2F23", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.204.0/23,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3541, "IP-CIDR,211.160.204.0/23"]], "rdap": ["https://rdap.apnic.net/ip/211.160.204.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.204.0%2F23", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.24.0/22,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3527, "IP-CIDR,211.160.24.0/22"]], "rdap": ["https://rdap.apnic.net/ip/211.160.24.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.24.0%2F22", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.240.0/20,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3542, "IP-CIDR,211.160.240.0/20"]], "rdap": ["https://rdap.apnic.net/ip/211.160.240.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.240.0%2F20", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.4.0/23,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3523, "IP-CIDR,211.160.4.0/23"]], "rdap": ["https://rdap.apnic.net/ip/211.160.4.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.4.0%2F23", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.46.0/23,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3530, "IP-CIDR,211.160.46.0/23"]], "rdap": ["https://rdap.apnic.net/ip/211.160.46.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.46.0%2F23", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.62.0/23,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3531, "IP-CIDR,211.160.62.0/23"]], "rdap": ["https://rdap.apnic.net/ip/211.160.62.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.62.0%2F23", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.160.8.0/22,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3524, "IP-CIDR,211.160.8.0/22"]], "rdap": ["https://rdap.apnic.net/ip/211.160.8.0", "FibrLINK", "CN", "211.160.0.0", "211.160.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.160.8.0%2F22", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,211.99.24.0/21,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3425, "IP-CIDR,211.99.24.0/21"]], "rdap": ["https://rdap.apnic.net/ip/211.99.24.0", "FibrLINK", "CN", "211.99.0.0", "211.99.31.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=211.99.24.0%2F21", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,218.241.113.0/24,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3609, "IP-CIDR,218.241.113.0/24"]], "rdap": ["https://rdap.apnic.net/ip/218.241.113.0", "CNNIC", "CN", "218.240.0.0", "218.243.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=218.241.113.0%2F24", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,218.241.114.0/23,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 3610, "IP-CIDR,218.241.114.0/23"]], "rdap": ["https://rdap.apnic.net/ip/218.241.114.0", "CNNIC", "CN", "218.240.0.0", "218.243.255.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=218.241.114.0%2F23", "CN", 100]}},
+    {"list": "China", "rule": "IP-CIDR,45.248.109.0/24,no-resolve", "decision": "approved", "reason": "china_ip", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf", 426, "IP-CIDR,45.248.109.0/24"]], "rdap": ["https://rdap.apnic.net/ip/45.248.109.0", "PengChengNet", "CN", "45.248.108.0", "45.248.111.255"], "geo": ["https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=45.248.109.0%2F24", "CN", 100]}},
+    {"list": "Speedtest", "rule": "DOMAIN,fetdl2.seed.net.tw", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 304, "fetdl2.seed.net.tw"]], "dns": [["https://dns.google/resolve?name=fetdl2.seed.net.tw&type=A", ["211.77.43.26"]], ["https://dns.google/resolve?name=fetdl2.seed.net.tw&type=AAAA", ["2401:e180:0:f::60b"]]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,fetml1.seed.net.tw", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 306, "fetml1.seed.net.tw"]], "dns": [["https://dns.google/resolve?name=fetml1.seed.net.tw&type=A", ["211.77.43.22"]], ["https://dns.google/resolve?name=fetml1.seed.net.tw&type=AAAA", ["2401:e180:0:f::610"]]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,kc.speedtest.rustbanned.net", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 2332, "kc.speedtest.rustbanned.net"]], "dns": [["https://dns.google/resolve?name=kc.speedtest.rustbanned.net&type=A", ["23.156.200.157"]], ["https://dns.google/resolve?name=kc.speedtest.rustbanned.net&type=AAAA", ["2602:fa7e:18::1c"]]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,lhr.speedtest.rustbanned.net", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 2520, "lhr.speedtest.rustbanned.net"]], "dns": [["https://dns.google/resolve?name=lhr.speedtest.rustbanned.net&type=A", ["185.121.24.238"]], ["https://dns.google/resolve?name=lhr.speedtest.rustbanned.net&type=AAAA", ["2602:fa7e:11::56"]]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,librespeed-dtw.rackgenius.com", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 2717, "librespeed-dtw.rackgenius.com"]], "dns": [["https://dns.google/resolve?name=librespeed-dtw.rackgenius.com&type=A", ["198.134.23.5"]], ["https://dns.google/resolve?name=librespeed-dtw.rackgenius.com&type=AAAA", ["2602:f964:4:a::5"]]], "operator": "https://librespeed.org/backend-servers/servers.php"}},
+    {"list": "Speedtest", "rule": "DOMAIN,msk.speedtest.reynard.cloud", "decision": "quarantined", "reason": "speedtest_missing_dns", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 2339, "msk.speedtest.reynard.cloud"]], "dns": ["https://dns.google/resolve?name=msk.speedtest.reynard.cloud&type=A", "https://dns.google/resolve?name=msk.speedtest.reynard.cloud&type=AAAA", "https://cloudflare-dns.com/dns-query?name=msk.speedtest.reynard.cloud&type=A"]}},
+    {"list": "Speedtest", "rule": "DOMAIN,seednet-hc1.seed.net.tw", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 1418, "seednet-hc1.seed.net.tw"]], "dns": [["https://dns.google/resolve?name=seednet-hc1.seed.net.tw&type=A", ["211.77.43.113"]], ["https://dns.google/resolve?name=seednet-hc1.seed.net.tw&type=AAAA", ["2401:e180:0:f::60e"]]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,seednet-ntp2.seed.net.tw", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 1676, "seednet-ntp2.seed.net.tw"]], "dns": [["https://dns.google/resolve?name=seednet-ntp2.seed.net.tw&type=A", ["211.77.43.111"]], ["https://dns.google/resolve?name=seednet-ntp2.seed.net.tw&type=AAAA", ["2401:e180:0:f::60c"]]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,seednet-tp1.seed.net.tw", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 1421, "seednet-tp1.seed.net.tw"]], "dns": [["https://dns.google/resolve?name=seednet-tp1.seed.net.tw&type=A", ["211.77.43.110"]], ["https://dns.google/resolve?name=seednet-tp1.seed.net.tw&type=AAAA", ["2401:e180:0:f::611"]]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,speed-fra.laudat.org", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 665, "speed-fra.laudat.org"]], "dns": [["https://dns.google/resolve?name=speed-fra.laudat.org&type=A", ["195.162.253.235"]], ["https://dns.google/resolve?name=speed-fra.laudat.org&type=AAAA", ["2001:470:1f0a:ef1::2"]]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,speedtest-albuquerque.resoundnetworks.com", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 3506, "speedtest-albuquerque.resoundnetworks.com"]], "dns": [["https://dns.google/resolve?name=speedtest-albuquerque.resoundnetworks.com&type=A", ["207.22.52.250"]], ["https://dns.google/resolve?name=speedtest-albuquerque.resoundnetworks.com&type=AAAA", []]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,speedtest.edgefox.net", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 957, "speedtest.edgefox.net"]], "dns": [["https://dns.google/resolve?name=speedtest.edgefox.net&type=A", ["163.123.238.40"]], ["https://dns.google/resolve?name=speedtest.edgefox.net&type=AAAA", ["2602:f964:2:5::50a"]]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,speedtest.ilitha.com", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 724, "speedtest.ilitha.com"]], "dns": [["https://dns.google/resolve?name=speedtest.ilitha.com&type=A", ["102.215.248.31"]], ["https://dns.google/resolve?name=speedtest.ilitha.com&type=AAAA", []]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,speedtest.opiquad.it", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 753, "speedtest.opiquad.it"]], "dns": [["https://dns.google/resolve?name=speedtest.opiquad.it&type=A", ["212.78.16.117"]], ["https://dns.google/resolve?name=speedtest.opiquad.it&type=AAAA", []]]}},
+    {"list": "Speedtest", "rule": "DOMAIN,speedtest.speednetmacapa.com.br", "decision": "approved", "reason": "speedtest", "evidence": {"sources": [["https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/speedtest.conf", 3104, "speedtest.speednetmacapa.com.br"]], "dns": [["https://dns.google/resolve?name=speedtest.speednetmacapa.com.br&type=A", ["d4f10d6397cb.sn.mynetname.net.", "177.131.22.22"]], ["https://dns.google/resolve?name=speedtest.speednetmacapa.com.br&type=AAAA", ["d4f10d6397cb.sn.mynetname.net.", "2804:2d80:600:100::"]]]}},
+    {"list": "Global", "rule": "DOMAIN,api.together.xyz", "decision": "approved", "reason": "global_official", "evidence": {"sources": ["https://raw.githubusercontent.com/togethercomputer/together-python/main/src/together/constants.py"], "source_line": [12, "BASE_URL = \"https://api.together.xyz/v1\""]}},
+    {"list": "Global", "rule": "DOMAIN,courses.myecnu.org", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 108, "courses.myecnu.org"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/geolocation-!cn", 106, "full:courses.myecnu.org # ECNU·课栈"]]}},
+    {"list": "Global", "rule": "DOMAIN-KEYWORD,anthropic", "decision": "quarantined", "reason": "global_keyword", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-KEYWORD,antigravity", "decision": "quarantined", "reason": "global_keyword", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-KEYWORD,claude", "decision": "quarantined", "reason": "global_keyword", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-KEYWORD,openai", "decision": "quarantined", "reason": "global_keyword", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,abitno.linpie.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,bbs.huasing.org", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,bbs.skykiwi.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,bbs.sou-tong.org", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,blog.foolsmountain.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,blog.sogoo.org", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,blog.syx86.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,blog.taragana.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,bravotv.com", "decision": "approved", "reason": "global_source", "evidence": {"reject_child_matches": [".ijaabm.bravotv.com", ".links.email.bravotv.com"], "sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 5268, "+.bravotv.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 21, "bravotv.com      # Bravo"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,cachix.org", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 5586, "+.cachix.org"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nixos", 14, "cachix.org"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,cdn.assets.lfpcontent.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,cdn1.lp.saboom.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,chinese.soifind.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,client-api.arkoselabs.com", "decision": "approved", "reason": "global_arkose", "evidence": {"sources": [["https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/refs/heads/main/rules/surge/all.list", 218, "DOMAIN-SUFFIX,client-api.arkoselabs.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,cn.streetvoice.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,cn2.streetvoice.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,cnbccouncils.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 6492, "+.cnbccouncils.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/cnbc", 2, "cnbccouncils.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,copilot.cloud.microsoft", "decision": "approved", "reason": "global_official", "evidence": {"sources": ["https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements"], "classification": [["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/bing", 35, "copilot.cloud.microsoft"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-ai-!cn", 32, "copilot.cloud.microsoft"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,cyberghost.natado.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,dappcdn.com", "decision": "quarantined", "reason": "global_parent", "evidence": {"upstream_removed_child_rules": ["DOMAIN-SUFFIX,download.dappcdn.com", "DOMAIN-SUFFIX,get.dappcdn.com"], "narrower_source": ["https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt", [[106, "||get.dappcdn.com"], [1897, "||download.dappcdn.com"]]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,fangong.forums-free.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,fastly-insights.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 9431, "+.fastly-insights.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/fastly", 2, "fastly-insights.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,fastlydns.net", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 9436, "+.fastlydns.net"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/fastly", 7, "fastlydns.net"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,focusfeatures.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 9826, "+.focusfeatures.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 36, "focusfeatures.com                   # Focus Features"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,forum.mymaji.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,gamma.app", "decision": "approved", "reason": "global_source", "evidence": {"reject_child_matches": [".events.api.gamma.app"], "upstream_removed_child_rules": ["DOMAIN,static.gamma.app"], "sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 10449, "+.gamma.app"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,greenbean.media", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 11400, "+.greenbean.media"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,hayu.com", "decision": "approved", "reason": "global_source", "evidence": {"reject_child_matches": [".stats.hayu.com", ".sstats.hayu.com"], "sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 11618, "+.hayu.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 22, "hayu.com         # Hayu"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,hkcitycreation.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 12035, "+.hkcitycreation.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,hkcourtnews.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 12039, "+.hkcourtnews.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,hkfeature.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 12050, "+.hkfeature.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,illumination.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 12988, "+.illumination.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 37, "illumination.com                    # Illumination"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,lifesitenews.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 14849, "+.lifesitenews.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,master-insight.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 15444, "+.master-insight.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,megafon.cloud", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 15724, "+.megafon.cloud"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/megafon", 2, "megafon.cloud"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,moomoobull.com", "decision": "approved", "reason": "global_official", "evidence": {"upstream_removed_child_rules": ["DOMAIN-SUFFIX,api.moomoobull.com"], "sources": ["https://moomoobull.com/"]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,nbcumv.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 17147, "+.nbcumv.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 38, "nbcumv.com                          # NBCUniversal MediaVillage"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,nbcunicareers.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 17149, "+.nbcunicareers.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 3, "nbcunicareers.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,nbcuniversalprivacy.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 17151, "+.nbcuniversalprivacy.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 5, "nbcuniversalprivacy.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,nemesis2.qx.net", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,nxtrace.org", "decision": "approved", "reason": "global_official", "evidence": {"upstream_removed_child_rules": ["DOMAIN-SUFFIX,assets.nxtrace.org"], "sources": ["https://raw.githubusercontent.com/nxtrace/NTrace-core/main/README.md"]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,o7.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 18030, "+.o7.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/rostelecom", 4, "o7.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,opml.radiotime.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,pioneer-worker.forums-free.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,play-analytics.com", "decision": "quarantined", "reason": "global_conflicting_parent", "evidence": {"upstream_removed_child_rules": ["DOMAIN-SUFFIX,cg.play-analytics.com"], "classification": ["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"], "narrower_source": ["https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt", [[617, "||cg.play-analytics.com"]]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,pulsehknews.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 19861, "+.pulsehknews.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,redteago.com", "decision": "approved", "reason": "global_official", "evidence": {"upstream_removed_child_rules": ["DOMAIN-SUFFIX,esim.redteago.com"], "sources": ["https://redteago.com/"]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,shanghainationalparty.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 21327, "+.shanghainationalparty.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,share.ovi.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,shuaiapi.com", "decision": "quarantined", "reason": "global_parent", "evidence": {"upstream_removed_child_rules": ["DOMAIN-SUFFIX,api.shuaiapi.com"], "narrower_source": ["https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt", [[3541, "||api.shuaiapi.com"]]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,soulogic.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 21949, "+.soulogic.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,srcf.ucam.org", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,ss.pythonic.life", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,taiwanyes.ning.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,tbskkinabalu.page.tl", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,telemundo.com", "decision": "approved", "reason": "global_source", "evidence": {"reject_child_matches": [".ijaabm.telemundo.com", ".aamt.newsapp.telemundo.com"], "sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 22842, "+.telemundo.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 32, "telemundo.com  # Telemundo"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,thecollectivehk.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 22960, "+.thecollectivehk.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,theonlinecitizen.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 23024, "+.theonlinecitizen.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,thestar.com", "decision": "approved", "reason": "global_source", "evidence": {"reject_child_matches": [".n.thestar.com", ".s.thestar.com", ".z737.thestar.com"], "sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 23061, "+.thestar.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,thewitnesshk.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 23084, "+.thewitnesshk.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,tor.updatestar.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,tortoisegit.org", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 23434, "+.tortoisegit.org"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-dev", 166, "tortoisegit.org"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,tritondigital.com", "decision": "quarantined", "reason": "global_parent", "evidence": {"upstream_removed_child_rules": ["DOMAIN-SUFFIX,bbc.pdn.tritondigital.com"], "narrower_source": ["https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt", [[3804, "||bbc.pdn.tritondigital.com"]]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,tw.streetvoice.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,udxfpp.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 23926, "+.udxfpp.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 6, "udxfpp.com # UDX Franchise, Products & Partnerships"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,universalbeijingresort.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 24004, "+.universalbeijingresort.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 11, "universalbeijingresort.com        # Universal Beijing Resort"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,universalhorrorunleashed.com", "decision": "approved", "reason": "global_source", "evidence": {"reject_child_matches": [".data.mktg.universalhorrorunleashed.com"], "sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 24005, "+.universalhorrorunleashed.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 12, "universalhorrorunleashed.com      # Universal Horror Unleashed"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,universalkidsresort.com", "decision": "approved", "reason": "global_source", "evidence": {"reject_child_matches": [".data.mktg.universalkidsresort.com"], "sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 24006, "+.universalkidsresort.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 13, "universalkidsresort.com           # Universal Kids Resort"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,universalpicturesathome.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 24010, "+.universalpicturesathome.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 41, "universalpicturesathome.com         # Universal Pictures Home Entertainment"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,universalproductsexperiences.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 24012, "+.universalproductsexperiences.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 15, "universalproductsexperiences.com  # Universal Products & Experiences"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,unun.dev", "decision": "quarantined", "reason": "global_parent", "evidence": {"upstream_removed_child_rules": ["DOMAIN-SUFFIX,sbti.unun.dev"], "narrower_source": ["https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt", [[4099, "||sbti.unun.dev"]]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,uphe.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 24042, "+.uphe.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/nbcuniversal", 43, "uphe.com                            # Universal Pictures Home Entertainment"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,usmgtcg.ning.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,vivox.com", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 24707, "+.vivox.com"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/unity", 3, "vivox.com"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,womany.net", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 25656, "+.womany.net"]]}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,www.owind.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,www.thechinastory.org", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,www2.ohchr.org", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,www2.rocketbbs.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,xinqimeng.over-blog.com", "decision": "quarantined", "reason": "global_unconfirmed", "evidence": {}},
+    {"list": "Global", "rule": "DOMAIN-SUFFIX,xn--e1aapchhekkk.xn--p1ai", "decision": "approved", "reason": "global_source", "evidence": {"sources": [["https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", 26070, "+.xn--e1aapchhekkk.xn--p1ai"], ["https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/rostelecom", 9, "xn--e1aapchhekkk.xn--p1ai # ростелеком.рф"]]}}
+  ]
+}
