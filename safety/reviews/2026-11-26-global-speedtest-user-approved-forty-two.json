@@ -1,0 +1,273 @@
+{
+  "reviewed_at": "2026-11-26T04:05:05-08:00",
+  "baseline_commit": "5e90a5535c5a5315458d22c689c5d47394b9c6cd",
+  "authorization": "Explicit user approval to sync all 42 rules held in the preceding review.",
+  "prior_review": {
+    "path": "safety/reviews/2026-11-26-china-speedtest-global-additions.json",
+    "sha256": "784586206e7abb365b59eaa3852886e9921a71bea8320c3f1245071336fc2129"
+  },
+  "summary": {
+    "Speedtest": {
+      "approved": 1,
+      "quarantined": 0
+    },
+    "Global": {
+      "approved": 41,
+      "quarantined": 0
+    }
+  },
+  "decisions": [
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,msk.speedtest.reynard.cloud",
+      "decision": "user-approved",
+      "previous_hold_reason": "speedtest_missing_dns"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-KEYWORD,anthropic",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_keyword"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-KEYWORD,antigravity",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_keyword"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-KEYWORD,claude",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_keyword"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-KEYWORD,openai",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_keyword"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,abitno.linpie.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,bbs.huasing.org",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,bbs.skykiwi.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,bbs.sou-tong.org",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,blog.foolsmountain.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,blog.sogoo.org",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,blog.syx86.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,blog.taragana.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,cdn.assets.lfpcontent.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,cdn1.lp.saboom.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,chinese.soifind.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,cn.streetvoice.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,cn2.streetvoice.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,cyberghost.natado.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,dappcdn.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_parent"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,fangong.forums-free.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,forum.mymaji.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,nemesis2.qx.net",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,opml.radiotime.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,pioneer-worker.forums-free.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,play-analytics.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_conflicting_parent"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,share.ovi.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,shuaiapi.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_parent"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,srcf.ucam.org",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,ss.pythonic.life",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,taiwanyes.ning.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,tbskkinabalu.page.tl",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,tor.updatestar.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,tritondigital.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_parent"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,tw.streetvoice.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,unun.dev",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_parent"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,usmgtcg.ning.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,www.owind.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,www.thechinastory.org",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,www2.ohchr.org",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,www2.rocketbbs.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,xinqimeng.over-blog.com",
+      "decision": "user-approved",
+      "previous_hold_reason": "global_unconfirmed"
+    }
+  ]
+}
