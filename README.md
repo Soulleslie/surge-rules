@@ -2,7 +2,7 @@
 
 每天北京时间 08:00 从 [MagicRule](https://magicrule.pages.dev/) 同步经过本地审核的 Surge 规则，并生成 Clash 产物。GitHub Actions 调度可能延迟，也可在 Actions → Sync rules → Run workflow 手动运行。
 
-上游曾把广告规则追加到 Apple、Lan、Telegram、GlobalMedia、Speedtest；连 11 月 7 日的冻结旧版也有残留。因此现在所有 30 个列表都使用 `safety/approved/` 中独立、固定的逐条白名单。五个受影响列表已对照各自原始来源重审，记录在 `safety/review.json`。
+上游曾把广告规则追加到 Apple、Lan、Telegram、GlobalMedia、Speedtest；连 11 月 7 日的冻结旧版也有残留。因此现在所有 31 个列表都使用 `safety/approved/` 中独立、固定的逐条白名单。五个受影响列表已对照各自原始来源重审，记录在 `safety/review.json`。
 
 - 已审核规则才允许发布，规则类型和 `no-resolve` 参数也是审核身份的一部分。
 - 已知未批准条目由 `safety/excluded.list` 或目标列表的 `safety/quarantine/` 文件隔离。

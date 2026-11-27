@@ -173,6 +173,11 @@
       "path": "safety/approved/Cloudflare.list",
       "sha256": "17f569bdd36d6c2eda5790648733b28b55fae8bad1c0b320569209d432efe2f9",
       "count": 99
+    },
+    "TestFlight": {
+      "path": "safety/approved/TestFlight.list",
+      "sha256": "8f07e52c4969aa0e57e6e7e74552f8b4ec868953dd0c7160d5acbbaf54643134",
+      "count": 2
     }
   },
   "excluded": {
@@ -275,6 +280,12 @@
       "sha256": "ddd88a1d9047ebcbd1440f7000ec88b7614118143f5ef8c2a048100d905693c8",
       "approved": 0,
       "quarantined": 1
+    },
+    {
+      "path": "safety/reviews/2026-11-27-testflight-import.json",
+      "sha256": "c12dfd91ea7615fbf7f7e3308816b920475e389dad4fccf793adadca7e01b510",
+      "approved": 2,
+      "quarantined": 0
     }
   ]
 }

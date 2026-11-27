@@ -1,0 +1,93 @@
+{
+  "list": "TestFlight",
+  "reviewed_at": "2026-11-27T15:21:30+00:00",
+  "baseline_commit": "95c555e1f7425cf29e65b7c491a7a03159da4d1a",
+  "upstream": {
+    "count": 2,
+    "integrity_verification": "bytes_sha256",
+    "manifest": "https://magicrule.pages.dev/data/rules/Surge/9c64662c4ec4106f99f09c94/manifest.json",
+    "sha256": "432f77d063efabf20daa49be215a45f39782ef21128b352a359390b2649272d9",
+    "url": "https://magicrule.pages.dev/data/_shared/artifacts/TestFlight_rules_4b00736d488539d8.list",
+    "providers": []
+  },
+  "source_snapshots": {
+    "blackmatrix7-testflight": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TestFlight/TestFlight.list",
+      "sha256": "06b2eb437c4ab26a9111168cf1be4d7efbafa8eda22b0d9c1d9343bb43092a46"
+    },
+    "v2fly-apple": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple",
+      "sha256": "77e078d2a0ea4c4f8811563d113d24ed1298e96c6df220fc7479403948097398"
+    },
+    "v2fly-apple-dev": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/apple-dev",
+      "sha256": "b5a30bd78a67f5e00e36beed2a0c02158f6559c5e3da45c80c66df0594ceaf34"
+    },
+    "acl4ssr-apple": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list",
+      "sha256": "7b2e60cd0bf3c4bfb1369890d39cc3783bdfcb016089b78acee0ff6f0d4e51c5"
+    },
+    "sukka-apple-services": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/apple_services.conf",
+      "sha256": "9c32e8eb6e1d334a85b972791a0afc4b0fc81f57d3a80902a50c9168269f7602"
+    },
+    "sukka-reject-domainset": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "28bc54dd3af74c5f9e1f96d241e9b06809d526cb51d23805ce8956044e55f4df"
+    },
+    "sukka-reject-non_ip": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    }
+  },
+  "summary": {
+    "approved": 2,
+    "quarantined": 0
+  },
+  "notes": [
+    "Upstream declares no providers; blackmatrix7 TestFlight is the only checked source carrying both exact rules.",
+    "v2fly apple/apple-dev, ACL4SSR Apple and Sukka apple_services contain no testflight entry; Sukka domain and non_ip reject lists contain no testflight match.",
+    "DOMAIN-KEYWORD,testflight remains in the global safety/excluded.list from the initial cleanup; approval here is scoped to TestFlight only, as with the earlier user-approved Apple entry (safety/reviews/2026-11-17-apple-user-approved-nine.json)."
+  ],
+  "decisions": [
+    {
+      "list": "TestFlight",
+      "rule": "DOMAIN,testflight.apple.com",
+      "decision": "approved",
+      "reason": "Exact rule in the blackmatrix7 TestFlight category. Apple-owned apple.com host that serves TestFlight public links; resolves through Apple's Akamai edge. Already approved in the Apple list.",
+      "evidence": {
+        "sources": [
+          [
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TestFlight/TestFlight.list",
+            9,
+            "DOMAIN,testflight.apple.com"
+          ]
+        ],
+        "dns": [
+          "https://dns.google/resolve?name=testflight.apple.com&type=A",
+          [
+            "testflight.apple.com.edgesuite.net.",
+            "a305.dscg1.akamai.net.",
+            "23.54.76.10",
+            "23.54.76.28"
+          ]
+        ]
+      }
+    },
+    {
+      "list": "TestFlight",
+      "rule": "DOMAIN-KEYWORD,testflight",
+      "decision": "approved",
+      "reason": "Exact keyword with the same TestFlight scope in the blackmatrix7 TestFlight category. Substring matching can also catch unrelated hosts containing \"testflight\"; accepted for a list dedicated to TestFlight routing. Previously user-approved for Apple.",
+      "evidence": {
+        "sources": [
+          [
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TestFlight/TestFlight.list",
+            10,
+            "DOMAIN-KEYWORD,testflight"
+          ]
+        ]
+      }
+    }
+  ]
+}
