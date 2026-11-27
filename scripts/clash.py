@@ -10,6 +10,7 @@ mihomo 不支持的 USER-AGENT、URL-REGEX 丢弃。没有内容的部分不生�
 用法：python3 scripts/clash.py <mihomo 可执行文件>
 """
 
+import json
 import subprocess
 import sys
 import tempfile
@@ -100,10 +101,16 @@ def main() -> int:
         print(f'FAIL safety policy: {exc}', file=sys.stderr)
         return 1
     OUT.mkdir(exist_ok=True)
+    # sources.json 里标记 "clash": false 的列表只发布 Surge，不生成 Clash 产物
+    surge_only = {e['name'] for e in json.loads((ROOT / 'sources.json').read_text(encoding='utf-8'))['rules']
+                  if e.get('clash', True) is False}
 
     failed = []
     for source in SOURCES:
         label = str(source.relative_to(ROOT))
+        if source.parent == ROOT / 'rules' and source.stem in surge_only:
+            print(f"SKIP  {label:28} (clash: false)")
+            continue
         try:
             if source.parent == ROOT / 'rules':
                 text = source.read_text(encoding='utf-8')

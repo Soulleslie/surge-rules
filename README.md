@@ -50,6 +50,8 @@ python3 -B tests/smoke_mihomo.py --mihomo /path/to/mihomo
 
 mihomo 不支持的 USER-AGENT、URL-REGEX 会被丢弃；没有内容的部分不生成文件。
 
+在 `sources.json` 中给列表加上 `"clash": false`，该列表就只发布 Surge 产物；同步时不生成 Clash 文件，并删除已有的 Clash 文件。目前 Apple 和 TestFlight 只用于 Apple 设备上的 Surge，不提供 Clash 版本。
+
 ```yaml
 rule-providers:
   Google:
