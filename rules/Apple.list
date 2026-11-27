@@ -3,8 +3,8 @@
 # REPO: https://magicrule.pages.dev
 # UPDATED: 2026-11-17 20:23:13
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
-# DOMAIN: 283
-# DOMAIN-KEYWORD: 5
+# DOMAIN: 282
+# DOMAIN-KEYWORD: 4
 # DOMAIN-SUFFIX: 1771
 # IP-CIDR: 10
 # IP-CIDR6: 3
@@ -270,7 +270,6 @@ DOMAIN,swscan-cdn.apple.com.akadns.net
 DOMAIN,swscan.apple.com
 DOMAIN,sylvan.apple.com
 DOMAIN,sync.itunes.apple.com
-DOMAIN,testflight.apple.com
 DOMAIN,tf-feedback.itunes.apple.com
 DOMAIN,tj-pod1-smp-device.apple.com
 DOMAIN,tj-pod2-smp-device.apple.com
@@ -2069,7 +2068,6 @@ DOMAIN-KEYWORD,apple.com.akadns.net
 DOMAIN-KEYWORD,icloud.com.akadns.net
 DOMAIN-KEYWORD,icoudo
 DOMAIN-KEYWORD,icoudos
-DOMAIN-KEYWORD,testflight
 USER-AGENT,AppleNews*
 USER-AGENT,AppleTV*
 USER-AGENT,com.apple.news*

@@ -52,6 +52,8 @@ mihomo 不支持的 USER-AGENT、URL-REGEX 会被丢弃；没有内容的部分�
 
 在 `sources.json` 中给列表加上 `"clash": false`，该列表就只发布 Surge 产物；同步时不生成 Clash 文件，并删除已有的 Clash 文件。目前 Apple 和 TestFlight 只用于 Apple 设备上的 Surge，不提供 Clash 版本。
 
+在 `sources.json` 中给列表加上 `"exclude_lists": ["<其他列表>"]`，同步时会从该列表中去掉其他列表白名单已批准的规则。这些规则不计入保留比例，也不会因为是新增条目而拦截该列表；排除只依据固定的审核白名单，只能减少规则，不会放入新规则。目前 Apple 排除 TestFlight，TestFlight 以后新批准的规则也会自动从 Apple 中去掉。
+
 ```yaml
 rule-providers:
   Google:

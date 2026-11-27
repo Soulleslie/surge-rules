@@ -92,11 +92,18 @@ class Policy:
             raise UnsafeRules(f'审核文件校验和不符: {path}')
         return data.decode('utf-8')
 
-    def clean(self, name: str, text: str) -> tuple[str, dict]:
+    def clean(self, name: str, text: str, *, excluded_by_config=frozenset()) -> tuple[str, dict]:
+        """`excluded_by_config` are rules removed on purpose (sources.json exclude_lists).
+
+        They can only shrink the output, and they do not count as missing for the
+        retention floor.
+        """
         if name not in self.approved:
             raise UnsafeRules(f'{name}: 缺少独立审核白名单')
-        lines = parse(text)
-        approved = self.approved[name]
+        parsed = parse(text)
+        lines = [line for line in parsed if line not in excluded_by_config]
+        excluded_here = sorted(set(parsed) - set(lines))
+        approved = self.approved[name] - set(excluded_by_config)
         unapproved = set(lines) - approved
         excluded = self.excluded | self.list_excluded.get(name, set())
         unknown = unapproved - excluded
@@ -119,5 +126,5 @@ class Policy:
         return '\n'.join(header + [''] + kept) + '\n', {
             'upstream_rules': len(lines), 'accepted_rules': len(kept),
             'filtered_rules': len(lines) - len(kept), 'updated': updated,
-            'quarantined_rules': quarantined,
+            'quarantined_rules': quarantined, 'excluded_by_config': excluded_here,
         }

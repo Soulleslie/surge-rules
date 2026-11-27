@@ -130,6 +130,18 @@ def clash_enabled(entry):
     return value
 
 
+def excluded_rules(entry, policy, names):
+    """Rules approved in the lists named by `"exclude_lists"`, to keep out of this list.
+
+    Uses the pinned allowlists only, so it can remove rules but never admit one.
+    """
+    value = entry.get('exclude_lists', [])
+    if (type(value) is not list or not all(isinstance(x, str) for x in value)
+            or len(set(value)) != len(value) or entry['name'] in value or not set(value) <= set(names)):
+        raise UnsafeRules('配置的 exclude_lists 必须是其他已配置列表名称的数组')
+    return frozenset().union(*(policy.approved[n] for n in value))
+
+
 def install(root, name, clean, mihomo, *, with_clash=True):
     with tempfile.TemporaryDirectory() as tmp:
         stage = Path(tmp)
@@ -160,7 +172,8 @@ def recover_reviewed(names, mihomo, report_path, *, root=ROOT):
     for name in names:
         item = policy.config['lists'][name]
         text = policy.read_verified(item)
-        clean, counts = policy.clean(name, text)
+        excluded = excluded_rules(entries.get(name, {'name': name}), policy, entries)
+        clean, counts = policy.clean(name, text, excluded_by_config=excluded)
         clean = clean.replace('# AUTHOR: MagicRule (review-filtered)', '# AUTHOR: source-audited recovery')
         clean = clean.replace('# UPDATED: unknown', '# REVIEWED: ' + policy.config['reviewed_at'])
         install(root, name, clean, mihomo, with_clash=clash_enabled(entries.get(name, {})))
@@ -187,6 +200,7 @@ def run(config, mihomo, report_path, *, root=ROOT, fetcher=fetch):
                     or entry['artifact'] != 'rules'):
                 raise UnsafeRules('配置包含非预期输出路径或产物')
             clash_enabled(entry)
+            excluded_rules(entry, policy, names)
         index = {}
         for row in json.loads(fetcher(checked_url(config['index']))).get('rules', []):
             index.setdefault(row.get('name'), []).append(row)
@@ -199,7 +213,7 @@ def run(config, mihomo, report_path, *, root=ROOT, fetcher=fetch):
                 detail.update(source=url, integrity_verification=verification)
                 if entry.get('drop_bare_suffix'):
                     text = sync.drop_bare_suffix(text, set(entry.get('keep_bare', [])))
-                clean, counts = policy.clean(name, text)
+                clean, counts = policy.clean(name, text, excluded_by_config=excluded_rules(entry, policy, names))
                 detail.update(counts, source=url)
                 with tempfile.TemporaryDirectory() as tmp:
                     # Policy supplies the stronger, immutable retention floor.
