@@ -7,7 +7,12 @@
     "China": {
       "path": "safety/approved/China.list",
       "sha256": "1795159f79ad3dc5d085911aba9a4732574e314b5a941ad6da1402f31d36b780",
-      "count": 10374
+      "count": 10374,
+      "excluded": {
+        "path": "safety/quarantine/China.list",
+        "sha256": "a9abb99e5c052048e4072e053ebec4c1e274c52213d8e4fc18c8d234f537f2b4",
+        "count": 1
+      }
     },
     "Lan": {
       "path": "safety/approved/Lan.list",
@@ -264,6 +269,12 @@
       "approved": 42,
       "quarantined": 0,
       "authorization": "explicit-user-override"
+    },
+    {
+      "path": "safety/reviews/2026-11-27-china-vietnam-cidr-quarantine.json",
+      "sha256": "ddd88a1d9047ebcbd1440f7000ec88b7614118143f5ef8c2a048100d905693c8",
+      "approved": 0,
+      "quarantined": 1
     }
   ]
 }

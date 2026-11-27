@@ -1,0 +1,98 @@
+{
+  "reviewed_at": "2026-11-27T09:34:53+00:00",
+  "baseline_commit": "49dea925714e0896dbef530ef4a5b658a82e0730",
+  "summary": {
+    "China": {
+      "approved": 0,
+      "quarantined": 1,
+      "upstream_removed": 1
+    }
+  },
+  "upstream_artifacts": {
+    "China": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/China_rules_25adbc0394103807.list",
+      "sha256": "16fdd907b6a537d6884f127dc861d59c1e3a9ad18d1c3699d853cd6d02a872f8",
+      "integrity_verification": "semantic_sha256",
+      "manifest": "https://magicrule.pages.dev/data/rules/Surge/11af2559235209b8783239b3/manifest.json"
+    }
+  },
+  "upstream_removals": {
+    "China": [
+      "IP-CIDR,180.184.8.0/23,no-resolve"
+    ]
+  },
+  "reject_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+      "sha256": "99809ef57bb04640d2690f198c7ab16484945e6aad0f9eca9a02e9a0d60658b2"
+    }
+  ],
+  "reason_descriptions": {
+    "china_ip_not_cn": "Sukka lists the CIDR as China, but APNIC registers the covering network outside China, GeoLite places the full range outside China, and the announcing origin AS is foreign. Fails the china_ip criteria; held."
+  },
+  "evidence_fields": {
+    "sources": "Source references, optionally with the line number and verbatim rule.",
+    "rdap": "Source reference, registered network name, country, first address, last address.",
+    "geo": "Source reference, country, percent of the candidate network.",
+    "bgp": "Source reference, origin ASN and holder."
+  },
+  "source_catalog": {
+    "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+      "sha256": "3488a8b5a864de6f819e05829fe486aa52072d47e88ce2f23eb4b8b0e49c914d"
+    },
+    "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/reject.conf",
+      "sha256": "99809ef57bb04640d2690f198c7ab16484945e6aad0f9eca9a02e9a0d60658b2"
+    },
+    "https://rdap.apnic.net/ip/203.162.166.0": {
+      "url": "https://rdap.apnic.net/ip/203.162.166.0",
+      "sha256": "bbb1e80b15fb39ea499640590c3cd8a7166decb2ae693ff8a11cf07ce30e1126"
+    },
+    "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=203.162.166.0%2F23": {
+      "url": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=203.162.166.0%2F23",
+      "sha256": "402736abdc92b1fb548f390cd6d459e99ad26bf3d5115e4e1faee81afa41290a"
+    },
+    "https://stat.ripe.net/data/prefix-overview/data.json?resource=203.162.166.0%2F23": {
+      "url": "https://stat.ripe.net/data/prefix-overview/data.json?resource=203.162.166.0%2F23",
+      "sha256": "3642d89f8e79b4f5e11b541e33472c62c25195e82a287700108c73e3bc5e10f9"
+    }
+  },
+  "decisions": [
+    {
+      "list": "China",
+      "rule": "IP-CIDR,203.162.166.0/23,no-resolve",
+      "decision": "quarantined",
+      "reason": "china_ip_not_cn",
+      "evidence": {
+        "sources": [
+          [
+            "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/ip/china_ip.conf",
+            3239,
+            "IP-CIDR,203.162.166.0/23"
+          ]
+        ],
+        "rdap": [
+          "https://rdap.apnic.net/ip/203.162.166.0",
+          "VDC-NET",
+          "VN",
+          "203.162.144.0",
+          "203.162.175.255"
+        ],
+        "geo": [
+          "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource=203.162.166.0%2F23",
+          "VN",
+          100.0
+        ],
+        "bgp": [
+          "https://stat.ripe.net/data/prefix-overview/data.json?resource=203.162.166.0%2F23",
+          [
+            45899,
+            "VNPT-AS-VN - VNPT Corp"
+          ]
+        ],
+        "reject_overlaps": []
+      }
+    }
+  ]
+}
