@@ -122,13 +122,22 @@ def candidate(entry, index, fetcher):
     return data.decode('utf-8'), url, verification
 
 
-def install(root, name, clean, mihomo):
+def clash_enabled(entry):
+    """`"clash": false` in sources.json publishes Surge only and removes old Clash parts."""
+    value = entry.get('clash', True)
+    if type(value) is not bool:
+        raise UnsafeRules('配置的 clash 开关必须是 true 或 false')
+    return value
+
+
+def install(root, name, clean, mihomo, *, with_clash=True):
     with tempfile.TemporaryDirectory() as tmp:
         stage = Path(tmp)
         source = stage / 'rules' / f'{name}.list'
         source.parent.mkdir(parents=True)
         source.write_text(clean, encoding='utf-8')
-        clash.build(mihomo, source, root=stage, out_dir=stage / 'clash')
+        if with_clash:
+            clash.build(mihomo, source, root=stage, out_dir=stage / 'clash')
         updates = {root / 'rules' / f'{name}.list': source.read_bytes()}
         for suffix in ('.mrs', '-IP.mrs', '-Extra.list'):
             part = Path('clash') / f'{name}{suffix}'
@@ -146,6 +155,7 @@ def recover_reviewed(names, mihomo, report_path, *, root=ROOT):
     if not set(names) <= RECOVERY_LISTS:
         raise UnsafeRules('恢复命令仅用于本次事故涉及的五个列表')
     policy = Policy(root)
+    entries = {e['name']: e for e in json.loads((root / 'sources.json').read_text(encoding='utf-8'))['rules']}
     report = {'mode': 'local-reviewed-recovery', 'lists': {}}
     for name in names:
         item = policy.config['lists'][name]
@@ -153,7 +163,7 @@ def recover_reviewed(names, mihomo, report_path, *, root=ROOT):
         clean, counts = policy.clean(name, text)
         clean = clean.replace('# AUTHOR: MagicRule (review-filtered)', '# AUTHOR: source-audited recovery')
         clean = clean.replace('# UPDATED: unknown', '# REVIEWED: ' + policy.config['reviewed_at'])
-        install(root, name, clean, mihomo)
+        install(root, name, clean, mihomo, with_clash=clash_enabled(entries.get(name, {})))
         report['lists'][name] = dict(counts, status='recovered', approved_sha256=item['sha256'])
         print(f'RECOVERED {name}: {counts["accepted_rules"]} source-reviewed rules')
     publish({Path(report_path): (json.dumps(report, ensure_ascii=False, indent=2) + '\n').encode()})
@@ -176,6 +186,7 @@ def run(config, mihomo, report_path, *, root=ROOT, fetcher=fetch):
             if (not re.fullmatch(r'[A-Za-z0-9]+', name) or entry['output'] != f'rules/{name}.list'
                     or entry['artifact'] != 'rules'):
                 raise UnsafeRules('配置包含非预期输出路径或产物')
+            clash_enabled(entry)
         index = {}
         for row in json.loads(fetcher(checked_url(config['index']))).get('rules', []):
             index.setdefault(row.get('name'), []).append(row)
@@ -193,7 +204,7 @@ def run(config, mihomo, report_path, *, root=ROOT, fetcher=fetch):
                 with tempfile.TemporaryDirectory() as tmp:
                     # Policy supplies the stronger, immutable retention floor.
                     sync.check(entry, clean, Path(tmp) / 'not-written')
-                install(root, name, clean, mihomo)
+                install(root, name, clean, mihomo, with_clash=clash_enabled(entry))
                 detail['status'] = 'updated'
                 print(f'OK {name}: {counts["accepted_rules"]} accepted, {counts["filtered_rules"]} quarantined')
             except Exception as exc:

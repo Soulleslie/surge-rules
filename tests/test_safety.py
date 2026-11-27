@@ -211,6 +211,30 @@ class PipelineTests(RepositoryCase):
         self.assertIn(b'good.invalid', (self.root / 'clash/One.mrs').read_bytes())
         self.assertFalse((self.root / 'clash/One-IP.mrs').exists())
 
+    def test_clash_disabled_list_publishes_surge_only_and_removes_clash(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\nDOMAIN-KEYWORD,good\n',
+                                  'Two': 'DOMAIN,other.invalid\n'},
+                                 {'One': 'DOMAIN,good.invalid\nDOMAIN-KEYWORD,good\n',
+                                  'Two': 'DOMAIN,other.invalid\n'})
+        c['rules'][0]['clash'] = False
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 0)
+        self.assertEqual(report['lists']['One']['status'], 'updated')
+        self.assertEqual(parse((self.root / 'rules/One.list').read_text()),
+                         ['DOMAIN,good.invalid', 'DOMAIN-KEYWORD,good'])
+        for suffix in ('.mrs', '-IP.mrs', '-Extra.list'):
+            self.assertFalse((self.root / f'clash/One{suffix}').exists(), suffix)
+        self.assertIn(b'other.invalid', (self.root / 'clash/Two.mrs').read_bytes())
+
+    def test_non_boolean_clash_switch_fails_before_writes(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+        c['rules'][0]['clash'] = 'false'
+        before = self.snapshot()
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 1)
+        self.assertIn('clash', report['fatal_error'])
+        self.assertEqual(before, self.snapshot())
+
     def test_unknown_blocks_entire_group_but_other_list_updates(self):
         c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n', 'Two': 'DOMAIN,other.invalid\n'},
                                  {'One': 'DOMAIN,good.invalid\nDOMAIN,new.invalid\nDOMAIN-SUFFIX,ad.invalid\n', 'Two': 'DOMAIN,other.invalid\n'})
