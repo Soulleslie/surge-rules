@@ -235,6 +235,34 @@ class PipelineTests(RepositoryCase):
         self.assertIn('clash', report['fatal_error'])
         self.assertEqual(before, self.snapshot())
 
+    def test_exclude_lists_removes_rules_approved_in_other_list(self):
+        c, n = self.setup_remote(
+            {'One': 'DOMAIN,good.invalid\nDOMAIN-KEYWORD,shared\n',
+             'Two': 'DOMAIN-KEYWORD,shared\nDOMAIN,newtwo.invalid\n'},
+            {'One': 'DOMAIN,good.invalid\nDOMAIN-KEYWORD,shared\nDOMAIN,NewTwo.invalid\n',
+             'Two': 'DOMAIN-KEYWORD,shared\nDOMAIN,newtwo.invalid\n'})
+        c['rules'][0]['exclude_lists'] = ['Two']
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 0)
+        # newtwo.invalid is unknown to One but approved in Two: excluded, not blocked.
+        self.assertEqual(report['lists']['One']['excluded_by_config'],
+                         ['DOMAIN,newtwo.invalid', 'DOMAIN-KEYWORD,shared'])
+        self.assertEqual(parse((self.root / 'rules/One.list').read_text()), ['DOMAIN,good.invalid'])
+        self.assertEqual(parse((self.root / 'rules/Two.list').read_text()),
+                         ['DOMAIN-KEYWORD,shared', 'DOMAIN,newtwo.invalid'])
+
+    def test_invalid_exclude_lists_fails_before_writes(self):
+        for value in (['One'], ['Missing'], 'Two', ['Two', 'Two']):
+            with self.subTest(value=value):
+                c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n', 'Two': 'DOMAIN,other.invalid\n'},
+                                         {'One': 'DOMAIN,good.invalid\n', 'Two': 'DOMAIN,other.invalid\n'})
+                c['rules'][0]['exclude_lists'] = value
+                before = self.snapshot()
+                code, report = self.execute(c, n)
+                self.assertEqual(code, 1)
+                self.assertIn('exclude_lists', report['fatal_error'])
+                self.assertEqual(before, self.snapshot())
+
     def test_unknown_blocks_entire_group_but_other_list_updates(self):
         c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n', 'Two': 'DOMAIN,other.invalid\n'},
                                  {'One': 'DOMAIN,good.invalid\nDOMAIN,new.invalid\nDOMAIN-SUFFIX,ad.invalid\n', 'Two': 'DOMAIN,other.invalid\n'})
@@ -384,7 +412,10 @@ class ReviewedRepositoryTests(unittest.TestCase):
             with self.subTest(name=e['name']):
                 text = (root / e['output']).read_text()
                 self.assertLessEqual(set(parse(text)), policy.approved[e['name']])
-                policy.clean(e['name'], text)
+                excluded = update.excluded_rules(e, policy, [x['name'] for x in config['rules']])
+                policy.clean(e['name'], text, excluded_by_config=excluded)
+                for other in e.get('exclude_lists', []):
+                    self.assertFalse(set(parse(text)) & policy.approved[other], other)
 
     def test_known_ad_examples_absent_from_five_cleaned_lists(self):
         root = Path(__file__).resolve().parents[1]
