@@ -8,7 +8,6 @@ import sys
 import tempfile
 import urllib.request
 from pathlib import Path
-from urllib.error import HTTPError
 from urllib.parse import urlsplit
 
 import clash
@@ -83,7 +82,7 @@ def standard_header(lines, expected_name: str) -> bool:
 
 
 def configured_artifact(entry):
-    """The fixed per-list artifact URL in sources.json, used only when the manifest is gated."""
+    """The fixed per-list artifact URL in sources.json; when set, no index or manifest is used."""
     url = entry.get('artifact_url')
     if url is None:
         return None
@@ -95,12 +94,6 @@ def configured_artifact(entry):
     if not match or match.group(1) != entry['name'] or parts.query or parts.fragment:
         raise UnsafeRules('artifact_url 必须是该列表固定的 rules 产物地址')
     return url
-
-
-def manifest_gated(exc) -> bool:
-    """MagicRule answers 403 with this reason when it requires a Turnstile check."""
-    return (isinstance(exc, HTTPError) and exc.code == 403 and exc.headers is not None
-            and exc.headers.get('x-magicrule-block-reason') == 'turnstile-required')
 
 
 def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
@@ -133,20 +126,17 @@ def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
 
 
 def candidate(entry, index, fetcher):
+    direct = configured_artifact(entry)
+    if direct is not None:
+        # No upstream digest is checked; the per-rule allowlist still applies.
+        data = fetcher(direct)
+        if not standard_header(data.split(b'\n', 4)[:4], entry['name']):
+            raise UnsafeRules('固定产物的元数据头格式或规则名称不符')
+        return data.decode('utf-8'), direct, 'fixed-artifact'
     matches = index.get(entry['name'], [])
     if len(matches) != 1:
         raise UnsafeRules(f'索引里找到 {len(matches)} 个同名条目')
-    try:
-        manifest = json.loads(fetcher(checked_url(matches[0]['manifest'])))
-    except Exception as exc:
-        direct = configured_artifact(entry)
-        if direct is None or not manifest_gated(exc):
-            raise
-        # No upstream digest is available; the per-rule allowlist still applies.
-        data = fetcher(direct)
-        if not standard_header(data.split(b'\n', 4)[:4], entry['name']):
-            raise UnsafeRules('manifest 不可用时，固定产物的元数据头格式或规则名称不符') from exc
-        return data.decode('utf-8'), direct, 'manifest-unavailable'
+    manifest = json.loads(fetcher(checked_url(matches[0]['manifest'])))
     if manifest.get('rule') != entry['name'] or manifest.get('client') != 'Surge':
         raise UnsafeRules('manifest 名称或客户端不符')
     artifacts = [a for a in manifest.get('artifacts', []) if a.get('key') == entry['artifact']]
@@ -240,8 +230,9 @@ def run(config, mihomo, report_path, *, root=ROOT, fetcher=fetch):
             excluded_rules(entry, policy, names)
             configured_artifact(entry)
         index = {}
-        for row in json.loads(fetcher(checked_url(config['index']))).get('rules', []):
-            index.setdefault(row.get('name'), []).append(row)
+        if any(configured_artifact(entry) is None for entry in entries):
+            for row in json.loads(fetcher(checked_url(config['index']))).get('rules', []):
+                index.setdefault(row.get('name'), []).append(row)
         for entry in entries:
             name = entry['name']
             detail = {'status': 'failed'}

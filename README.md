@@ -8,7 +8,7 @@
 - 已知未批准条目由 `safety/excluded.list` 或目标列表的 `safety/quarantine/` 文件隔离。
 - 出现任何其他未经审核的新条目，即使只有一条，也暂停更新该列表并保留 Surge 和 Clash 旧版。
 - 从原始上游下载开始验证 TLS、发布地址、manifest 身份和 SHA-256。优先核对整文件指纹。上游明确声明支持的头部标准化格式时，校验规定的元数据行后可核对其余完整字节的 `semantic_sha256`。
-- 上游自 2026-11-28 起对 `magicrule.pages.dev` 的 manifest 要求人机验证（403，`x-magicrule-block-reason: turnstile-required`）。只有遇到这个响应时，才改为下载 `sources.json` 中该列表固定的 `artifact_url`；地址必须是该列表自己的 `rules` 产物，文件头必须是标准的 NAME、AUTHOR、REPO、UPDATED 四行。这种情况没有上游指纹可以核对，报告中记为 `manifest-unavailable`；逐条白名单、隔离和保留比例检查照常执行。其他错误不会触发回退。
+- 上游自 2026-11-28 起对 `magicrule.pages.dev` 的 manifest 要求人机验证（403，`x-magicrule-block-reason: turnstile-required`），因此现在每个列表都在 `sources.json` 中配置了固定的 `artifact_url`。配置了这个地址的列表直接下载它，不再请求索引和 manifest；地址必须是该列表自己的 `rules` 产物，文件头必须是标准的 NAME、AUTHOR、REPO、UPDATED 四行。这种方式不核对上游指纹，报告中记为 `fixed-artifact`；逐条白名单、隔离和保留比例检查照常执行。没有配置 `artifact_url` 的列表仍按上述 manifest 流程校验。上游更换产物地址时，需要更新对应的 `artifact_url`。
 - 清理后剩余条数不能低于固定白名单的 90%，防止逐次减少绕过检查。
 - 网络任务只提交 `rules/` 和 `clash/`，不能自动修改或扩大审核白名单。
 
