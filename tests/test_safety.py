@@ -263,6 +263,90 @@ class PipelineTests(RepositoryCase):
                 self.assertIn('exclude_lists', report['fatal_error'])
                 self.assertEqual(before, self.snapshot())
 
+    def gate_manifest(self, network, name, reason='turnstile-required', body=None):
+        """Make One's manifest answer 403 and serve its fixed artifact URL directly."""
+        from email.message import Message
+        from urllib.error import HTTPError
+        manifest_url = f'https://magicrule.pages.dev/data/{name}/manifest.json'
+        direct = f'https://magicrule.pages.dev/data/_shared/artifacts/{name}_rules_0123456789abcdef.list'
+        headers = Message()
+        if reason:
+            headers['x-magicrule-block-reason'] = reason
+        if body is not None:
+            network[direct] = body.encode()
+        def fetcher(url):
+            if url == manifest_url:
+                raise HTTPError(url, 403, 'Forbidden', headers, None)
+            return network[url]
+        return fetcher, direct
+
+    def execute_with(self, config, fetcher):
+        def convert(mihomo, behavior, lines, out):
+            out.write_bytes((behavior + '\n' + '\n'.join(lines)).encode())
+        with patch.object(clash, 'convert', side_effect=convert):
+            code = update.run(config, 'fake', self.root / 'report.json', root=self.root, fetcher=fetcher)
+        return code, json.loads((self.root / 'report.json').read_text())
+
+    HEADER = '# NAME: One\n# AUTHOR: MagicRule\n# REPO: https://magicrule.pages.dev\n# UPDATED: 2026-11-28 10:00:00\n'
+
+    def test_gated_manifest_uses_fixed_artifact_and_still_filters(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+        fetcher, direct = self.gate_manifest(n, 'One', body=self.HEADER + 'DOMAIN,good.invalid\nDOMAIN-SUFFIX,ad.invalid\n')
+        c['rules'][0]['artifact_url'] = direct
+        code, report = self.execute_with(c, fetcher)
+        self.assertEqual(code, 0)
+        self.assertEqual(report['lists']['One']['integrity_verification'], 'manifest-unavailable')
+        self.assertEqual(report['lists']['One']['source'], direct)
+        self.assertEqual(report['lists']['One']['quarantined_rules'], ['DOMAIN-SUFFIX,ad.invalid'])
+        self.assertEqual(parse((self.root / 'rules/One.list').read_text()), ['DOMAIN,good.invalid'])
+
+    def test_gated_manifest_fixed_artifact_cannot_approve_unknown_rules(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+        fetcher, direct = self.gate_manifest(n, 'One', body=self.HEADER + 'DOMAIN,good.invalid\nDOMAIN,new.invalid\n')
+        c['rules'][0]['artifact_url'] = direct
+        before = self.snapshot()
+        code, report = self.execute_with(c, fetcher)
+        self.assertEqual(code, 1)
+        self.assertEqual(report['lists']['One']['unknown_rules'], ['DOMAIN,new.invalid'])
+        self.assertEqual(before, self.snapshot())
+
+    def test_no_fallback_without_url_other_403_or_bad_header(self):
+        bad_header = self.HEADER.replace('# NAME: One', '# NAME: Two') + 'DOMAIN,good.invalid\n'
+        good = self.HEADER + 'DOMAIN,good.invalid\n'
+        for reason, configure, body in (('turnstile-required', False, good), (None, True, good),
+                                        ('rate-limited', True, good), ('turnstile-required', True, bad_header)):
+            with self.subTest(reason=reason, configure=configure, body=body[:12]):
+                c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+                fetcher, direct = self.gate_manifest(n, 'One', reason=reason, body=body)
+                if configure:
+                    c['rules'][0]['artifact_url'] = direct
+                before = self.snapshot()
+                code, report = self.execute_with(c, fetcher)
+                self.assertEqual(code, 1)
+                self.assertEqual(report['lists']['One']['status'], 'failed')
+                self.assertEqual(before, self.snapshot())
+
+    def test_working_manifest_ignores_fixed_artifact(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+        c['rules'][0]['artifact_url'] = 'https://magicrule.pages.dev/data/_shared/artifacts/One_rules_0123456789abcdef.list'
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 0)
+        self.assertEqual(report['lists']['One']['integrity_verification'], 'bytes_sha256')
+        self.assertEqual(report['lists']['One']['source'], 'https://magicrule.pages.dev/data/One.list')
+
+    def test_invalid_artifact_url_fails_before_writes(self):
+        base = 'https://magicrule.pages.dev/data/_shared/artifacts/'
+        for value in (base + 'Two_rules_0123456789abcdef.list', 'https://evil.invalid/data/_shared/artifacts/One_rules_0123456789abcdef.list',
+                      base + 'One_rules_0123456789abcdef.list?x=1', base + 'One_rules_short.list', 7):
+            with self.subTest(value=value):
+                c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+                c['rules'][0]['artifact_url'] = value
+                before = self.snapshot()
+                code, report = self.execute(c, n)
+                self.assertEqual(code, 1)
+                self.assertIsNotNone(report['fatal_error'])
+                self.assertEqual(before, self.snapshot())
+
     def test_unknown_blocks_entire_group_but_other_list_updates(self):
         c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n', 'Two': 'DOMAIN,other.invalid\n'},
                                  {'One': 'DOMAIN,good.invalid\nDOMAIN,new.invalid\nDOMAIN-SUFFIX,ad.invalid\n', 'Two': 'DOMAIN,other.invalid\n'})
