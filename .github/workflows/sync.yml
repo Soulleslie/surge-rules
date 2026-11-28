@@ -2,7 +2,8 @@ name: Sync rules
 
 on:
   schedule:
-    - cron: "0 0 * * *" # 每天北京时间 08:00（GitHub 调度可能延迟）
+    # 每天北京时间 08:17。避开整点：整点是 GitHub 调度最拥挤的时段，延迟最大
+    - cron: "17 0 * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -25,7 +26,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Test safety checks and rollback
         run: python3 -B -m unittest discover -s tests -v
@@ -54,7 +55,7 @@ jobs:
 
       - name: Save quarantine and failure report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: sync-review-${{ github.run_id }}
           path: ${{ runner.temp }}/sync-report.json

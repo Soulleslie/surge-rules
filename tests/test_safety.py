@@ -10,6 +10,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import artifacts
 import clash
+import preview
 import update
 from safety import Policy, UnsafeRules, parse
 
@@ -288,11 +289,77 @@ class PipelineTests(RepositoryCase):
         fetcher, calls = self.recording(n)
         code, report = self.execute_with(c, fetcher)
         self.assertEqual(code, 0)
-        self.assertEqual(calls, [direct])
+        # The index is only read for stale hints; no manifest is ever requested.
+        self.assertEqual(calls, [c['index'], direct])
         self.assertEqual(report['lists']['One']['integrity_verification'], 'fixed-artifact')
         self.assertEqual(report['lists']['One']['source'], direct)
         self.assertEqual(report['lists']['One']['quarantined_rules'], ['DOMAIN-SUFFIX,ad.invalid'])
         self.assertEqual(parse((self.root / 'rules/One.list').read_text()), ['DOMAIN,good.invalid'])
+
+    def test_unavailable_index_does_not_block_fixed_artifacts(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+        direct = self.FIXED.format('One')
+        c['rules'][0]['artifact_url'] = direct
+        n[direct] = (self.HEADER + 'DOMAIN,good.invalid\n').encode()
+        del n[c['index']]
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 0)
+        self.assertFalse(report['index_available'])
+        self.assertEqual(report['lists']['One']['status'], 'updated')
+
+    def test_unavailable_index_still_fails_lists_that_need_a_manifest(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+        del n[c['index']]
+        before = self.snapshot()
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 1)
+        self.assertIsNotNone(report['fatal_error'])
+        self.assertEqual(before, self.snapshot())
+
+    def test_stale_hint_is_reported_but_never_blocks(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+        direct = self.FIXED.format('One')
+        c['rules'][0]['artifact_url'] = direct
+        n[direct] = (self.HEADER + 'DOMAIN,good.invalid\n').encode()  # UPDATED 10:00 China = 02:00 UTC
+        rows = json.loads(n[c['index']])['rules']
+        rows[0].update(source_rule_updated_at='2026-11-28T05:00:00+00:00', total_line_count=2)
+        n[c['index']] = json.dumps({'rules': rows}).encode()
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 0)
+        self.assertEqual(report['lists']['One']['status'], 'updated')
+        self.assertIn('artifact_url', report['lists']['One']['stale_hint'])
+
+    def test_stale_hint_rules(self):
+        text = self.HEADER + 'DOMAIN,good.invalid\n# comment\n'
+        row = lambda when, total: {'source_rule_updated_at': when, 'total_line_count': total}
+        self.assertIsNotNone(update.stale_hint(text, row('2026-11-28T05:00:00+00:00', 2)))
+        # Source not newer than the file (10:00 China = 02:00 UTC, plus one hour of slack).
+        self.assertIsNone(update.stale_hint(text, row('2026-11-28T02:30:00+00:00', 2)))
+        # Newer source with the same count: no hint.
+        self.assertIsNone(update.stale_hint(text, row('2026-11-28T05:00:00+00:00', 1)))
+        # Malformed or missing metadata never produces a hint or an error.
+        for bad in (None, {}, row('yesterday', 2), row('2026-11-28T05:00:00', 2), row('2026-11-28T05:00:00+00:00', '2')):
+            self.assertIsNone(update.stale_hint(text, bad))
+        self.assertIsNone(update.stale_hint('DOMAIN,good.invalid\n', row('2026-11-28T05:00:00+00:00', 2)))
+
+    def test_preview_reports_same_changed_and_blocked_without_writing(self):
+        approved = {'One': 'DOMAIN,good.invalid\nDOMAIN,next.invalid\n', 'Two': 'DOMAIN,other.invalid\n',
+                    'Three': 'DOMAIN,three.invalid\n'}
+        c, n = self.setup_remote(approved, {'One': 'DOMAIN,good.invalid\nDOMAIN,next.invalid\n',
+                                            'Two': 'DOMAIN,other.invalid\nDOMAIN,new.invalid\n',
+                                            'Three': 'DOMAIN,three.invalid\n'})
+        self.write('rules/One.list', 'DOMAIN,good.invalid\n')
+        self.write('rules/Two.list', 'DOMAIN,other.invalid\n')
+        self.write('rules/Three.list', 'DOMAIN,three.invalid\n')
+        before = self.snapshot()
+        report = preview.preview(c, root=self.root, fetcher=n.__getitem__)
+        self.assertEqual(before, self.snapshot())
+        lists = report['lists']
+        self.assertEqual((lists['One']['status'], lists['One']['added'], lists['One']['removed']),
+                         ('changed', ['DOMAIN,next.invalid'], []))
+        self.assertEqual((lists['Two']['status'], lists['Two']['unknown_rules']), ('blocked', ['DOMAIN,new.invalid']))
+        self.assertEqual(lists['Two']['integrity_verification'], 'bytes_sha256')
+        self.assertEqual(lists['Three']['status'], 'same')
 
     def test_fixed_artifact_cannot_approve_unknown_rules(self):
         c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})

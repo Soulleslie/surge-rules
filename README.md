@@ -1,6 +1,10 @@
 # surge-rules
 
-每天北京时间 08:00 从 [MagicRule](https://magicrule.pages.dev/) 同步经过本地审核的 Surge 规则，并生成 Clash 产物。GitHub Actions 调度可能延迟，也可在 Actions → Sync rules → Run workflow 手动运行。
+每天北京时间 08:17 从 [MagicRule](https://magicrule.pages.dev/) 同步经过本地审核的 Surge 规则，并生成 Clash 产物。GitHub Actions 调度可能延迟，也可在 Actions → Sync rules → Run workflow 手动运行。
+
+> 自 2026-11-28 起，上游对 GitHub Actions 运行环境的下载请求返回 HTTP 403，定时同步会失败并保留旧版。在此期间改为在其他环境中按下文“本地手动同步”运行，通过 PR 提交 `rules/` 和 `clash/` 的变化。
+
+PR 会自动运行离线单元测试（`.github/workflows/test.yml`），不下载上游，也不提交文件。
 
 上游曾把广告规则追加到 Apple、Lan、Telegram、GlobalMedia、Speedtest；连 11 月 7 日的冻结旧版也有残留。因此现在所有 31 个列表都使用 `safety/approved/` 中独立、固定的逐条白名单。五个受影响列表已对照各自原始来源重审，记录在 `safety/review.json`。
 
@@ -30,6 +34,14 @@ GEOIP,CN,DIRECT
 [Host]
 RULE-SET:https://raw.githubusercontent.com/Soulleslie/surge-rules/refs/heads/main/rules/China.list = server:system
 ```
+
+同步前可以先只读预检：按正式同步的同一流程下载、校验和清理每个列表，再与已发布的 Surge 规则比对。它列出新增、删除、待审核的条目和过期提示，不修改仓库，也不需要 mihomo；有列表会被拦截时退出码为 1。
+
+```bash
+python3 -B scripts/preview.py
+```
+
+过期提示的判断方法：上游索引显示来源的更新时间晚于固定产物头部的 `UPDATED`（北京时间），且条数不同。这说明上游可能还没发布新文件，也可能 `artifact_url` 已经过期，需要在网站上核对。提示只是提醒，从不拦截同步；索引不可用时跳过这项检查。同步时同样会把提示写入报告的 `stale_hint`，并在 Actions 中显示为 warning。
 
 本地手动同步（要求先安装 CI 中固定版本的 mihomo）：
 
