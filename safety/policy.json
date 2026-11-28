@@ -31,8 +31,8 @@
     },
     "Speedtest": {
       "path": "safety/approved/Speedtest.list",
-      "sha256": "9f202d7252945cc25ca3149088a002fbecc530f6606b38343d905b8eb0595ece",
-      "count": 3526,
+      "sha256": "eb1602d6095aa7a003c85c4d57baa8dc87835fe4f25974896690cbaf54795f66",
+      "count": 3531,
       "excluded": {
         "path": "safety/quarantine/Speedtest.list",
         "sha256": "e96c28d626de19ecb14e48b215e3dbff1bdd59c5e286d2a69f2ef9809654fb09",
@@ -41,8 +41,8 @@
     },
     "Google": {
       "path": "safety/approved/Google.list",
-      "sha256": "fafd1dd5c3d944eeae13ed1004b1dfc5e68424befce1893906d6257ffee20cf9",
-      "count": 1146
+      "sha256": "415223d9d3c9a9340b6462dcc2f4413301c88462a34814ee1f0afa5bcbd616ba",
+      "count": 1147
     },
     "YouTube": {
       "path": "safety/approved/YouTube.list",
@@ -151,8 +151,8 @@
     },
     "Global": {
       "path": "safety/approved/Global.list",
-      "sha256": "ece3a89b5b1388ef1b4ba2d08aecb0ba58bf30cea67ab2b83c0223e53001d71a",
-      "count": 24530,
+      "sha256": "f37832e2e27cee14d23edf589d8d176224efe7a83b3dd273b55c4e03d06a3f41",
+      "count": 24533,
       "excluded": {
         "path": "safety/quarantine/Global.list",
         "sha256": "e6e8665baea6ac1566ddcdd4c3ecb15c9d543fc5effd5c054909b06d38d0226e",
@@ -291,6 +291,12 @@
       "path": "safety/reviews/2026-11-28-global-microsoft-additions.json",
       "sha256": "6f6085c002d9160b9eef2ebb1d898a122080b88f9d0701b699b81f1f2f5666d7",
       "approved": 3,
+      "quarantined": 0
+    },
+    {
+      "path": "safety/reviews/2026-11-28-speedtest-google-global-additions.json",
+      "sha256": "4d35986d9966d95cb16f75f77ad93f59c6cda6414e9a6bb1e1b135aca97c726d",
+      "approved": 9,
       "quarantined": 0
     }
   ]
