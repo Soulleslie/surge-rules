@@ -236,7 +236,7 @@ def stale_hint(text, row):
     if source_time > file_time + timedelta(hours=1) and total != rules:
         return (f'上游索引显示来源在 {source_time.astimezone(timezone.utc):%Y-%m-%d %H:%M} UTC 更新为 {total} 条，'
                 f'固定产物仍是 {file_time.astimezone(timezone.utc):%Y-%m-%d %H:%M} UTC 的 {rules} 条；'
-                '上游可能尚未发布，或 artifact_url 已过期')
+                '若网站上仍是同一链接，说明上游尚未发布新文件，无需处理；若网站已换链接，请更新 artifact_url')
     return None
 
 

@@ -41,7 +41,7 @@ RULE-SET:https://raw.githubusercontent.com/Soulleslie/surge-rules/refs/heads/mai
 python3 -B scripts/preview.py
 ```
 
-过期提示的判断方法：上游索引显示来源的更新时间晚于固定产物头部的 `UPDATED`（北京时间），且条数不同。这说明上游可能还没发布新文件，也可能 `artifact_url` 已经过期，需要在网站上核对。提示只是提醒，从不拦截同步；索引不可用时跳过这项检查。同步时同样会把提示写入报告的 `stale_hint`，并在 Actions 中显示为 warning。
+过期提示的判断方法：上游索引显示来源的更新时间晚于固定产物头部的 `UPDATED`（北京时间），且条数不同。遇到提示时，到网站上看该列表的规则文件链接：如果仍是同一链接，说明上游自己的统计已更新、但还没发布新文件，无需处理（2026-11-28 的 Google、Speedtest 就是这种情况）；如果网站已换链接，请更新 `artifact_url`。提示只是提醒，从不拦截同步；索引不可用时跳过这项检查。同步时同样会把提示写入报告的 `stale_hint`，并在 Actions 中显示为 warning。
 
 本地手动同步（要求先安装 CI 中固定版本的 mihomo）：
 
