@@ -1,14 +1,15 @@
 # NAME: Microsoft
 # AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-17 20:34:06
+# UPDATED: 2026-11-28 00:15:24
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
-# DOMAIN: 124
+# DOMAIN: 125
 # DOMAIN-KEYWORD: 4
 # DOMAIN-SUFFIX: 784
 # PROCESS-NAME: 2
 # USER-AGENT: 3
 
+DOMAIN,aurora-customization-usw2.lithium.com
 DOMAIN,az764295.vo.msecnd.net
 DOMAIN,azure.microsoft.com
 DOMAIN,azuremarketplace.microsoft.com
