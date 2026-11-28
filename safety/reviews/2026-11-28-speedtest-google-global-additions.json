@@ -1,0 +1,369 @@
+{
+  "reviewed_at": "2026-11-28T13:24:24+00:00",
+  "baseline_commit": "07901c35769b3e767f627ae69dec6734d65a038d",
+  "summary": {
+    "Speedtest": {
+      "approved": 5,
+      "quarantined": 0
+    },
+    "Google": {
+      "approved": 1,
+      "quarantined": 0
+    },
+    "Global": {
+      "approved": 3,
+      "quarantined": 0
+    }
+  },
+  "upstream_artifacts": {
+    "Speedtest": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/Speedtest_rules_6431e293aaca07be.list",
+      "sha256": "b5460152e4f4a7d6f53bebf49d82073004bfee2b530501b69c0b4d6eb4f919d7",
+      "integrity_verification": "fixed-artifact",
+      "updated": "2026-11-28 18:26:20"
+    },
+    "Google": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/Google_rules_0804a8c31c599a1e.list",
+      "sha256": "3c78966ba4abfbd08be3bbdd38d3556f86ea7d921e693440b4105bc1ec74872f",
+      "integrity_verification": "fixed-artifact",
+      "updated": "2026-11-28 18:22:45"
+    },
+    "Global": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/Global_rules_b5f3bb33d8a4698a.list",
+      "sha256": "c87a5b9b923aefebfc28c405aea39c48a81271f6a8127bc881b3f7df4d97f6aa",
+      "integrity_verification": "fixed-artifact",
+      "updated": "2026-11-28 20:55:50"
+    }
+  },
+  "notes": [
+    "Speedtest and Google are the additions earlier stale hints anticipated; the site kept the same artifact URLs.",
+    "Apple (-129) and GlobalMedia (-44) upstream removals in the same run need no approval; both lists keep over 90% of their allowlists."
+  ],
+  "reject_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "fe0aa5468f728190670e72ceab9eab4813ea3144c958955bf3dc9eed1aa1bb06"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    }
+  ],
+  "reason_descriptions": {
+    "speedtest": "Exact hostname in the configured Sukka Speedtest category, with public DNS answers and no checked domain reject match.",
+    "google_source": "Exact entry in the configured v2fly google provider through its include path, corroborated by Loyalsoldier; no checked reject match; resolves in public DNS.",
+    "global_source": "Exact rule in a configured Global provider. No checked Sukka domain or non_ip reject match; resolves in public DNS."
+  },
+  "source_catalog": {
+    "https://ruleset.skk.moe/List/domainset/speedtest.conf": {
+      "url": "https://ruleset.skk.moe/List/domainset/speedtest.conf",
+      "sha256": "8e0e1758dee733f50bb107705b9171cbfabcc2f4869c9fbdfea5c6f3c82e3546"
+    },
+    "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt": {
+      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+      "sha256": "04063818091129ce57c9fa53ab00e71d1aa5cd4f0c96674c05af23fa85e4381c"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-deepmind": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-deepmind",
+      "sha256": "fa60e3f80e1487e38c04c92973102ff481c961e620b9bb11fb8585451f5ff2db"
+    },
+    "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "fe0aa5468f728190670e72ceab9eab4813ea3144c958955bf3dc9eed1aa1bb06"
+    },
+    "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    }
+  },
+  "decisions": [
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,ams.speedtest.rustbanned.net",
+      "decision": "approved",
+      "reason": "speedtest",
+      "evidence": {
+        "sources": [
+          [
+            "https://ruleset.skk.moe/List/domainset/speedtest.conf",
+            2501,
+            "ams.speedtest.rustbanned.net"
+          ]
+        ],
+        "dns": [
+          [
+            "https://dns.google/resolve?name=ams.speedtest.rustbanned.net&type=A",
+            [
+              "188.65.164.39"
+            ]
+          ],
+          [
+            "https://dns.google/resolve?name=ams.speedtest.rustbanned.net&type=AAAA",
+            [
+              "2602:fa7e:17::48"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,ookla-london3.tropicalhosting.net",
+      "decision": "approved",
+      "reason": "speedtest",
+      "evidence": {
+        "sources": [
+          [
+            "https://ruleset.skk.moe/List/domainset/speedtest.conf",
+            3283,
+            "ookla-london3.tropicalhosting.net"
+          ]
+        ],
+        "dns": [
+          [
+            "https://dns.google/resolve?name=ookla-london3.tropicalhosting.net&type=A",
+            [
+              "31.56.165.239"
+            ]
+          ],
+          [
+            "https://dns.google/resolve?name=ookla-london3.tropicalhosting.net&type=AAAA",
+            [
+              "2a14:f700:de0:1::3"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,ookla.speedtest.freethought-internet.co.uk",
+      "decision": "approved",
+      "reason": "speedtest",
+      "evidence": {
+        "sources": [
+          [
+            "https://ruleset.skk.moe/List/domainset/speedtest.conf",
+            3514,
+            "ookla.speedtest.freethought-internet.co.uk"
+          ]
+        ],
+        "dns": [
+          [
+            "https://dns.google/resolve?name=ookla.speedtest.freethought-internet.co.uk&type=A",
+            [
+              "176.74.19.50"
+            ]
+          ],
+          [
+            "https://dns.google/resolve?name=ookla.speedtest.freethought-internet.co.uk&type=AAAA",
+            [
+              "2a00:b980:2:5::50"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,speedtest-spo.fibranort.com.br",
+      "decision": "approved",
+      "reason": "speedtest",
+      "evidence": {
+        "sources": [
+          [
+            "https://ruleset.skk.moe/List/domainset/speedtest.conf",
+            2926,
+            "speedtest-spo.fibranort.com.br"
+          ]
+        ],
+        "dns": [
+          [
+            "https://dns.google/resolve?name=speedtest-spo.fibranort.com.br&type=A",
+            [
+              "192.141.15.104"
+            ]
+          ],
+          [
+            "https://dns.google/resolve?name=speedtest-spo.fibranort.com.br&type=AAAA",
+            [
+              "2804:41b4:20c0:1::10"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Speedtest",
+      "rule": "DOMAIN,speedtest.10gtelecomindia.com",
+      "decision": "approved",
+      "reason": "speedtest",
+      "evidence": {
+        "sources": [
+          [
+            "https://ruleset.skk.moe/List/domainset/speedtest.conf",
+            2769,
+            "speedtest.10gtelecomindia.com"
+          ]
+        ],
+        "dns": [
+          [
+            "https://dns.google/resolve?name=speedtest.10gtelecomindia.com&type=A",
+            [
+              "103.181.201.26"
+            ]
+          ],
+          [
+            "https://dns.google/resolve?name=speedtest.10gtelecomindia.com&type=AAAA",
+            [
+              "2401:12a0::12"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Google",
+      "rule": "DOMAIN-SUFFIX,gemma.ai",
+      "decision": "approved",
+      "reason": "google_source",
+      "evidence": {
+        "sources": [
+          [
+            "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/google-deepmind",
+            77,
+            "gemma.ai"
+          ]
+        ],
+        "v2fly_paths": [
+          [
+            "google",
+            "google-deepmind"
+          ]
+        ],
+        "corroboration": [
+          [
+            "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+            10606,
+            "- '+.gemma.ai'"
+          ]
+        ],
+        "also_approved_in": [
+          "GlobalAI",
+          "safety/reviews/2026-11-26-globalai-gemma-addition.json"
+        ],
+        "dns": [
+          [
+            "https://dns.google/resolve?name=gemma.ai&type=A",
+            [
+              "185.199.110.153",
+              "185.199.109.153",
+              "185.199.108.153",
+              "185.199.111.153"
+            ]
+          ],
+          [
+            "https://dns.google/resolve?name=gemma.ai&type=AAAA",
+            [
+              "2606:50c0:8001::153",
+              "2606:50c0:8003::153",
+              "2606:50c0:8002::153",
+              "2606:50c0:8000::153"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,aicu.cc",
+      "decision": "approved",
+      "reason": "global_source",
+      "evidence": {
+        "sources": [
+          [
+            "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+            1845,
+            "- '+.aicu.cc'"
+          ]
+        ],
+        "dns": [
+          [
+            "https://dns.google/resolve?name=aicu.cc&type=A",
+            [
+              "172.67.223.36",
+              "104.21.46.36"
+            ]
+          ],
+          [
+            "https://dns.google/resolve?name=aicu.cc&type=AAAA",
+            [
+              "2606:4700:3031::6815:2e24",
+              "2606:4700:3032::ac43:df24"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,danmakus.com",
+      "decision": "approved",
+      "reason": "global_source",
+      "evidence": {
+        "sources": [
+          [
+            "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+            7041,
+            "- '+.danmakus.com'"
+          ]
+        ],
+        "dns": [
+          [
+            "https://dns.google/resolve?name=danmakus.com&type=A",
+            [
+              "172.67.138.125",
+              "104.21.64.250"
+            ]
+          ],
+          [
+            "https://dns.google/resolve?name=danmakus.com&type=AAAA",
+            [
+              "2606:4700:3036::6815:40fa",
+              "2606:4700:3035::ac43:8a7d"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN-SUFFIX,spacedesk.net",
+      "decision": "approved",
+      "reason": "global_source",
+      "evidence": {
+        "sources": [
+          [
+            "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+            21983,
+            "- '+.spacedesk.net'"
+          ]
+        ],
+        "dns": [
+          [
+            "https://dns.google/resolve?name=spacedesk.net&type=A",
+            [
+              "217.160.0.102"
+            ]
+          ],
+          [
+            "https://dns.google/resolve?name=spacedesk.net&type=AAAA",
+            [
+              "2001:8d8:100f:f000::200"
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

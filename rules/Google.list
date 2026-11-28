@@ -1,11 +1,11 @@
 # NAME: Google
 # AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-17 19:37:43
+# UPDATED: 2026-11-28 18:22:45
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 241
 # DOMAIN-KEYWORD: 6
-# DOMAIN-SUFFIX: 893
+# DOMAIN-SUFFIX: 894
 # IP-CIDR: 2
 # PROCESS-NAME: 4
 
@@ -525,6 +525,7 @@ DOMAIN-SUFFIX,geller-pa.googleapis.com
 DOMAIN-SUFFIX,gemini.google
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,gemini.gstatic.com
+DOMAIN-SUFFIX,gemma.ai
 DOMAIN-SUFFIX,generativeai.google
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,gerritcodereview.com

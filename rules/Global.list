@@ -1,11 +1,11 @@
 # NAME: Global
 # AUTHOR: MagicRule (review-filtered)
 # REPO: https://magicrule.pages.dev
-# UPDATED: 2026-11-28 04:48:49
+# UPDATED: 2026-11-28 20:55:50
 # SAFETY: exact per-list reviewed allowlist; unknown additions require review
 # DOMAIN: 1912
 # DOMAIN-KEYWORD: 57
-# DOMAIN-SUFFIX: 22245
+# DOMAIN-SUFFIX: 22248
 # IP-CIDR: 80
 # IP-CIDR6: 4
 # PROCESS-NAME: 8
@@ -2834,6 +2834,7 @@ DOMAIN-SUFFIX,ai-wen.net
 DOMAIN-SUFFIX,ai.dev
 DOMAIN-SUFFIX,ai7995.site
 DOMAIN-SUFFIX,aicoin.com
+DOMAIN-SUFFIX,aicu.cc
 DOMAIN-SUFFIX,aihub.top
 DOMAIN-SUFFIX,aimei133.com
 DOMAIN-SUFFIX,aimoon.com
@@ -7236,6 +7237,7 @@ DOMAIN-SUFFIX,dandanplay.com
 DOMAIN-SUFFIX,dandanplay.net
 DOMAIN-SUFFIX,dandanzan.cc
 DOMAIN-SUFFIX,danke4china.net
+DOMAIN-SUFFIX,danmakus.com
 DOMAIN-SUFFIX,danmarkbeatsbydrdre.com
 DOMAIN-SUFFIX,dansmovies.com
 DOMAIN-SUFFIX,danwei.org
@@ -19753,6 +19755,7 @@ DOMAIN-SUFFIX,soyinyj.top
 DOMAIN-SUFFIX,soylent.com
 DOMAIN-SUFFIX,sp.cool
 DOMAIN-SUFFIX,spacebattles.com
+DOMAIN-SUFFIX,spacedesk.net
 DOMAIN-SUFFIX,spaceexplored.com
 DOMAIN-SUFFIX,spacemail.com
 DOMAIN-SUFFIX,spaceship-cdn.com
