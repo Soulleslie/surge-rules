@@ -131,8 +131,8 @@
     },
     "Microsoft": {
       "path": "safety/approved/Microsoft.list",
-      "sha256": "21c758c90292a337e60ed64279fcc9e6a86e98f6536a8b3854b1582bf243ad19",
-      "count": 923
+      "sha256": "9229c47b038e613ffbff528265a2f09815bfc6a14eb17336ed98d5ad6367e845",
+      "count": 924
     },
     "Reddit": {
       "path": "safety/approved/Reddit.list",
@@ -151,8 +151,8 @@
     },
     "Global": {
       "path": "safety/approved/Global.list",
-      "sha256": "215bacf99c01c222cf627e0ed4e94b17469557babca33a13e2b62c83f87f9f90",
-      "count": 24528,
+      "sha256": "ece3a89b5b1388ef1b4ba2d08aecb0ba58bf30cea67ab2b83c0223e53001d71a",
+      "count": 24530,
       "excluded": {
         "path": "safety/quarantine/Global.list",
         "sha256": "e6e8665baea6ac1566ddcdd4c3ecb15c9d543fc5effd5c054909b06d38d0226e",
@@ -285,6 +285,12 @@
       "path": "safety/reviews/2026-11-27-testflight-import.json",
       "sha256": "c12dfd91ea7615fbf7f7e3308816b920475e389dad4fccf793adadca7e01b510",
       "approved": 2,
+      "quarantined": 0
+    },
+    {
+      "path": "safety/reviews/2026-11-28-global-microsoft-additions.json",
+      "sha256": "6f6085c002d9160b9eef2ebb1d898a122080b88f9d0701b699b81f1f2f5666d7",
+      "approved": 3,
       "quarantined": 0
     }
   ]

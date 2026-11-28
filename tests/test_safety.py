@@ -263,6 +263,90 @@ class PipelineTests(RepositoryCase):
                 self.assertIn('exclude_lists', report['fatal_error'])
                 self.assertEqual(before, self.snapshot())
 
+    FIXED = 'https://magicrule.pages.dev/data/_shared/artifacts/{}_rules_0123456789abcdef.list'
+    HEADER = '# NAME: One\n# AUTHOR: MagicRule\n# REPO: https://magicrule.pages.dev\n# UPDATED: 2026-11-28 10:00:00\n'
+
+    def recording(self, network):
+        calls = []
+        def fetcher(url):
+            calls.append(url)
+            return network[url]
+        return fetcher, calls
+
+    def execute_with(self, config, fetcher):
+        def convert(mihomo, behavior, lines, out):
+            out.write_bytes((behavior + '\n' + '\n'.join(lines)).encode())
+        with patch.object(clash, 'convert', side_effect=convert):
+            code = update.run(config, 'fake', self.root / 'report.json', root=self.root, fetcher=fetcher)
+        return code, json.loads((self.root / 'report.json').read_text())
+
+    def test_fixed_artifact_skips_index_and_manifest_and_still_filters(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+        direct = self.FIXED.format('One')
+        c['rules'][0]['artifact_url'] = direct
+        n[direct] = (self.HEADER + 'DOMAIN,good.invalid\nDOMAIN-SUFFIX,ad.invalid\n').encode()
+        fetcher, calls = self.recording(n)
+        code, report = self.execute_with(c, fetcher)
+        self.assertEqual(code, 0)
+        self.assertEqual(calls, [direct])
+        self.assertEqual(report['lists']['One']['integrity_verification'], 'fixed-artifact')
+        self.assertEqual(report['lists']['One']['source'], direct)
+        self.assertEqual(report['lists']['One']['quarantined_rules'], ['DOMAIN-SUFFIX,ad.invalid'])
+        self.assertEqual(parse((self.root / 'rules/One.list').read_text()), ['DOMAIN,good.invalid'])
+
+    def test_fixed_artifact_cannot_approve_unknown_rules(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+        direct = self.FIXED.format('One')
+        c['rules'][0]['artifact_url'] = direct
+        n[direct] = (self.HEADER + 'DOMAIN,good.invalid\nDOMAIN,new.invalid\n').encode()
+        before = self.snapshot()
+        code, report = self.execute(c, n)
+        self.assertEqual(code, 1)
+        self.assertEqual(report['lists']['One']['unknown_rules'], ['DOMAIN,new.invalid'])
+        self.assertEqual(before, self.snapshot())
+
+    def test_fixed_artifact_requires_standard_header_for_this_list(self):
+        for body in (self.HEADER.replace('# NAME: One', '# NAME: Two') + 'DOMAIN,good.invalid\n',
+                     'DOMAIN,good.invalid\n',
+                     self.HEADER.replace('2026-11-28 10:00:00', 'yesterday') + 'DOMAIN,good.invalid\n'):
+            with self.subTest(body=body[:24]):
+                c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+                direct = self.FIXED.format('One')
+                c['rules'][0]['artifact_url'] = direct
+                n[direct] = body.encode()
+                before = self.snapshot()
+                code, report = self.execute(c, n)
+                self.assertEqual(code, 1)
+                self.assertEqual(report['lists']['One']['status'], 'failed')
+                self.assertEqual(before, self.snapshot())
+
+    def test_list_without_fixed_artifact_still_uses_manifest(self):
+        c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n', 'Two': 'DOMAIN,other.invalid\n'},
+                                 {'One': 'DOMAIN,good.invalid\n', 'Two': 'DOMAIN,other.invalid\n'})
+        direct = self.FIXED.format('One')
+        c['rules'][0]['artifact_url'] = direct
+        n[direct] = (self.HEADER + 'DOMAIN,good.invalid\n').encode()
+        fetcher, calls = self.recording(n)
+        code, report = self.execute_with(c, fetcher)
+        self.assertEqual(code, 0)
+        self.assertEqual(report['lists']['One']['integrity_verification'], 'fixed-artifact')
+        self.assertEqual(report['lists']['Two']['integrity_verification'], 'bytes_sha256')
+        self.assertIn(c['index'], calls)
+        self.assertNotIn('https://magicrule.pages.dev/data/One/manifest.json', calls)
+
+    def test_invalid_artifact_url_fails_before_writes(self):
+        base = 'https://magicrule.pages.dev/data/_shared/artifacts/'
+        for value in (base + 'Two_rules_0123456789abcdef.list', 'https://evil.invalid/data/_shared/artifacts/One_rules_0123456789abcdef.list',
+                      base + 'One_rules_0123456789abcdef.list?x=1', base + 'One_rules_short.list', 7):
+            with self.subTest(value=value):
+                c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n'}, {'One': 'DOMAIN,good.invalid\n'})
+                c['rules'][0]['artifact_url'] = value
+                before = self.snapshot()
+                code, report = self.execute(c, n)
+                self.assertEqual(code, 1)
+                self.assertIsNotNone(report['fatal_error'])
+                self.assertEqual(before, self.snapshot())
+
     def test_unknown_blocks_entire_group_but_other_list_updates(self):
         c, n = self.setup_remote({'One': 'DOMAIN,good.invalid\n', 'Two': 'DOMAIN,other.invalid\n'},
                                  {'One': 'DOMAIN,good.invalid\nDOMAIN,new.invalid\nDOMAIN-SUFFIX,ad.invalid\n', 'Two': 'DOMAIN,other.invalid\n'})

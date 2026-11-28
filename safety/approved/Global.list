@@ -290,6 +290,7 @@ DOMAIN,cdn-main.plus500.com
 DOMAIN,cdn-node.diskpart.com
 DOMAIN,cdn-public-apis.moonlock.com
 DOMAIN,cdn-public.sociabble.com
+DOMAIN,cdn-resize-prod-com.500px.cloud
 DOMAIN,cdn-seo.airdroid.com
 DOMAIN,cdn-service.jp.sumologic.com
 DOMAIN,cdn-share-sprites.flaticon.com
@@ -519,6 +520,7 @@ DOMAIN,cdn.privacy-mgmt.com
 DOMAIN,cdn.privacy.com
 DOMAIN,cdn.promo.capcomusa.com
 DOMAIN,cdn.promotekit.com
+DOMAIN,cdn.protect.clerk.com
 DOMAIN,cdn.quadpay.com
 DOMAIN,cdn.quickemailverification.com
 DOMAIN,cdn.rauno.me

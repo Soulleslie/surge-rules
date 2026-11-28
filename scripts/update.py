@@ -71,6 +71,31 @@ def without_description(body: bytes) -> bytes:
     return b'\n'.join(lines)
 
 
+def standard_header(lines, expected_name: str) -> bool:
+    """The four leading NAME, AUTHOR, REPO, UPDATED lines of a MagicRule list."""
+    headers = [line.removesuffix(b'\r') for line in lines]
+    return (len(headers) == 4 and headers[0] == b'# NAME: ' + expected_name.encode('utf-8')
+            and headers[1].startswith(b'# AUTHOR: ') and bool(headers[1][10:].strip())
+            and headers[2].startswith(b'# REPO: ') and bool(headers[2][8:].strip())
+            and re.fullmatch(rb'# UPDATED: \d{4}-\d\d-\d\d \d\d:\d\d:\d\d', headers[3]) is not None
+            and all(valid_metadata_line(line) for line in headers))
+
+
+def configured_artifact(entry):
+    """The fixed per-list artifact URL in sources.json; when set, no index or manifest is used."""
+    url = entry.get('artifact_url')
+    if url is None:
+        return None
+    if not isinstance(url, str):
+        raise UnsafeRules('配置的 artifact_url 必须是字符串')
+    checked_url(url)
+    parts = urlsplit(url)
+    match = re.fullmatch(r'/data/_shared/artifacts/([A-Za-z0-9]+)_rules_[0-9a-f]{16}\.list', parts.path)
+    if not match or match.group(1) != entry['name'] or parts.query or parts.fragment:
+        raise UnsafeRules('artifact_url 必须是该列表固定的 rules 产物地址')
+    return url
+
+
 def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
     """Verify exact bytes, or the declared digest of the rules and fixed comments."""
     dedupe = artifact.get('dedupe')
@@ -92,12 +117,7 @@ def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
     parts = data.split(b'\n', 4)
     if len(parts) != 5:
         raise UnsafeRules('正文 SHA-256 校验要求四行完整元数据头')
-    headers = [line.removesuffix(b'\r') for line in parts[:4]]
-    if (headers[0] != b'# NAME: ' + expected_name.encode('utf-8')
-            or not headers[1].startswith(b'# AUTHOR: ') or not headers[1][10:].strip()
-            or not headers[2].startswith(b'# REPO: ') or not headers[2][8:].strip()
-            or not re.fullmatch(rb'# UPDATED: \d{4}-\d\d-\d\d \d\d:\d\d:\d\d', headers[3])
-            or not all(valid_metadata_line(line) for line in headers)):
+    if not standard_header(parts[:4], expected_name):
         raise UnsafeRules('正文 SHA-256 校验的元数据头格式或规则名称不符')
     body = without_description(parts[4]) if normalized_lines == 5 else parts[4]
     if hashlib.sha256(body).hexdigest() != semantic:
@@ -106,6 +126,13 @@ def verify_artifact(data: bytes, artifact: dict, expected_name: str) -> str:
 
 
 def candidate(entry, index, fetcher):
+    direct = configured_artifact(entry)
+    if direct is not None:
+        # No upstream digest is checked; the per-rule allowlist still applies.
+        data = fetcher(direct)
+        if not standard_header(data.split(b'\n', 4)[:4], entry['name']):
+            raise UnsafeRules('固定产物的元数据头格式或规则名称不符')
+        return data.decode('utf-8'), direct, 'fixed-artifact'
     matches = index.get(entry['name'], [])
     if len(matches) != 1:
         raise UnsafeRules(f'索引里找到 {len(matches)} 个同名条目')
@@ -201,9 +228,11 @@ def run(config, mihomo, report_path, *, root=ROOT, fetcher=fetch):
                 raise UnsafeRules('配置包含非预期输出路径或产物')
             clash_enabled(entry)
             excluded_rules(entry, policy, names)
+            configured_artifact(entry)
         index = {}
-        for row in json.loads(fetcher(checked_url(config['index']))).get('rules', []):
-            index.setdefault(row.get('name'), []).append(row)
+        if any(configured_artifact(entry) is None for entry in entries):
+            for row in json.loads(fetcher(checked_url(config['index']))).get('rules', []):
+                index.setdefault(row.get('name'), []).append(row)
         for entry in entries:
             name = entry['name']
             detail = {'status': 'failed'}

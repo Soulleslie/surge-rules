@@ -1,0 +1,158 @@
+{
+  "reviewed_at": "2026-11-28T07:20:57+00:00",
+  "baseline_commit": "4c13a77cdb103b2a7a5c64381543e5e923173695",
+  "summary": {
+    "Global": {
+      "approved": 2,
+      "quarantined": 0,
+      "upstream_removed": 7
+    },
+    "Microsoft": {
+      "approved": 1,
+      "quarantined": 0,
+      "upstream_removed": 0
+    }
+  },
+  "upstream_artifacts": {
+    "Global": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/Global_rules_b5f3bb33d8a4698a.list",
+      "sha256": "3d711ef4aae2bc8e0ad9dcbddc55de091717f1cc8b33a16230b1f8d04a9163f0",
+      "integrity_verification": "manifest-unavailable"
+    },
+    "Microsoft": {
+      "url": "https://magicrule.pages.dev/data/_shared/artifacts/Microsoft_rules_7fd3d40967dabeef.list",
+      "sha256": "5778d7aa86bc759ffbb5dbe9d2fc76774f1f81b86a0068783c99c875074761d2",
+      "integrity_verification": "manifest-unavailable"
+    }
+  },
+  "notes": [
+    "magicrule.pages.dev manifests answered 403 with x-magicrule-block-reason: turnstile-required; artifacts were fetched from the fixed per-list URLs the user supplied and checked for the standard NAME/AUTHOR/REPO/UPDATED header."
+  ],
+  "reject_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "8f09ea189eee8cd11f330e3cde33d61f4004250b4beee082132501375ea8a01c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    }
+  ],
+  "reason_descriptions": {
+    "global_source": "Exact rule in a configured Global provider. No checked Sukka domain or non_ip reject match; resolves in public DNS.",
+    "microsoft_source": "Exact full: entry in the configured v2fly microsoft provider, corroborated by Loyalsoldier proxy. No checked Sukka reject match; resolves in public DNS."
+  },
+  "source_catalog": {
+    "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt": {
+      "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+      "sha256": "04063818091129ce57c9fa53ab00e71d1aa5cd4f0c96674c05af23fa85e4381c"
+    },
+    "https://ruleset.skk.moe/List/domainset/cdn.conf": {
+      "url": "https://ruleset.skk.moe/List/domainset/cdn.conf",
+      "sha256": "463746d22961990284c5d572bddbb8544211a78a9d1b0c019ce8ce6993b4da15"
+    },
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/microsoft": {
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/microsoft",
+      "sha256": "5217808a3d2b8076a3a7bfdd229ea8796918c089af6abe49c12d1de20cf12578"
+    },
+    "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/domainset/reject.conf",
+      "sha256": "8f09ea189eee8cd11f330e3cde33d61f4004250b4beee082132501375ea8a01c"
+    },
+    "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf": {
+      "url": "https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/List/non_ip/reject.conf",
+      "sha256": "a20731d45036217728e6324ac46acc34cf1b0ab077b63424c24fc500aa7a7d12"
+    }
+  },
+  "decisions": [
+    {
+      "list": "Global",
+      "rule": "DOMAIN,cdn-resize-prod-com.500px.cloud",
+      "decision": "approved",
+      "reason": "global_source",
+      "evidence": {
+        "sources": [
+          [
+            "https://ruleset.skk.moe/List/domainset/cdn.conf",
+            4580,
+            "cdn-resize-prod-com.500px.cloud"
+          ]
+        ],
+        "dns": [
+          "https://dns.google/resolve?name=cdn-resize-prod-com.500px.cloud&type=A",
+          [
+            "dahq9v5lil8lm.cloudfront.net.",
+            "3.171.22.34",
+            "3.171.22.112",
+            "3.171.22.69",
+            "3.171.22.129"
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Global",
+      "rule": "DOMAIN,cdn.protect.clerk.com",
+      "decision": "approved",
+      "reason": "global_source",
+      "evidence": {
+        "sources": [
+          [
+            "https://ruleset.skk.moe/List/domainset/cdn.conf",
+            3458,
+            "cdn.protect.clerk.com"
+          ]
+        ],
+        "dns": [
+          "https://dns.google/resolve?name=cdn.protect.clerk.com&type=A",
+          [
+            "44.247.125.95"
+          ]
+        ]
+      }
+    },
+    {
+      "list": "Microsoft",
+      "rule": "DOMAIN,aurora-customization-usw2.lithium.com",
+      "decision": "approved",
+      "reason": "microsoft_source",
+      "evidence": {
+        "sources": [
+          [
+            "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/microsoft",
+            310,
+            "full:aurora-customization-usw2.lithium.com"
+          ],
+          [
+            "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt",
+            63,
+            "- 'aurora-customization-usw2.lithium.com'"
+          ]
+        ],
+        "v2fly_section": "# CDN",
+        "dns": [
+          "https://dns.google/resolve?name=aurora-customization-usw2.lithium.com&type=A",
+          [
+            "d30gs4w8gwk4ii.cloudfront.net.",
+            "18.64.183.42",
+            "18.64.183.111",
+            "18.64.183.5",
+            "18.64.183.116"
+          ]
+        ]
+      }
+    }
+  ],
+  "upstream_removals": {
+    "Global": [
+      "DOMAIN,assets.mcp.corespeed.io",
+      "DOMAIN,r2cdn.c7d.dev",
+      "DOMAIN,r2cdn.corespeed.io",
+      "DOMAIN,scdn.clerk.com",
+      "DOMAIN,segapi.clerk.com",
+      "DOMAIN,showcase.abovemarket.com",
+      "DOMAIN,spotlightimage.biggo.com"
+    ],
+    "Microsoft": []
+  }
+}
